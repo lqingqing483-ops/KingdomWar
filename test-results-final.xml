@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="45" result="Passed" total="45" passed="45" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:09Z" duration="2.0981277">
+  <test-suite type="TestSuite" id="1064" name="KingdomWar" fullname="KingdomWar" runstate="Runnable" testcasecount="45" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:09Z" duration="2.098128" total="45" passed="45" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties />
+    <test-suite type="Assembly" id="1072" name="EditMode.dll" fullname="D:/fs2025/unity/KingdomWar/Library/ScriptAssemblies/EditMode.dll" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.032806" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="40160" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+      </properties>
+      <test-suite type="TestFixture" id="1065" name="BattleManagerTests" fullname="BattleManagerTests" classname="BattleManagerTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.030686" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1066" name="BattleStatus_Enum_Exists" fullname="BattleManagerTests.BattleStatus_Enum_Exists" methodname="BattleStatus_Enum_Exists" classname="BattleManagerTests" runstate="Runnable" seed="2055462984" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.009358" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1068" name="BattleStatus_HasFighting" fullname="BattleManagerTests.BattleStatus_HasFighting" methodname="BattleStatus_HasFighting" classname="BattleManagerTests" runstate="Runnable" seed="2064784091" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.000393" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1067" name="BattleStatus_HasWaiting" fullname="BattleManagerTests.BattleStatus_HasWaiting" methodname="BattleStatus_HasWaiting" classname="BattleManagerTests" runstate="Runnable" seed="1744516540" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.000404" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1069" name="UnitState_Enum_Exists" fullname="BattleManagerTests.UnitState_Enum_Exists" methodname="UnitState_Enum_Exists" classname="BattleManagerTests" runstate="Runnable" seed="629351699" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.000204" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1071" name="UnitState_HasDead" fullname="BattleManagerTests.UnitState_HasDead" methodname="UnitState_HasDead" classname="BattleManagerTests" runstate="Runnable" seed="845264732" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.000309" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1070" name="UnitState_HasIdle" fullname="BattleManagerTests.UnitState_HasIdle" methodname="UnitState_HasIdle" classname="BattleManagerTests" runstate="Runnable" seed="1865824807" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.000369" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+    </test-suite>
+    <test-suite type="Assembly" id="1119" name="PlayMode.dll" fullname="D:/fs2025/unity/KingdomWar/Library/ScriptAssemblies/PlayMode.dll" runstate="Runnable" testcasecount="38" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:08Z" duration="1.022588" total="38" passed="38" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="40160" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+      </properties>
+      <test-suite type="TestFixture" id="1075" name="AudioManagerTests" fullname="AudioManagerTests" classname="AudioManagerTests" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.020956" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1077" name="DefaultVolume_IsOne" fullname="AudioManagerTests.DefaultVolume_IsOne" methodname="DefaultVolume_IsOne" classname="AudioManagerTests" runstate="Runnable" seed="689541346" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.007001" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1076" name="Instance_IsNotNull" fullname="AudioManagerTests.Instance_IsNotNull" methodname="Instance_IsNotNull" classname="AudioManagerTests" runstate="Runnable" seed="1948654246" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.002850" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1082" name="LoadVolumeSettings_DoesNotThrow" fullname="AudioManagerTests.LoadVolumeSettings_DoesNotThrow" methodname="LoadVolumeSettings_DoesNotThrow" classname="AudioManagerTests" runstate="Runnable" seed="593903936" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.003386" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1081" name="SetBGMVolume_OnlyAffectsBGM" fullname="AudioManagerTests.SetBGMVolume_OnlyAffectsBGM" methodname="SetBGMVolume_OnlyAffectsBGM" classname="AudioManagerTests" runstate="Runnable" seed="1006566338" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.000754" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1080" name="SetVolume_ClampsToOne" fullname="AudioManagerTests.SetVolume_ClampsToOne" methodname="SetVolume_ClampsToOne" classname="AudioManagerTests" runstate="Runnable" seed="159032800" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.000303" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1079" name="SetVolume_ClampsToZero" fullname="AudioManagerTests.SetVolume_ClampsToZero" methodname="SetVolume_ClampsToZero" classname="AudioManagerTests" runstate="Runnable" seed="1548116670" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.000256" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1078" name="SetVolume_UpdatesBGMAndSFX" fullname="AudioManagerTests.SetVolume_UpdatesBGMAndSFX" methodname="SetVolume_UpdatesBGMAndSFX" classname="AudioManagerTests" runstate="Runnable" seed="901627978" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.000471" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1083" name="VolumePersists_AfterSaveAndLoad" fullname="AudioManagerTests.VolumePersists_AfterSaveAndLoad" methodname="VolumePersists_AfterSaveAndLoad" classname="AudioManagerTests" runstate="Runnable" seed="610772452" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.001120" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1084" name="CardDatabaseTests" fullname="CardDatabaseTests" classname="CardDatabaseTests" runstate="Runnable" testcasecount="10" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.141266" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1085" name="AllCards_LoadFromResources_AtLeastEight" fullname="CardDatabaseTests.AllCards_LoadFromResources_AtLeastEight" methodname="AllCards_LoadFromResources_AtLeastEight" classname="CardDatabaseTests" runstate="Runnable" seed="163151344" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.126488" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1087" name="Archer_IsLoaded_AsUnit_3Elixir" fullname="CardDatabaseTests.Archer_IsLoaded_AsUnit_3Elixir" methodname="Archer_IsLoaded_AsUnit_3Elixir" classname="CardDatabaseTests" runstate="Runnable" seed="1874748201" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.002642" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1094" name="CardDatabase_LoadsAllCardsFromResources" fullname="CardDatabaseTests.CardDatabase_LoadsAllCardsFromResources" methodname="CardDatabase_LoadsAllCardsFromResources" classname="CardDatabaseTests" runstate="Runnable" seed="299929454" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.000523" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1092" name="ElixirCollector_IsLoaded_AsBuilding" fullname="CardDatabaseTests.ElixirCollector_IsLoaded_AsBuilding" methodname="ElixirCollector_IsLoaded_AsBuilding" classname="CardDatabaseTests" runstate="Runnable" seed="1300320525" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.000613" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1088" name="Fireball_IsLoaded_AsSpell_4Elixir" fullname="CardDatabaseTests.Fireball_IsLoaded_AsSpell_4Elixir" methodname="Fireball_IsLoaded_AsSpell_4Elixir" classname="CardDatabaseTests" runstate="Runnable" seed="2043819945" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.000583" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1089" name="Giant_IsLoaded_AsUnit_5Elixir" fullname="CardDatabaseTests.Giant_IsLoaded_AsUnit_5Elixir" methodname="Giant_IsLoaded_AsUnit_5Elixir" classname="CardDatabaseTests" runstate="Runnable" seed="720753673" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.000405" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1086" name="Knight_IsLoaded_AsUnit_3Elixir" fullname="CardDatabaseTests.Knight_IsLoaded_AsUnit_3Elixir" methodname="Knight_IsLoaded_AsUnit_3Elixir" classname="CardDatabaseTests" runstate="Runnable" seed="802482942" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.000394" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1090" name="Lightning_IsLoaded_AsSpell_6Elixir" fullname="CardDatabaseTests.Lightning_IsLoaded_AsSpell_6Elixir" methodname="Lightning_IsLoaded_AsSpell_6Elixir" classname="CardDatabaseTests" runstate="Runnable" seed="1237723576" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.000351" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1091" name="PEKKA_IsLoaded_AsUnit" fullname="CardDatabaseTests.PEKKA_IsLoaded_AsUnit" methodname="PEKKA_IsLoaded_AsUnit" classname="CardDatabaseTests" runstate="Runnable" seed="661656847" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.000377" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1093" name="Zap_IsLoaded_AsSpell_2Elixir" fullname="CardDatabaseTests.Zap_IsLoaded_AsSpell_2Elixir" methodname="Zap_IsLoaded_AsSpell_2Elixir" classname="CardDatabaseTests" runstate="Runnable" seed="381554911" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.000319" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1095" name="LotterySystemTests" fullname="LotterySystemTests" classname="LotterySystemTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.723333" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1100" name="Draw_ReturnsCorrectCardRarityWeights" fullname="LotterySystemTests.Draw_ReturnsCorrectCardRarityWeights" methodname="Draw_ReturnsCorrectCardRarityWeights" classname="LotterySystemTests" runstate="Runnable" seed="1374354890" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.714560" asserts="0">
+          <properties />
+          <output><![CDATA[Loaded 8 cards into database
+Reloaded card data
+]]></output>
+        </test-case>
+        <test-case id="1096" name="Draw_ReturnsSuccess_WhenPlayerHasGold" fullname="LotterySystemTests.Draw_ReturnsSuccess_WhenPlayerHasGold" methodname="Draw_ReturnsSuccess_WhenPlayerHasGold" classname="LotterySystemTests" runstate="Runnable" seed="173255366" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.001148" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1097" name="GetRemainingFreeDraws_ReturnsNonNegative" fullname="LotterySystemTests.GetRemainingFreeDraws_ReturnsNonNegative" methodname="GetRemainingFreeDraws_ReturnsNonNegative" classname="LotterySystemTests" runstate="Runnable" seed="1803899963" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.000290" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1099" name="HasEnoughCurrency_ReturnsBool" fullname="LotterySystemTests.HasEnoughCurrency_ReturnsBool" methodname="HasEnoughCurrency_ReturnsBool" classname="LotterySystemTests" runstate="Runnable" seed="980438809" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.000525" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1098" name="IsFreeDrawAvailable_ReturnsBool" fullname="LotterySystemTests.IsFreeDrawAvailable_ReturnsBool" methodname="IsFreeDrawAvailable_ReturnsBool" classname="LotterySystemTests" runstate="Runnable" seed="1382147937" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:07Z" duration="0.000223" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1101" name="ShopManagerTests" fullname="ShopManagerTests" classname="ShopManagerTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-07-04 05:28:07Z" end-time="2026-07-04 05:28:08Z" duration="0.024828" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1104" name="GetDailyItems_ItemsHaveValidData" fullname="ShopManagerTests.GetDailyItems_ItemsHaveValidData" methodname="GetDailyItems_ItemsHaveValidData" classname="ShopManagerTests" runstate="Runnable" seed="1220187085" result="Passed" start-time="2026-07-04 05:28:08Z" end-time="2026-07-04 05:28:08Z" duration="0.003511" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1103" name="GetDailyItems_ReturnsThreeItems" fullname="ShopManagerTests.GetDailyItems_ReturnsThreeItems" methodname="GetDailyItems_ReturnsThreeItems" classname="ShopManagerTests" runstate="Runnable" seed="707730906" result="Passed" start-time="2026-07-04 05:28:08Z" end-time="2026-07-04 05:28:08Z" duration="0.000359" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1102" name="Instance_IsNotNull" fullname="ShopManagerTests.Instance_IsNotNull" methodname="Instance_IsNotNull" classname="ShopManagerTests" runstate="Runnable" seed="935601755" result="Passed" start-time="2026-07-04 05:28:08Z" end-time="2026-07-04 05:28:08Z" duration="0.000389" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1105" name="PurchaseItem_FailsForAlreadyPurchased" fullname="ShopManagerTests.PurchaseItem_FailsForAlreadyPurchased" methodname="PurchaseItem_FailsForAlreadyPurchased" classname="ShopManagerTests" runstate="Runnable" seed="15968701" result="Passed" start-time="2026-07-04 05:28:08Z" end-time="2026-07-04 05:28:08Z" duration="0.002095" asserts="0">
+          <properties />
+          <output><![CDATA[Item already purchased
+]]></output>
+        </test-case>
+        <test-case id="1106" name="RefreshDailyShop_GeneratesNewItems" fullname="ShopManagerTests.RefreshDailyShop_GeneratesNewItems" methodname="RefreshDailyShop_GeneratesNewItems" classname="ShopManagerTests" runstate="Runnable" seed="1990069533" result="Passed" start-time="2026-07-04 05:28:08Z" end-time="2026-07-04 05:28:08Z" duration="0.000538" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1107" name="UIManagerTests" fullname="UIManagerTests" classname="UIManagerTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-07-04 05:28:08Z" end-time="2026-07-04 05:28:08Z" duration="0.078937" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1113" name="ClearPanelCache_DoesNotThrow" fullname="UIManagerTests.ClearPanelCache_DoesNotThrow" methodname="ClearPanelCache_DoesNotThrow" classname="UIManagerTests" runstate="Runnable" seed="99626851" result="Passed" start-time="2026-07-04 05:28:08Z" end-time="2026-07-04 05:28:08Z" duration="0.001802" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1110" name="CreatePromptMessageAsync_DoesNotThrow" fullname="UIManagerTests.CreatePromptMessageAsync_DoesNotThrow" methodname="CreatePromptMessageAsync_DoesNotThrow" classname="UIManagerTests" runstate="Runnable" seed="741933803" result="Passed" start-time="2026-07-04 05:28:08Z" end-time="2026-07-04 05:28:08Z" duration="0.060019" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1111" name="GetPanel_ReturnsNull_ForInvalidType" fullname="UIManagerTests.GetPanel_ReturnsNull_ForInvalidType" methodname="GetPanel_ReturnsNull_ForInvalidType" classname="UIManagerTests" runstate="Runnable" seed="1921671570" result="Passed" start-time="2026-07-04 05:28:08Z" end-time="2026-07-04 05:28:08Z" duration="0.012334" asserts="0">
+          <properties />
+          <output><![CDATA[未找到UI面板:999
+]]></output>
+        </test-case>
+        <test-case id="1109" name="GetPanelAsync_DoesNotThrow" fullname="UIManagerTests.GetPanelAsync_DoesNotThrow" methodname="GetPanelAsync_DoesNotThrow" classname="UIManagerTests" runstate="Runnable" seed="1812957301" result="Passed" start-time="2026-07-04 05:28:08Z" end-time="2026-07-04 05:28:08Z" duration="0.000947" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1108" name="Instance_IsNotNull" fullname="UIManagerTests.Instance_IsNotNull" methodname="Instance_IsNotNull" classname="UIManagerTests" runstate="Runnable" seed="692243400" result="Passed" start-time="2026-07-04 05:28:08Z" end-time="2026-07-04 05:28:08Z" duration="0.000219" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1112" name="ParseUIText_PopulatesPanelPathDic" fullname="UIManagerTests.ParseUIText_PopulatesPanelPathDic" methodname="ParseUIText_PopulatesPanelPathDic" classname="UIManagerTests" runstate="Runnable" seed="1192805589" result="Passed" start-time="2026-07-04 05:28:08Z" end-time="2026-07-04 05:28:08Z" duration="0.000285" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1114" name="UnitHealthBarTests" fullname="UnitHealthBarTests" classname="UnitHealthBarTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-07-04 05:28:08Z" end-time="2026-07-04 05:28:08Z" duration="0.027677" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1118" name="Cleanup_DestroysCanvas" fullname="UnitHealthBarTests.Cleanup_DestroysCanvas" methodname="Cleanup_DestroysCanvas" classname="UnitHealthBarTests" runstate="Runnable" seed="1670011225" result="Passed" start-time="2026-07-04 05:28:08Z" end-time="2026-07-04 05:28:08Z" duration="0.017774" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1115" name="Initialize_CreatesCanvas" fullname="UnitHealthBarTests.Initialize_CreatesCanvas" methodname="Initialize_CreatesCanvas" classname="UnitHealthBarTests" runstate="Runnable" seed="1014883046" result="Passed" start-time="2026-07-04 05:28:08Z" end-time="2026-07-04 05:28:08Z" duration="0.000991" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1116" name="UpdateHealth_ChangesBarFill" fullname="UnitHealthBarTests.UpdateHealth_ChangesBarFill" methodname="UpdateHealth_ChangesBarFill" classname="UnitHealthBarTests" runstate="Runnable" seed="879191763" result="Passed" start-time="2026-07-04 05:28:08Z" end-time="2026-07-04 05:28:08Z" duration="0.001504" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1117" name="UpdateHealth_FullHealth_ShowsGreen" fullname="UnitHealthBarTests.UpdateHealth_FullHealth_ShowsGreen" methodname="UpdateHealth_FullHealth_ShowsGreen" classname="UnitHealthBarTests" runstate="Runnable" seed="452363489" result="Passed" start-time="2026-07-04 05:28:08Z" end-time="2026-07-04 05:28:08Z" duration="0.000711" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+    </test-suite>
+    <test-suite type="Assembly" id="1122" name="Unity.Addressables.Editor.Tests.DocExampleCode.dll" fullname="D:/fs2025/unity/KingdomWar/Library/ScriptAssemblies/Unity.Addressables.Editor.Tests.DocExampleCode.dll" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-04 05:28:08Z" end-time="2026-07-04 05:28:09Z" duration="0.997184" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="40160" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+      </properties>
+      <test-suite type="TestSuite" id="1123" name="AddressableAssets" fullname="AddressableAssets" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-04 05:28:09Z" end-time="2026-07-04 05:28:09Z" duration="0.002083" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1124" name="DocExampleCode" fullname="AddressableAssets.DocExampleCode" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-04 05:28:09Z" end-time="2026-07-04 05:28:09Z" duration="0.001103" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1120" name="TestStub" fullname="AddressableAssets.DocExampleCode.TestStub" classname="AddressableAssets.DocExampleCode.TestStub" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-04 05:28:09Z" end-time="2026-07-04 05:28:09Z" duration="0.000940" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1121" name="RequiredTest" fullname="AddressableAssets.DocExampleCode.TestStub.RequiredTest" methodname="RequiredTest" classname="AddressableAssets.DocExampleCode.TestStub" runstate="Runnable" seed="1045757291" result="Passed" start-time="2026-07-04 05:28:09Z" end-time="2026-07-04 05:28:09Z" duration="0.000272" asserts="0">
+              <properties />
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

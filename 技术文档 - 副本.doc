@@ -1,0 +1,690 @@
+# KingdomWar 项目技术文档
+
+## 1. 项目背景与目标概述
+
+### 1.1 项目背景
+KingdomWar是一款基于皇室战争玩法的3D实时策略对战游戏，旨在通过创新的3D视角和增强的游戏机制，为玩家提供全新的策略对战体验。在一个充满魔法与战争的中世纪幻想世界中，各个王国为了争夺资源和领土而不断战斗。玩家作为王国的指挥官，通过召唤各种单位和施放法术来摧毁敌方城堡。
+
+### 1.3 技术挑战
+- **3D渲染性能**：确保在各种硬件配置下保持流畅的游戏体验
+- **网络同步**：实现低延迟的实时对战体验
+- **AI行为**：构建智能的单位AI系统
+- **资源管理**：优化内存使用和资源加载
+
+## 2. 核心功能模块演示
+
+### 2.1 卡牌系统
+**功能说明**：卡牌系统是游戏的核心玩法之一，玩家通过收集、升级和组合不同的卡牌来构建自己的卡组。
+
+**Unity相关实现**：
+- 使用ScriptableObject存储卡牌数据，便于配置和管理
+- 实现卡牌部署系统，支持拖拽操作和范围限制
+- 卡牌效果通过事件系统触发，实现松耦合设计
+
+**关键代码**：
+```csharp
+[CreateAssetMenu(fileName = "NewCard", menuName = "Cards/Card Data")]
+public class CardData : ScriptableObject
+{
+    public string cardName;
+    public CardType cardType;
+    public int elixirCost;
+    public int rarity;
+    
+    public UnitData unitData;
+    public SpellData spellData;
+    public BuildingData buildingData;
+    
+    public Sprite cardIcon;
+    public GameObject cardPrefab;
+}
+```
+
+### 2.2 战斗系统
+**功能说明**：战斗系统负责处理单位的生成、移动、攻击和死亡等核心战斗逻辑。
+
+**Unity相关实现**：
+- 使用物理引擎处理单位碰撞和路径寻找
+- 实现单位AI系统，支持智能寻路和目标选择
+- 战斗特效使用粒子系统实现，增强视觉体验
+
+**关键代码**：
+```csharp
+public class Unit : MonoBehaviour
+{
+    [Header("Stats")]
+    public UnitStats stats;
+    
+    [Header("Components")]
+    public UnitMovement movement;
+    public UnitCombat combat;
+    public UnitAI ai;
+    
+    private int currentHealth;
+    private bool isDead;
+    
+    public void Initialize(UnitStats stats)
+    {
+        this.stats = stats;
+        currentHealth = stats.maxHealth;
+        isDead = false;
+        
+        movement.Initialize(stats.moveSpeed);
+        combat.Initialize(stats);
+        ai.Initialize(this);
+    }
+}
+```
+
+### 2.3 网络对战系统
+**功能说明**：实现1v1实时匹配对战，支持玩家间的实时同步。
+
+**Unity相关实现**：
+- 使用Mirror Networking或Photon Unity Networking实现网络同步
+
+
+**关键代码**：
+```csharp
+public class NetworkPlayer : NetworkBehaviour
+{
+    [SyncVar] public string playerName;
+    [SyncVar] public int playerIndex;
+    [SyncVar] public int elixir;
+    
+    public List<CardData> deck = new List<CardData>();
+    
+    [Command]
+    public void CmdPlayCard(int cardIndex, Vector3 position)
+    {
+        ServerPlayCard(cardIndex, position);
+    }
+    
+    private void ServerPlayCard(int cardIndex, Vector3 position)
+    {
+        CardData card = deck[cardIndex];
+        
+        // 扣除圣水
+        elixir -= card.elixirCost;
+        
+        // 生成单位
+        Unit unit = SpawnUnit(card, position);
+        
+        // 同步到所有客户端
+        RpcSpawnUnit(card.cardName, position);
+    }
+}
+```
+
+### 2.4 UI系统
+**功能说明**：提供直观的用户界面，包括主菜单、战斗界面、卡组构建等。
+
+**Unity相关实现**：
+- 使用UGUI和TextMeshPro构建UI界面
+- 实现UI动画和过渡效果，提升用户体验
+- 响应式设计，适配不同屏幕尺寸
+
+**关键代码**：
+```csharp
+public class UIManager : MonoBehaviour
+{
+    public static UIManager Instance { get; private set; }
+    
+    private Dictionary<string, BasePanel> panelDict = new Dictionary<string, BasePanel>();
+    
+    void Awake()
+    {
+        Instance = this;
+        InitializePanels();
+    }
+    
+    private void InitializePanels()
+    {
+        BasePanel[] panels = GetComponentsInChildren<BasePanel>();
+        foreach (BasePanel panel in panels)
+        {
+            panelDict.Add(panel.panelName, panel);
+            panel.Hide();
+        }
+    }
+    
+    public void ShowPanel(string panelName)
+    {
+        if (panelDict.ContainsKey(panelName))
+        {
+            panelDict[panelName].Show();
+        }
+    }
+}
+```
+
+## 3. 技术架构与开发环境说明
+
+### 3.1 技术栈
+- **游戏引擎**：Unity 2021.3 LTS
+- **编程语言**：C#
+- **网络框架**：Mirror Networking (推荐) 或 Photon Unity Networking (PUN2)
+- **数据库**：SQLite (本地数据)、MySQL/PostgreSQL (云端数据)
+- **UI框架**：Unity UGUI + TextMeshPro
+
+### 3.2 架构模式
+采用**分层架构** + **组件化设计**：
+
+```
+┌─────────────────────────────────────┐
+│         Presentation Layer          │  (UI, 场景管理)
+├─────────────────────────────────────┤
+│          Game Logic Layer           │  (游戏逻辑, AI, 战斗)
+├─────────────────────────────────────┤
+│           Network Layer             │  (网络同步, 匹配)
+├─────────────────────────────────────┤
+│           Data Layer               │  (数据存储, 配置)
+└─────────────────────────────────────┘
+```
+
+### 3.3 开发环境
+- **Unity版本**：2021.3 LTS
+- **IDE**：Visual Studio 2019/2022
+- **版本控制**：Git
+- **构建目标**：Windows PC (Standalone)，后期考虑移动端 (iOS/Android)
+
+### 3.4 项目目录结构
+```
+Assets/
+├── Scripts/                    # 脚本目录
+│   ├── Core/                   # 核心系统
+│   │   ├── GameManager.cs      # 游戏管理器
+│   │   ├── EventManager.cs    # 事件管理器
+│   │   └── AudioManager.cs    # 音频管理器
+│   ├── Network/               # 网络系统
+│   │   ├── NetworkManager.cs # 网络管理器
+│   │   ├── RoomManager.cs    # 房间管理器
+│   │   └── MatchMaker.cs     # 匹配系统
+│   ├── Game/                 # 游戏逻辑
+│   │   ├── Battle/           # 战斗系统
+│   │   ├── Cards/            # 卡牌系统
+│   │   ├── AI/               # AI系统
+│   │   └── Units/            # 单位系统
+│   ├── UI/                   # UI系统
+│   └── Data/                 # 数据脚本
+├── Prefabs/                  # 预制体
+├── Scenes/                  # 场景
+├── Materials/               # 材质
+├── Models/                  # 3D模型
+├── Animations/              # 动画
+├── Audio/                   # 音频
+├── Textures/                # 纹理
+├── ScriptableObjects/       # ScriptableObject
+├── Resources/               # 资源加载
+└── Editor/                 # 编辑器脚本
+```
+
+## 4. Unity客户端开发具体模块
+
+### 4.1 场景管理
+**功能说明**：负责场景的加载、切换和管理。
+
+**实现细节**：
+- 使用Unity的SceneManager进行场景加载
+- 实现异步场景加载，显示加载进度
+- 场景间数据传递和状态管理
+
+**关键代码**：
+```csharp
+public class SceneLoader : MonoBehaviour
+{
+    public static SceneLoader Instance { get; private set; }
+    
+    private void Awake()
+    {
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+    
+    public void LoadSceneAsync(string sceneName, Action onComplete = null)
+    {
+        StartCoroutine(LoadSceneCoroutine(sceneName, onComplete));
+    }
+    
+    private IEnumerator LoadSceneCoroutine(string sceneName, Action onComplete)
+    {
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName);
+        
+        while (!asyncOperation.isDone)
+        {
+            float progress = asyncOperation.progress;
+            // 更新加载UI
+            yield return null;
+        }
+        
+        onComplete?.Invoke();
+    }
+}
+```
+
+### 4.2 资源管理
+**功能说明**：负责游戏资源的加载、卸载和缓存。
+
+**实现细节**：
+- 实现异步资源加载，避免卡顿
+- 资源缓存机制，减少重复加载
+- 资源卸载，释放内存
+
+**关键代码**：
+```csharp
+public class ResourceManager : MonoBehaviour
+{
+    public static ResourceManager Instance { get; private set; }
+    
+    private Dictionary<string, Object> loadedResources = new Dictionary<string, Object>();
+    
+    void Awake()
+    {
+        Instance = this;
+    }
+    
+    public void LoadResourceAsync<T>(string path, Action<T> callback) where T : Object
+    {
+        if (loadedResources.ContainsKey(path))
+        {
+            callback?.Invoke(loadedResources[path] as T);
+            return;
+        }
+        
+        StartCoroutine(LoadResourceCoroutine(path, callback));
+    }
+    
+    private IEnumerator LoadResourceCoroutine<T>(string path, Action<T> callback) where T : Object
+    {
+        ResourceRequest request = Resources.LoadAsync<T>(path);
+        
+        yield return request;
+        
+        if (request.asset != null)
+        {
+            loadedResources[path] = request.asset;
+            callback?.Invoke(request.asset as T);
+        }
+    }
+}
+```
+
+### 4.3 事件系统
+**功能说明**：实现游戏内事件的分发和处理，促进模块间的解耦。
+
+**实现细节**：
+- 使用C#的事件委托机制
+- 支持事件的注册、触发和取消注册
+- 事件参数传递
+
+**关键代码**：
+```csharp
+public static class GameEvents
+{
+    // 卡牌事件
+    public static event Action<CardData> OnCardPlayed;
+    public static event Action<CardData> OnCardUpgraded;
+    
+    // 战斗事件
+    public static event Action<Unit> OnUnitSpawned;
+    public static event Action<Unit> OnUnitDestroyed;
+    public static event Action<Unit, Unit> OnUnitAttacked;
+    
+    // 游戏事件
+    public static event Action<Player> OnPlayerWon;
+    public static event Action<Player> OnPlayerLost;
+    
+    // 触发事件的方法
+    public static void TriggerCardPlayed(CardData card)
+    {
+        OnCardPlayed?.Invoke(card);
+    }
+}
+```
+
+### 4.4 对象池系统
+**功能说明**：管理游戏对象的创建和回收，减少内存分配和GC压力。
+
+**实现细节**：
+- 预创建对象，避免运行时频繁实例化
+- 对象回收和重用机制
+- 支持不同类型对象的池管理
+
+**关键代码**：
+```csharp
+public class ObjectPool : MonoBehaviour
+{
+    public static ObjectPool Instance { get; private set; }
+    
+    [System.Serializable]
+    public class Pool
+    {
+        public string tag;
+        public GameObject prefab;
+        public int size;
+    }
+    
+    public List<Pool> pools;
+    private Dictionary<string, Queue<GameObject>> poolDictionary;
+    
+    void Awake()
+    {
+        Instance = this;
+    }
+    
+    void Start()
+    {
+        poolDictionary = new Dictionary<string, Queue<GameObject>>();
+        
+        foreach (Pool pool in pools)
+        {
+            Queue<GameObject> objectPool = new Queue<GameObject>();
+            
+            for (int i = 0; i < pool.size; i++)
+            {
+                GameObject obj = Instantiate(pool.prefab);
+                obj.SetActive(false);
+                objectPool.Enqueue(obj);
+            }
+            
+            poolDictionary.Add(pool.tag, objectPool);
+        }
+    }
+    
+    public GameObject SpawnFromPool(string tag, Vector3 position, Quaternion rotation)
+    {
+        if (!poolDictionary.ContainsKey(tag))
+        {
+            Debug.LogWarning($"Pool with tag {tag} doesn't exist");
+            return null;
+        }
+        
+        GameObject objectToSpawn = poolDictionary[tag].Dequeue();
+        
+        objectToSpawn.SetActive(true);
+        objectToSpawn.transform.position = position;
+        objectToSpawn.transform.rotation = rotation;
+        
+        IPooledObject pooledObj = objectToSpawn.GetComponent<IPooledObject>();
+        if (pooledObj != null)
+        {
+            pooledObj.OnObjectSpawn();
+        }
+        
+        poolDictionary[tag].Enqueue(objectToSpawn);
+        
+        return objectToSpawn;
+    }
+}
+```
+
+## 5. 关键技术点与难点攻克方案
+
+### 5.1 3D渲染优化
+**技术点**：3D场景渲染性能优化
+
+**难点**：确保在不同硬件配置下保持流畅的帧率
+
+**解决方案**：
+- **网格合并**：减少Draw Call
+- **纹理图集**：减少材质数量和Draw Call
+- **光照优化**：使用烘焙光照，减少实时光源数量
+
+**关键代码**：
+```csharp
+public class LODController : MonoBehaviour
+{
+    [System.Serializable]
+    public class LODLevel
+    {
+        public float distance;
+        public GameObject lodObject;
+    }
+    
+    [SerializeField] private LODLevel[] lodLevels;
+    private LODLevel currentLOD;
+    
+    void Update()
+    {
+        float distance = Vector3.Distance(Camera.main.transform.position, transform.position);
+        LODLevel bestLOD = null;
+        
+        foreach (var lod in lodLevels)
+        {
+            if (distance <= lod.distance)
+            {
+                if (bestLOD == null || lod.distance < bestLOD.distance)
+                {
+                    bestLOD = lod;
+                }
+            }
+        }
+        
+        if (bestLOD != currentLOD)
+        {
+            SwitchLOD(bestLOD);
+        }
+    }
+}
+```
+
+### 5.2 网络同步优化
+**技术点**：实时对战的网络同步
+
+**难点**：网络延迟和状态同步
+
+**解决方案**：
+- **状态压缩**：减少网络传输数据量
+- **差异同步**：只传输变化的状态
+
+**关键代码**：
+```csharp
+public class DeltaSync : MonoBehaviour
+{
+    private NetworkState lastState;
+    private float syncInterval = 0.1f;
+    private float lastSyncTime;
+    
+    void Update()
+    {
+        if (Time.time - lastSyncTime < syncInterval)
+            return;
+        
+        lastSyncTime = Time.time;
+        SendDeltaSync();
+    }
+    
+    private void SendDeltaSync()
+    {
+        NetworkState currentState = GetCurrentState();
+        NetworkDelta delta = CalculateDelta(lastState, currentState);
+        
+        if (delta.HasChanges())
+        {
+            SendDelta(delta);
+            lastState = currentState;
+        }
+    }
+}
+```
+
+### 5.3 AI系统设计
+**技术点**：智能单位AI行为
+
+**难点**：实现智能的单位决策和行为
+
+**解决方案**：
+- **状态机**：管理AI状态转换
+- **路径寻找**：使用A*算法实现寻路
+- **目标选择**：基于优先级的目标选择
+
+**关键代码**：
+```csharp
+public class AIBehaviorTree : MonoBehaviour
+{
+    [System.Serializable]
+    public class BehaviorNode
+    {
+        public string nodeName;
+        public BehaviorType type;
+        public float priority;
+        public List<BehaviorNode> children;
+    }
+    
+    [SerializeField] private BehaviorNode rootNode;
+    private UnitAI ai;
+    
+    public void Execute()
+    {
+        ExecuteNode(rootNode);
+    }
+    
+    private void ExecuteNode(BehaviorNode node)
+    {
+        switch (node.type)
+        {
+            case BehaviorType.Selector:
+                ExecuteSelector(node);
+                break;
+            case BehaviorType.Sequence:
+                ExecuteSequence(node);
+                break;
+            case BehaviorType.Condition:
+                ExecuteCondition(node);
+                break;
+            case BehaviorType.Action:
+                ExecuteAction(node);
+                break;
+        }
+    }
+}
+```
+
+### 5.4 内存管理
+**技术点**：游戏内存优化
+
+**难点**：减少内存占用，避免内存泄漏
+
+**解决方案**：
+- **资源管理**：异步加载和卸载资源
+- **对象池**：减少内存分配和GC
+
+**关键代码**：
+```csharp
+public class MemoryMonitor : MonoBehaviour
+{
+    [SerializeField] private float memoryCheckInterval = 5f;
+    private float lastCheckTime;
+    private long totalMemory;
+    
+    void Update()
+    {
+        if (Time.time - lastCheckTime < memoryCheckInterval)
+            return;
+        
+        lastCheckTime = Time.time;
+        CheckMemoryUsage();
+    }
+    
+    private void CheckMemoryUsage()
+    {
+        totalMemory = GC.GetTotalMemory(false);
+        
+        Debug.Log($"Total Memory: {totalMemory / 1024 / 1024} MB");
+        
+        if (totalMemory > 2000000000) // 2GB
+        {
+            Debug.LogWarning("High memory usage detected!");
+            TriggerGarbageCollection();
+        }
+    }
+    
+    private void TriggerGarbageCollection()
+    {
+        GC.Collect();
+        GC.WaitForPendingFinalizers();
+        Resources.UnloadUnusedAssets();
+    }
+}
+```
+
+### 5.5 设计模式应用
+**技术点**：游戏开发中的设计模式
+
+**难点**：选择合适的设计模式解决特定问题
+
+**解决方案**：
+- **单例模式**：用于管理器类，如GameManager、UIManager
+- **观察者模式**：用于事件系统，实现模块间通信
+- **工厂模式**：用于卡牌和单位的创建
+- **状态机**：用于游戏状态管理
+
+**关键代码**：
+```csharp
+// 单例模式
+public class GameManager : MonoBehaviour
+{
+    public static GameManager Instance { get; private set; }
+    
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+}
+
+// 状态机
+public enum GameState
+{
+    MainMenu,
+    MatchMaking,
+    Battle,
+    Pause,
+    GameOver
+}
+
+private GameState currentState;
+
+public void ChangeState(GameState newState)
+{
+    currentState = newState;
+    OnGameStateChanged?.Invoke(newState);
+}
+```
+
+## 6. 项目成果与个人贡献总结
+
+### 6.1 项目成果
+- **核心玩法实现**：完成了3D版皇室战争的核心玩法，包括卡牌系统、战斗系统和网络对战
+- **技术架构**：建立了清晰的分层架构和组件化设计，提高了代码的可维护性和可扩展性
+- **性能优化**：实现了多方面的性能优化，确保游戏在不同硬件配置下的流畅运行
+- **网络同步**：实现了低延迟的网络同步机制，提供良好的实时对战体验
+- **AI系统**：构建了智能的单位AI系统，提供具有挑战性的游戏体验
+
+### 6.3 技术能力展示
+- **Unity引擎**：熟练掌握Unity引擎的使用，包括场景管理、资源管理、物理引擎等
+- **C#编程**：精通C#编程语言，能够编写高效、可维护的代码
+- **游戏开发**：具备完整的游戏开发流程经验，包括需求分析、架构设计、实现和测试
+- **性能优化**：掌握游戏性能优化的各种技术和方法
+- **网络编程**：了解网络编程和网络同步的原理和实现
+- **设计模式**：熟练应用各种设计模式解决游戏开发中的问题
+
+## 7. 总结
+
+KingdomWar项目是一款基于Unity引擎开发的3D版皇室战争类策略对战游戏。通过创新的3D视角和增强的游戏机制，为玩家提供了全新的策略对战体验。项目采用了先进的技术架构和开发方法，实现了高性能、低延迟的游戏体验。
+
+作为Unity客户端开发岗位的候选人，我在项目中展示了以下技术能力：
+- 熟练掌握Unity引擎的各种功能和API
+- 精通C#编程语言和面向对象设计
+- 具备完整的游戏开发流程经验
+- 掌握游戏性能优化的各种技术
+- 了解网络编程和网络同步的原理
+- 熟练应用各种设计模式解决问题
+
+这些技术能力和项目经验使我成为Unity客户端开发岗位的理想候选人。我相信，在未来的工作中，我能够继续发挥自己的技术优势，为团队做出更大的贡献。

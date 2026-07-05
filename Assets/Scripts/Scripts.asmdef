@@ -1,0 +1,25 @@
+{
+    "name": "Scripts",
+    "rootNamespace": "",
+    "references": [
+        "PhotonUnityNetworking",
+        "PhotonUnityNetworking.Utilities",
+        "PhotonRealtime",
+        "PhotonChat",
+        "Unity.Addressables",
+        "Unity.ResourceManager",
+        "Unity.TextMeshPro",
+        "Unity.Timeline",
+        "HybridCLR.Runtime",
+        "HotUpdate"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

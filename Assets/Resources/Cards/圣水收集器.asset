@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dd3217988f3a334db486d0dec9592aa, type: 3}
+  m_Name: "\u5723\u6C34\u6536\u96C6\u5668"
+  m_EditorClassIdentifier: 
+  cardName: "\u5723\u6C34\u6536\u96C6\u5668"
+  cardType: 2
+  elixirCost: 5
+  rarity: 3
+  unitData:
+    health: 0
+    damage: 0
+    attackSpeed: 0
+    moveSpeed: 0
+    attackRange: 0
+    deployTime: 0
+    projectilePrefab: {fileID: 0}
+  spellData:
+    damage: 0
+    radius: 0
+    duration: 0
+    deployTime: 0
+  buildingData:
+    health: 1200
+    damage: 0
+    attackSpeed: 0
+    attackRange: 0
+    duration: 60
+    deployTime: 2
+  cardIcon: {fileID: 21300000, guid: 3592838386d7d2741a4ff07b684642a0, type: 3}
+  cardPrefab: {fileID: 3538807561037368355, guid: b6269ce7e4b3aa440a7adee70f27456f, type: 3}

@@ -1,0 +1,908 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-A" at "2026-07-05T05:27:34.0679887Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 12916, path: "D:/yinyon/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.16.1+e780b2e
+  Session Id:              77d4ab49c8784799b8b5b0d205e702b0
+  Correlation Id:          a3e4609fc543f5469f9e9a78049ebc60
+  External correlation Id: 4312254437789575978
+  Machine Id:              MMz130eNA9kMqMs8bjc1WBN2eZU=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-A" (connect: 0.00s, validation: 0.01s, handshake: 0.04s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-A-notifications" at "2026-07-05T05:27:34.118888Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully updated license
+Built from '2022.3/china_unity/release' branch; Version is '2022.3.57f1c2 (32588f90613b) revision 3299471'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26100) 64bit Core' Language: 'zh' Physical Memory: 16049 MB
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Serial number assigned to: "F4-MCEH-D8PW-KYQH-HSN2-XXXX"
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+[Licensing::Client] Successfully resolved entitlement details
+
+COMMAND LINE ARGUMENTS:
+D:\yinyon\2022.3.57f1c2\Editor\Unity.exe
+-batchmode
+-nographics
+-projectPath
+D:\fs2025\unity\KingdomWar
+-runTests
+-testPlatform
+EditMode
+-testResults
+D:\fs2025\unity\KingdomWar\test-results-EditMode.xml
+-logFile
+D:\fs2025\unity\KingdomWar\unity-log-EditMode.txt
+Successfully changed project path to: D:\fs2025\unity\KingdomWar
+D:/fs2025/unity/KingdomWar
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [20872]  Target information:
+
+Player connection [20872]  * "[IP] 192.168.10.59 [Port] 55504 [Flags] 2 [Guid] 3433909758 [EditorId] 3433909758 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-EH5KGK3) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [20872] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [20872] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+[Package Manager] UpmClient::Connect -- Connected to IPC stream "Upm-20316" after 0.3 seconds.
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 62 packages:
+  Packages from [https://packages.unity.cn]:
+    com.unity.addressables@1.22.3 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.addressables@1.22.3)
+    com.unity.collab-proxy@2.11.3 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.collab-proxy@2.11.3)
+    com.unity.textmeshpro@3.0.7 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.textmeshpro@3.0.7)
+    com.unity.timeline@1.7.6 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.timeline@1.7.6)
+    com.unity.visualscripting@1.9.4 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.visualscripting@1.9.4)
+    com.unity.mathematics@1.2.6 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.mathematics@1.2.6)
+    com.unity.burst@1.8.18 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.burst@1.8.18)
+    com.unity.ide.visualstudio@2.0.22 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.ide.visualstudio@2.0.22)
+    com.unity.ide.rider@3.0.34 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.ide.rider@3.0.34)
+    com.unity.ide.vscode@1.2.5 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.ide.vscode@1.2.5)
+    com.unity.editorcoroutines@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.editorcoroutines@1.0.0)
+    com.unity.performance.profile-analyzer@1.2.3 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.performance.profile-analyzer@1.2.3)
+    com.unity.test-framework@1.1.33 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.test-framework@1.1.33)
+    com.unity.testtools.codecoverage@1.2.6 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.testtools.codecoverage@1.2.6)
+    com.unity.scriptablebuildpipeline@1.21.25 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.scriptablebuildpipeline@1.21.25)
+    com.unity.settings-manager@2.0.1 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.settings-manager@2.0.1)
+    com.unity.nuget.newtonsoft-json@3.2.1 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1)
+    com.unity.searcher@4.9.2 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.searcher@4.9.2)
+    com.unity.ext.nunit@1.0.6 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.ext.nunit@1.0.6)
+  Built-in packages:
+    com.unity.2d.sprite@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.2d.sprite@1.0.0)
+    com.unity.feature.development@1.0.1 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.feature.development@1.0.1)
+    com.unity.render-pipelines.universal@14.0.11 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.render-pipelines.universal@14.0.11)
+    com.unity.ugui@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.ugui@1.0.0)
+    com.unity.modules.ai@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.ai@1.0.0)
+    com.unity.modules.androidjni@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.androidjni@1.0.0)
+    com.unity.modules.animation@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.animation@1.0.0)
+    com.unity.modules.assetbundle@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.assetbundle@1.0.0)
+    com.unity.modules.audio@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.audio@1.0.0)
+    com.unity.modules.cloth@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.cloth@1.0.0)
+    com.unity.modules.director@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.director@1.0.0)
+    com.unity.modules.imageconversion@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.imageconversion@1.0.0)
+    com.unity.modules.imgui@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.imgui@1.0.0)
+    com.unity.modules.jsonserialize@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.jsonserialize@1.0.0)
+    com.unity.modules.particlesystem@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.particlesystem@1.0.0)
+    com.unity.modules.physics@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.physics@1.0.0)
+    com.unity.modules.physics2d@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.physics2d@1.0.0)
+    com.unity.modules.screencapture@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.screencapture@1.0.0)
+    com.unity.modules.terrain@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.terrain@1.0.0)
+    com.unity.modules.terrainphysics@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.terrainphysics@1.0.0)
+    com.unity.modules.tilemap@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.tilemap@1.0.0)
+    com.unity.modules.ui@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.ui@1.0.0)
+    com.unity.modules.uielements@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.uielements@1.0.0)
+    com.unity.modules.umbra@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.umbra@1.0.0)
+    com.unity.modules.unityanalytics@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.unityanalytics@1.0.0)
+    com.unity.modules.unitywebrequest@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.unitywebrequest@1.0.0)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle@1.0.0)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.unitywebrequestaudio@1.0.0)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.unitywebrequesttexture@1.0.0)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.unitywebrequestwww@1.0.0)
+    com.unity.modules.vehicles@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.vehicles@1.0.0)
+    com.unity.modules.video@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.video@1.0.0)
+    com.unity.modules.vr@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.vr@1.0.0)
+    com.unity.modules.wind@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.wind@1.0.0)
+    com.unity.modules.xr@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.xr@1.0.0)
+    com.unity.modules.subsystems@1.0.0 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.modules.subsystems@1.0.0)
+    com.unity.render-pipelines.core@14.0.11 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.render-pipelines.core@14.0.11)
+    com.unity.shadergraph@14.0.11 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.shadergraph@14.0.11)
+    com.unity.render-pipelines.universal-config@14.0.10 (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.unity.render-pipelines.universal-config@14.0.10)
+  Git packages:
+    com.code-philosophy.hybridclr@https://gitee.com/focus-creative-games/hybridclr_unity.git (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.code-philosophy.hybridclr@03083ad8f9)
+    com.coplaydev.unity-mcp@https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#main (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.coplaydev.unity-mcp@3dd5ac7742)
+    com.veriorpies.parrelsync@https://gitcode.com/gh_mirrors/pa/ParrelSync.git?path=/ParrelSync (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\com.veriorpies.parrelsync@610157ad76)
+    jp.hadashikick.vcontainer@https://github.com/hadashiA/VContainer.git?path=VContainer/Assets/VContainer (location: D:\fs2025\unity\KingdomWar\Library\PackageCache\jp.hadashikick.vcontainer@5401e5a7eb)
+[Subsystems] No new subsystems found in resolved package list.
+Package Manager log level set to [2]
+[Package Manager] Done registering packages in 0.64 seconds
+Artifact Garbage Collection - Removed 2 unused hashed content files
+Refreshing native plugins compatible for Editor in 14.39 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.57f1c2 (32588f90613b)
+[Subsystems] Discovering subsystems at path D:/yinyon/2022.3.57f1c2/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/fs2025/unity/KingdomWar/Assets
+Forcing GfxDevice: Null
+GfxDevice: creating device client; threaded=0; jobified=0
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+[Licensing::Client] Successfully resolved entitlement details
+Initialize mono
+Mono path[0] = 'D:/yinyon/2022.3.57f1c2/Editor/Data/Managed'
+Mono path[1] = 'D:/yinyon/2022.3.57f1c2/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/yinyon/2022.3.57f1c2/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56316
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+[Licensing::Client] Successfully resolved entitlement details
+Register platform support module: D:/yinyon/2022.3.57f1c2/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: D:/yinyon/2022.3.57f1c2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.016589 seconds.
+- Loaded All Assemblies, in  0.312 seconds
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 334 ms
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.586 seconds
+Domain Reload Profiling: 898ms
+	BeginReloadAssembly (89ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (29ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (57ms)
+	LoadAllAssembliesAndSetupDomain (128ms)
+		LoadAssemblies (90ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (126ms)
+			TypeCache.Refresh (124ms)
+				TypeCache.ScanAssembly (113ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (586ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (548ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (401ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (2ms)
+			ProcessInitializeOnLoadAttributes (102ms)
+			ProcessInitializeOnLoadMethodAttributes (40ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:80
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\fs2025\unity\KingdomWar\
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 36.8869ms
+Starting: D:\yinyon\2022.3.57f1c2\Editor\Data\bee_backend.exe --dont-print-to-structured-log --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: D:/fs2025/unity/KingdomWar
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/ConfigurePostProcessors'
+DisplayProgressbar: Compiling Scripts
+info: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Resolved Unity.Burst.Cecil, Version=0.11.4.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e with Library\PackageCache\com.unity.burst@1.8.18\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/ConfigurePostProcessors'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors application/grpc - - 200 - application/grpc 39.8232ms
+Starting: D:\yinyon\2022.3.57f1c2\Editor\Data\Tools\netcorerun\netcorerun.exe "D:\yinyon\2022.3.57f1c2\Editor\Data\Tools\BuildPipeline\ScriptCompilationBuildProgram.exe" "Library/Bee/1900b0aE.dag.json" "Library/Bee/1900b0aE-inputdata.json" "Library\Bee\buildprogram0.traceevents"
+WorkingDir: D:/fs2025/unity/KingdomWar
+ExitCode: 4 Duration: 0s257ms
+Rebuilding DAG because FileSignature timestamp changed: Library/Bee/1900b0aE-inputdata.json
+[697/911    0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+*** Tundra requires additional run (0.22 seconds), 1 items updated, 696 evaluated
+ExitCode: 0 Duration: 3s181ms
+Starting: D:\yinyon\2022.3.57f1c2\Editor\Data\bee_backend.exe --dont-print-to-structured-log --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --dagfilejson="Library\Bee\1900b0aE.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssemblies
+WorkingDir: D:/fs2025/unity/KingdomWar
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/ConfigurePostProcessors'
+info: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Current configuration matches the requested one, skipping
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/ConfigurePostProcessors'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors application/grpc - - 200 - application/grpc 3.2555ms
+ExitCode: 3 Duration: 0s651ms
+Finished compiling graph: 914 nodes, 13489 flattened edges (10891 ToBuild, 154 ToUse), maximum node priority 933
+[482/911    0s] WriteText Library/Bee/artifacts/1900b0aE.dag/Scripts.rsp
+[691/911    0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+[887/911    0s] Csc Library/Bee/artifacts/1900b0aE.dag/Scripts.dll (+2 others)
+##### CommandLine
+"D:\yinyon\2022.3.57f1c2\Editor\Data\NetCoreRuntime\dotnet.exe" exec "D:/yinyon/2022.3.57f1c2/Editor/Data/DotNetSdkRoslyn/csc.dll" /nostdlib /noconfig /shared "@Library/Bee/artifacts/1900b0aE.dag/Scripts.rsp" "@Library/Bee/artifacts/1900b0aE.dag/Scripts.rsp2"
+##### Contents of Library\Bee\artifacts\1900b0aE.dag\Scripts.rsp
+-target:library
+-out:"Library/Bee/artifacts/1900b0aE.dag/Scripts.dll"
+-refout:"Library/Bee/artifacts/1900b0aE.dag/Scripts.ref.dll"
+-define:UNITY_2022_3_57
+-define:UNITY_2022_3
+-define:UNITY_2022
+-define:UNITY_5_3_OR_NEWER
+-define:UNITY_5_4_OR_NEWER
+-define:UNITY_5_5_OR_NEWER
+-define:UNITY_5_6_OR_NEWER
+-define:UNITY_2017_1_OR_NEWER
+-define:UNITY_2017_2_OR_NEWER
+-define:UNITY_2017_3_OR_NEWER
+-define:UNITY_2017_4_OR_NEWER
+-define:UNITY_2018_1_OR_NEWER
+-define:UNITY_2018_2_OR_NEWER
+-define:UNITY_2018_3_OR_NEWER
+-define:UNITY_2018_4_OR_NEWER
+-define:UNITY_2019_1_OR_NEWER
+-define:UNITY_2019_2_OR_NEWER
+-define:UNITY_2019_3_OR_NEWER
+-define:UNITY_2019_4_OR_NEWER
+-define:UNITY_2020_1_OR_NEWER
+-define:UNITY_2020_2_OR_NEWER
+-define:UNITY_2020_3_OR_NEWER
+-define:UNITY_2021_1_OR_NEWER
+-define:UNITY_2021_2_OR_NEWER
+-define:UNITY_2021_3_OR_NEWER
+-define:UNITY_2022_1_OR_NEWER
+-define:UNITY_2022_2_OR_NEWER
+-define:UNITY_2022_3_OR_NEWER
+-define:PLATFORM_ARCH_64
+-define:UNITY_64
+-define:UNITY_INCLUDE_TESTS
+-define:ENABLE_AR
+-define:ENABLE_AUDIO
+-define:ENABLE_CACHING
+-define:ENABLE_CLOTH
+-define:ENABLE_EVENT_QUEUE
+-define:ENABLE_MICROPHONE
+-define:ENABLE_MULTIPLE_DISPLAYS
+-define:ENABLE_PHYSICS
+-define:ENABLE_TEXTURE_STREAMING
+-define:ENABLE_VIRTUALTEXTURING
+-define:ENABLE_LZMA
+-define:ENABLE_UNITYEVENTS
+-define:ENABLE_VR
+-define:ENABLE_WEBCAM
+-define:ENABLE_UNITYWEBREQUEST
+-define:ENABLE_WWW
+-define:ENABLE_CLOUD_SERVICES
+-define:ENABLE_CLOUD_SERVICES_ADS
+-define:ENABLE_CLOUD_SERVICES_USE_WEBREQUEST
+-define:ENABLE_CLOUD_SERVICES_CRASH_REPORTING
+-define:ENABLE_CLOUD_SERVICES_PURCHASING
+-define:ENABLE_CLOUD_SERVICES_ANALYTICS
+-define:ENABLE_CLOUD_SERVICES_BUILD
+-define:ENABLE_EDITOR_GAME_SERVICES
+-define:ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT
+-define:ENABLE_CLOUD_LICENSE
+-define:ENABLE_EDITOR_HUB_LICENSE
+-define:ENABLE_WEBSOCKET_CLIENT
+-define:ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API
+-define:ENABLE_DIRECTOR_AUDIO
+-define:ENABLE_DIRECTOR_TEXTURE
+-define:ENABLE_MANAGED_JOBS
+-define:ENABLE_MANAGED_TRANSFORM_JOBS
+-define:ENABLE_MANAGED_ANIMATION_JOBS
+-define:ENABLE_MANAGED_AUDIO_JOBS
+-define:ENABLE_MANAGED_UNITYTLS
+-define:INCLUDE_DYNAMIC_GI
+-define:ENABLE_SCRIPTING_GC_WBARRIERS
+-define:PLATFORM_SUPPORTS_MONO
+-define:RENDER_SOFTWARE_CURSOR
+-define:ENABLE_VIDEO
+-define:ENABLE_ACCELERATOR_CLIENT_DEBUGGING
+-define:ENABLE_NAVIGATION_PACKAGE_DEBUG_VISUALIZATION
+-define:ENABLE_NAVIGATION_HEIGHTMESH_RUNTIME_SUPPORT
+-define:ENABLE_NAVIGATION_UI_REQUIRES_PACKAGE
+-define:PLATFORM_STANDALONE
+-define:TEXTCORE_1_0_OR_NEWER
+-define:PLATFORM_STANDALONE_WIN
+-define:UNITY_STANDALONE_WIN
+-define:UNITY_STANDALONE
+-define:UNITY_UGP_API
+-define:ENABLE_RUNTIME_GI
+-define:ENABLE_MOVIES
+-define:ENABLE_NETWORK
+-define:ENABLE_NVIDIA
+-define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
+-define:ENABLE_OUT_OF_PROCESS_CRASH_HANDLER
+-define:ENABLE_CLUSTER_SYNC
+-define:ENABLE_CLUSTERINPUT
+-define:PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP
+-define:GFXDEVICE_WAITFOREVENT_MESSAGEPUMP
+-define:PLATFORM_INITIALIZES_MEMORY_MANAGER_EXPLICITLY
+-define:ENABLE_MONO
+-define:NET_4_6
+-define:NET_UNITY_4_8
+-define:ENABLE_PROFILER
+-define:DEBUG
+-define:TRACE
+-define:UNITY_ASSERTIONS
+-define:UNITY_EDITOR
+-define:UNITY_EDITOR_64
+-define:UNITY_EDITOR_WIN
+-define:ENABLE_UNITY_COLLECTIONS_CHECKS
+-define:ENABLE_BURST_AOT
+-define:UNITY_TEAM_LICENSE
+-define:ENABLE_CUSTOM_RENDER_TEXTURE
+-define:ENABLE_DIRECTOR
+-define:ENABLE_LOCALIZATION
+-define:ENABLE_SPRITES
+-define:ENABLE_TERRAIN
+-define:ENABLE_TILEMAP
+-define:ENABLE_TIMELINE
+-define:ENABLE_LEGACY_INPUT_MANAGER
+-define:TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
+-define:TEXTCORE_FONT_ENGINE_1_6_OR_NEWER
+-define:PHOTON_UNITY_NETWORKING
+-define:PUN_2_0_OR_NEWER
+-define:PUN_2_OR_NEWER
+-define:PUN_2_19_OR_NEWER
+-define:CSHARP_7_OR_LATER
+-define:CSHARP_7_3_OR_NEWER
+-r:"Assets/Demigiant/DemiLib/Core/DemiLib.dll"
+-r:"Assets/Demigiant/DemiLib/Core/Editor/DemiEditor.dll"
+-r:"Assets/Demigiant/DOTween/DOTween.dll"
+-r:"Assets/Demigiant/DOTween/DOTween43.dll"
+-r:"Assets/Demigiant/DOTween/DOTween46.dll"
+-r:"Assets/Demigiant/DOTween/DOTween50.dll"
+-r:"Assets/Demigiant/DOTween/Editor/DOTweenEditor.dll"
+-r:"Assets/Demigiant/DOTweenPro/DOTweenPro.dll"
+-r:"Assets/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll"
+-r:"Assets/Photon/PhotonLibs/netstandard2.0/Photon3Unity3D.dll"
+-r:"Assets/Photon/PhotonLibs/WebSocket/websocket-sharp.dll"
+-r:"Assets/Plugins/protobuf-net.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEditor.Graphs.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEditor.DiagnosticsModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEditor.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEditor.EditorToolbarModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEditor.GraphViewModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEditor.PresetsUIModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEditor.QuickSearchModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEditor.SceneTemplateModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEditor.SceneViewModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEditor.TextCoreFontEngineModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEditor.TextCoreTextEngineModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEditor.UIBuilderModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEditor.UIElementsModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEditor.UIElementsSamplesModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.AccessibilityModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.AndroidJNIModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.AnimationModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.AudioModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.ClothModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.ContentLoadModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.DirectorModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.DSPGraphModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.GameCenterModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.GIModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.GridModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.HotReloadModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.ImageConversionModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.IMGUIModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.InputLegacyModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.InputModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.LocalizationModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.Physics2DModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.PhysicsModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.ProfilerModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.PropertiesModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.StreamingModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.SubstanceModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.SubsystemsModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainPhysicsModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.TextCoreFontEngineModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.TextCoreTextEngineModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.TilemapModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.TLSModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.UIModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.UmbraModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.UnityAnalyticsCommonModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.UnityConnectModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.UnityCurlModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.UnityTestProtocolModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAssetBundleModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAudioModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestWWWModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.VehiclesModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.VFXModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.VideoModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.VirtualTexturingModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.VRModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/PlaybackEngines/AndroidPlayer/Unity.Android.Gradle.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/PlaybackEngines/AndroidPlayer/Unity.Android.GradleProject.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/PlaybackEngines/AndroidPlayer/Unity.Android.Types.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/Microsoft.Win32.Primitives.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/netstandard.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.AppContext.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Buffers.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Collections.Concurrent.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Collections.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Collections.NonGeneric.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Collections.Specialized.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.ComponentModel.Annotations.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.ComponentModel.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.ComponentModel.EventBasedAsync.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.ComponentModel.Primitives.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.ComponentModel.TypeConverter.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Console.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Data.Common.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Diagnostics.Contracts.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Diagnostics.Debug.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Diagnostics.FileVersionInfo.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Diagnostics.Process.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Diagnostics.StackTrace.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Diagnostics.TextWriterTraceListener.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Diagnostics.Tools.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Diagnostics.TraceSource.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Drawing.Primitives.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Dynamic.Runtime.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Globalization.Calendars.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Globalization.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Globalization.Extensions.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.IO.Compression.ZipFile.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.IO.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.IO.FileSystem.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.IO.FileSystem.DriveInfo.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.IO.FileSystem.Primitives.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.IO.FileSystem.Watcher.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.IO.IsolatedStorage.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.IO.MemoryMappedFiles.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.IO.Pipes.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.IO.UnmanagedMemoryStream.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Linq.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Linq.Expressions.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Linq.Parallel.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Linq.Queryable.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Memory.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Net.Http.Rtc.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Net.NameResolution.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Net.NetworkInformation.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Net.Ping.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Net.Primitives.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Net.Requests.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Net.Security.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Net.Sockets.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Net.WebHeaderCollection.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Net.WebSockets.Client.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Net.WebSockets.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.ObjectModel.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Reflection.DispatchProxy.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Reflection.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Reflection.Emit.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Reflection.Emit.ILGeneration.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Reflection.Emit.Lightweight.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Reflection.Extensions.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Reflection.Primitives.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Resources.Reader.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Resources.ResourceManager.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Resources.Writer.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Runtime.CompilerServices.VisualC.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Runtime.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Runtime.Extensions.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Runtime.Handles.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Runtime.InteropServices.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Runtime.InteropServices.RuntimeInformation.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Runtime.InteropServices.WindowsRuntime.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Runtime.Numerics.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Runtime.Serialization.Formatters.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Runtime.Serialization.Json.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Runtime.Serialization.Primitives.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Runtime.Serialization.Xml.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Security.Claims.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Security.Cryptography.Algorithms.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Security.Cryptography.Csp.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Security.Cryptography.Encoding.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Security.Cryptography.Primitives.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Security.Cryptography.X509Certificates.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Security.Principal.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Security.SecureString.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.ServiceModel.Duplex.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.ServiceModel.Http.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.ServiceModel.NetTcp.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.ServiceModel.Primitives.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.ServiceModel.Security.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Text.Encoding.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Text.Encoding.Extensions.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Text.RegularExpressions.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Threading.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Threading.Overlapped.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Threading.Tasks.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Threading.Tasks.Extensions.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Threading.Tasks.Parallel.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Threading.Thread.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Threading.ThreadPool.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Threading.Timer.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.ValueTuple.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Xml.ReaderWriter.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Xml.XDocument.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Xml.XmlDocument.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Xml.XmlSerializer.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Xml.XPath.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Xml.XPath.XDocument.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Microsoft.CSharp.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/mscorlib.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.ComponentModel.Composition.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.Core.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.Data.DataSetExtensions.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.Data.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.Drawing.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.IO.Compression.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.IO.Compression.FileSystem.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.Net.Http.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.Numerics.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.Numerics.Vectors.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.Runtime.Serialization.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.Transactions.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.Xml.dll"
+-r:"D:/yinyon/2022.3.57f1c2/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.Xml.Linq.dll"
+-r:"Library/PackageCache/com.code-philosophy.hybridclr@03083ad8f9/Plugins/dnlib.dll"
+-r:"Library/PackageCache/com.code-philosophy.hybridclr@03083ad8f9/Plugins/LZ4.dll"
+-r:"Library/PackageCache/com.unity.collab-proxy@2.11.3/Lib/Editor/log4netPlastic.dll"
+-r:"Library/PackageCache/com.unity.collab-proxy@2.11.3/Lib/Editor/Unity.Plastic.Antlr3.Runtime.dll"
+-r:"Library/PackageCache/com.unity.collab-proxy@2.11.3/Lib/Editor/Unity.Plastic.Newtonsoft.Json.dll"
+-r:"Library/PackageCache/com.unity.collab-proxy@2.11.3/Lib/Editor/unityplastic.dll"
+-r:"Library/PackageCache/com.unity.nuget.newtonsoft-json@3.2.1/Runtime/Newtonsoft.Json.dll"
+-r:"Library/PackageCache/com.unity.testtools.codecoverage@1.2.6/lib/ReportGenerator/ReportGeneratorMerged.dll"
+-r:"Library/PackageCache/com.unity.visualscripting@1.9.4/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll"
+-r:"Library/PackageCache/com.unity.visualscripting@1.9.4/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll"
+-r:"Library/PackageCache/com.unity.visualscripting@1.9.4/Editor/VisualScripting.Core/EditorAssetResources/Unity.VisualScripting.TextureAssets.dll"
+-r:"Library/PackageCache/com.unity.visualscripting@1.9.4/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/HotUpdate.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/HybridCLR.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/PhotonChat.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/PhotonRealtime.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/PhotonUnityNetworking.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/PhotonUnityNetworking.Utilities.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Addressables.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.ResourceManager.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Timeline.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+-analyzer:"D:/yinyon/2022.3.57f1c2/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
+-analyzer:"D:/yinyon/2022.3.57f1c2/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
+"Assets/Scripts/AI/AIChatConfig.cs"
+"Assets/Scripts/AI/AIChatModels.cs"
+"Assets/Scripts/AI/AIChatService.cs"
+"Assets/Scripts/Core/IDisposableService.cs"
+"Assets/Scripts/Core/ServiceLocator.cs"
+"Assets/Scripts/Game/AI/AIDeckData.cs"
+"Assets/Scripts/Game/AI/AIDifficulty.cs"
+"Assets/Scripts/Game/AI/AIOpponentConfig.cs"
+"Assets/Scripts/Game/AI/AIOpponentManager.cs"
+"Assets/Scripts/Game/Analytics/AnalyticsService.cs"
+"Assets/Scripts/Game/Arena/ArenaConfig.cs"
+"Assets/Scripts/Game/Arena/ArenaData.cs"
+"Assets/Scripts/Game/Arena/ArenaTestHelper.cs"
+"Assets/Scripts/Game/Arena/SeasonManager.cs"
+"Assets/Scripts/Game/Arena/TrophyManager.cs"
+"Assets/Scripts/Game/AudioManager.cs"
+"Assets/Scripts/Game/Battle/AnimationStateMachine.cs"
+"Assets/Scripts/Game/Battle/AnimationTest.cs"
+"Assets/Scripts/Game/Battle/BattleConflictResolver.cs"
+"Assets/Scripts/Game/Battle/BattleEventSystem.cs"
+"Assets/Scripts/Game/Battle/BattleManager.cs"
+"Assets/Scripts/Game/Battle/BattleSyncLogger.cs"
+"Assets/Scripts/Game/Battle/BattleSyncOptimizer.cs"
+"Assets/Scripts/Game/Battle/BattleSyncProtocol.cs"
+"Assets/Scripts/Game/Battle/BattleSyncService.cs"
+"Assets/Scripts/Game/Battle/Building.cs"
+"Assets/Scripts/Game/Battle/BuildingHealthBar.cs"
+"Assets/Scripts/Game/Battle/BuildingHealthBarManager.cs"
+"Assets/Scripts/Game/Battle/BuildingInitializer.cs"
+"Assets/Scripts/Game/Battle/FrameSyncManager.cs"
+"Assets/Scripts/Game/Battle/IBattleManager.cs"
+"Assets/Scripts/Game/Battle/NetworkBattleManager.cs"
+"Assets/Scripts/Game/Battle/NetworkBuilding.cs"
+"Assets/Scripts/Game/Battle/NetworkCompressor.cs"
+"Assets/Scripts/Game/Battle/NetworkEntityManager.cs"
+"Assets/Scripts/Game/Battle/NetworkSpell.cs"
+"Assets/Scripts/Game/Battle/NetworkUnit.cs"
+"Assets/Scripts/Game/Battle/NetworkUtils.cs"
+"Assets/Scripts/Game/Battle/Projectile.cs"
+"Assets/Scripts/Game/Battle/Spell.cs"
+"Assets/Scripts/Game/Battle/SpellEffectResolver.cs"
+"Assets/Scripts/Game/Battle/Unit.cs"
+"Assets/Scripts/Game/Cards/CardData.cs"
+"Assets/Scripts/Game/Cards/CardDatabase.cs"
+"Assets/Scripts/Game/Cards/CardDataCreator.cs"
+"Assets/Scripts/Game/Cards/CardEffectManager.cs"
+"Assets/Scripts/Game/Cards/CardRuntimeCreator.cs"
+"Assets/Scripts/Game/Cards/CardUpgradeData.cs"
+"Assets/Scripts/Game/Cards/CardUpgradeManager.cs"
+"Assets/Scripts/Game/Cards/UseRangeManager.cs"
+"Assets/Scripts/Game/Chest/ChestData.cs"
+"Assets/Scripts/Game/Chest/ChestManager.cs"
+"Assets/Scripts/Game/Config/EconomyBalanceSO.cs"
+"Assets/Scripts/Game/Data/IGameService.cs"
+"Assets/Scripts/Game/Data/IPlayerDataRepository.cs"
+"Assets/Scripts/Game/Data/JsonPlayerDataRepository.cs"
+"Assets/Scripts/Game/Decks/DeckManager.cs"
+"Assets/Scripts/Game/Game.cs"
+"Assets/Scripts/Game/GameConfig.cs"
+"Assets/Scripts/Game/Localization/LocalizationManager.cs"
+"Assets/Scripts/Game/Pathfinding/AStar.cs"
+"Assets/Scripts/Game/Pathfinding/GridEditor.cs"
+"Assets/Scripts/Game/Pathfinding/GridManager.cs"
+"Assets/Scripts/Game/Pathfinding/GridNode.cs"
+"Assets/Scripts/Game/Pathfinding/PathfindingTest.cs"
+"Assets/Scripts/Game/SceneNames.cs"
+"Assets/Scripts/Game/Shop/ShopData.cs"
+"Assets/Scripts/Game/Shop/ShopManager.cs"
+"Assets/Scripts/HotUpdate/HotUpdateManager.cs"
+"Assets/Scripts/HotUpdate/LotterySystem.cs"
+"Assets/Scripts/HotUpdate/PlayerDataManager.cs"
+"Assets/Scripts/HybridCLR/ConsoleToScreen.cs"
+"Assets/Scripts/HybridCLR/LoadDll.cs"
+"Assets/Scripts/Load/AsyncSceneLoader.cs"
+"Assets/Scripts/Server/AES.cs"
+"Assets/Scripts/Server/ByteArray.cs"
+"Assets/Scripts/Server/INetworkService.cs"
+"Assets/Scripts/Server/LoginLayer.cs"
+"Assets/Scripts/Server/MatchmakingService.cs"
+"Assets/Scripts/Server/MsgBase.cs"
+"Assets/Scripts/Server/NetManager.cs"
+"Assets/Scripts/Server/NetworkManager.cs"
+"Assets/Scripts/Server/ProtocolEnum.cs"
+"Assets/Scripts/Server/ProtoManager.cs"
+"Assets/Scripts/Server/RoomCreationTest.cs"
+"Assets/Scripts/Server/ServerRoot.cs"
+"Assets/Scripts/Server/SqlDateManager.cs"
+"Assets/Scripts/Server/SysMsg.cs"
+"Assets/Scripts/Tools/Bootstrapper.cs"
+"Assets/Scripts/Tools/CoroutineRunner.cs"
+"Assets/Scripts/Tools/CrashReporter.cs"
+"Assets/Scripts/Tools/IPoolable.cs"
+"Assets/Scripts/Tools/Logger.cs"
+"Assets/Scripts/Tools/ObjectPool.cs"
+"Assets/Scripts/Tools/ObjectPoolManager.cs"
+"Assets/Scripts/Tools/ObjectPoolTest.cs"
+"Assets/Scripts/Tools/PerformanceBaseline.cs"
+"Assets/Scripts/Tools/PerformanceTestRunner.cs"
+"Assets/Scripts/Tools/Singleton.cs"
+"Assets/Scripts/Tools/TaskExtensions.cs"
+"Assets/Scripts/UI/basePanel.cs"
+"Assets/Scripts/UI/battlePanel.cs"
+"Assets/Scripts/UI/CardsPanel.cs"
+"Assets/Scripts/UI/Chat/ChatPanel.cs"
+"Assets/Scripts/UI/ChestPanel.cs"
+"Assets/Scripts/UI/deckPanel.cs"
+"Assets/Scripts/UI/loadPanel.cs"
+"Assets/Scripts/UI/lotteryPanel.cs"
+"Assets/Scripts/UI/mainPanel.cs"
+"Assets/Scripts/UI/ProfilePanel.cs"
+"Assets/Scripts/UI/searchPanel.cs"
+"Assets/Scripts/UI/settingPanel.cs"
+"Assets/Scripts/UI/settlementPanel.cs"
+"Assets/Scripts/UI/shopPanel.cs"
+"Assets/Scripts/UI/TipUI/promptMessage.cs"
+"Assets/Scripts/UI/TipUI/Tip.cs"
+"Assets/Scripts/UI/UIManager.cs"
+"Assets/Scripts/UI/UIPanelInfo.cs"
+"Assets/Scripts/UI/UnitHealthBar.cs"
+"Assets/Scripts/UI/UpgradePanel.cs"
+-langversion:9.0
+/deterministic
+/optimize+
+/debug:portable
+/nologo
+/RuntimeMetadataVersion:v4.0.30319
+/nowarn:0169
+/nowarn:0649
+/nowarn:0282
+/nowarn:1701
+/nowarn:1702
+/utf8output
+/preferreduilang:en-US
+/additionalfile:"Library/Bee/artifacts/1900b0aE.dag/Scripts.UnityAdditionalFile.txt"
+##### Custom Environment Variables
+DOTNET_MULTILEVEL_LOOKUP=0
+##### ExitCode
+1
+##### Output
+Assets\Scripts\UI\battlePanel.cs(73,28): warning CS0114: 'battlePanel.Awake()' hides inherited member 'basePanel.Awake()'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+
+Assets\Scripts\UI\battlePanel.cs(83,28): warning CS0114: 'battlePanel.Start()' hides inherited member 'basePanel.Start()'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+
+Assets\Scripts\AI\AIChatService.cs(45,17): warning CS0108: 'AIChatService.SendMessage(string)' hides inherited member 'Component.SendMessage(string)'. Use the new keyword if hiding was intended.
+
+Assets\Scripts\UI\loadPanel.cs(16,28): warning CS0114: 'loadPanel.Awake()' hides inherited member 'basePanel.Awake()'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+
+Assets\Scripts\UI\loadPanel.cs(24,28): warning CS0114: 'loadPanel.Start()' hides inherited member 'basePanel.Start()'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+
+Assets\Scripts\UI\mainPanel.cs(24,28): warning CS0114: 'mainPanel.Start()' hides inherited member 'basePanel.Start()'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+
+Assets\Scripts\UI\deckPanel.cs(493,17): warning CS0108: 'deckPanel.OnBeginDrag(PointerEventData)' hides inherited member 'basePanel.OnBeginDrag(PointerEventData)'. Use the new keyword if hiding was intended.
+
+Assets\Scripts\UI\deckPanel.cs(526,17): warning CS0108: 'deckPanel.OnDrag(PointerEventData)' hides inherited member 'basePanel.OnDrag(PointerEventData)'. Use the new keyword if hiding was intended.
+
+Assets\Scripts\UI\searchPanel.cs(19,28): warning CS0114: 'searchPanel.Awake()' hides inherited member 'basePanel.Awake()'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+
+Assets\Scripts\UI\searchPanel.cs(47,28): warning CS0114: 'searchPanel.Start()' hides inherited member 'basePanel.Start()'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+
+Assets\Scripts\Game\Battle\NetworkSpell.cs(38,28): warning CS0108: 'NetworkSpell.photonView' hides inherited member 'MonoBehaviourPun.photonView'. Use the new keyword if hiding was intended.
+
+Assets\Scripts\Game\Battle\NetworkBuilding.cs(22,28): warning CS0108: 'NetworkBuilding.photonView' hides inherited member 'MonoBehaviourPun.photonView'. Use the new keyword if hiding was intended.
+
+Assets\Scripts\Game\Battle\NetworkBattleManager.cs(106,22): warning CS0114: 'NetworkBattleManager.OnEnable()' hides inherited member 'MonoBehaviourPunCallbacks.OnEnable()'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+
+Assets\Scripts\Game\Battle\NetworkBattleManager.cs(974,21): warning CS0114: 'NetworkBattleManager.OnPlayerPropertiesUpdate(Player, Hashtable)' hides inherited member 'MonoBehaviourPunCallbacks.OnPlayerPropertiesUpdate(Player, Hashtable)'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+
+Assets\Scripts\Game\Battle\NetworkBattleManager.cs(987,21): warning CS0114: 'NetworkBattleManager.OnRoomPropertiesUpdate(Hashtable)' hides inherited member 'MonoBehaviourPunCallbacks.OnRoomPropertiesUpdate(Hashtable)'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+
+Assets\Scripts\Tools\Bootstrapper.cs(27,17): error CS0103: The name 'Battle' does not exist in the current context
+
+Assets\Scripts\Tools\Bootstrapper.cs(29,41): error CS0246: The type or namespace name 'Battle' could not be found (are you missing a using directive or an assembly reference?)
+
+Assets\Scripts\Tools\Bootstrapper.cs(30,21): error CS0103: The name 'Battle' does not exist in the current context
+
+Assets\Scripts\UI\battlePanel.cs(256,9): warning CS0618: 'UIManager.CreatepromptMessage(string, Transform)' is obsolete: 'Use CreatePromptMessageAsync instead'
+
+Assets\Scripts\HotUpdate\HotUpdateManager.cs(135,14): warning CS0219: The variable 'downloadSuccess' is assigned but its value is never used
+
+Assets\Scripts\Server\LoginLayer.cs(120,9): warning CS0618: 'UIManager.CreatepromptMessage(string, Transform)' is obsolete: 'Use CreatePromptMessageAsync instead'
+
+Assets\Scripts\HotUpdate\PlayerDataManager.cs(146,33): warning CS0067: The event 'PlayerDataManager.OnCardAdded' is never used
+
+Assets\Scripts\Game\Battle\NetworkBattleManager.cs(33,23): warning CS0414: The field 'NetworkBattleManager.lastSyncTime' is assigned but its value is never used
+
+Assets\Scripts\Game\Battle\NetworkBattleManager.cs(30,21): warning CS0414: The field 'NetworkBattleManager.nextBuildingId' is assigned but its value is never used
+
+Assets\Scripts\Game\Battle\Unit.cs(55,23): warning CS0414: The field 'Unit.projectileFireTime' is assigned but its value is never used
+
+Assets\Scripts\Game\Battle\NetworkBattleManager.cs(31,21): warning CS0414: The field 'NetworkBattleManager.nextUnitId' is assigned but its value is never used
+
+Assets\Scripts\Game\Battle\BuildingHealthBar.cs(18,23): warning CS0414: The field 'BuildingHealthBar.showTimer' is assigned but its value is never used
+
+Assets\Scripts\Game\Battle\AnimationTest.cs(42,21): warning CS0414: The field 'AnimationTest.currentTestIndex' is assigned but its value is never used
+*** Tundra build failed (0.62 seconds), 3 items updated, 911 evaluated
+## Script Compilation Error for: Csc Library/Bee/artifacts/1900b0aE.dag/Scripts.dll (+2 others)
+## CmdLine: "D:\yinyon\2022.3.57f1c2\Editor\Data\NetCoreRuntime\dotnet.exe" exec "D:/yinyon/2022.3.57f1c2/Editor/Data/DotNetSdkRoslyn/csc.dll" /nostdlib /noconfig /shared "@Library/Bee/artifacts/1900b0aE.dag/Scripts.rsp" "@Library/Bee/artifacts/1900b0aE.dag/Scripts.rsp2"
+## Output:
+Assets\Scripts\UI\battlePanel.cs(73,28): warning CS0114: 'battlePanel.Awake()' hides inherited member 'basePanel.Awake()'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+Assets\Scripts\UI\battlePanel.cs(83,28): warning CS0114: 'battlePanel.Start()' hides inherited member 'basePanel.Start()'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+Assets\Scripts\AI\AIChatService.cs(45,17): warning CS0108: 'AIChatService.SendMessage(string)' hides inherited member 'Component.SendMessage(string)'. Use the new keyword if hiding was intended.
+Assets\Scripts\UI\loadPanel.cs(16,28): warning CS0114: 'loadPanel.Awake()' hides inherited member 'basePanel.Awake()'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+Assets\Scripts\UI\loadPanel.cs(24,28): warning CS0114: 'loadPanel.Start()' hides inherited member 'basePanel.Start()'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+Assets\Scripts\UI\mainPanel.cs(24,28): warning CS0114: 'mainPanel.Start()' hides inherited member 'basePanel.Start()'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+Assets\Scripts\UI\deckPanel.cs(493,17): warning CS0108: 'deckPanel.OnBeginDrag(PointerEventData)' hides inherited member 'basePanel.OnBeginDrag(PointerEventData)'. Use the new keyword if hiding was intended.
+Assets\Scripts\UI\deckPanel.cs(526,17): warning CS0108: 'deckPanel.OnDrag(PointerEventData)' hides inherited member 'basePanel.OnDrag(PointerEventData)'. Use the new keyword if hiding was intended.
+Assets\Scripts\UI\searchPanel.cs(19,28): warning CS0114: 'searchPanel.Awake()' hides inherited member 'basePanel.Awake()'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+Assets\Scripts\UI\searchPanel.cs(47,28): warning CS0114: 'searchPanel.Start()' hides inherited member 'basePanel.Start()'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+Assets\Scripts\Game\Battle\NetworkSpell.cs(38,28): warning CS0108: 'NetworkSpell.photonView' hides inherited member 'MonoBehaviourPun.photonView'. Use the new keyword if hiding was intended.
+Assets\Scripts\Game\Battle\NetworkBuilding.cs(22,28): warning CS0108: 'NetworkBuilding.photonView' hides inherited member 'MonoBehaviourPun.photonView'. Use the new keyword if hiding was intended.
+Assets\Scripts\Game\Battle\NetworkBattleManager.cs(106,22): warning CS0114: 'NetworkBattleManager.OnEnable()' hides inherited member 'MonoBehaviourPunCallbacks.OnEnable()'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+Assets\Scripts\Game\Battle\NetworkBattleManager.cs(974,21): warning CS0114: 'NetworkBattleManager.OnPlayerPropertiesUpdate(Player, Hashtable)' hides inherited member 'MonoBehaviourPunCallbacks.OnPlayerPropertiesUpdate(Player, Hashtable)'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+Assets\Scripts\Game\Battle\NetworkBattleManager.cs(987,21): warning CS0114: 'NetworkBattleManager.OnRoomPropertiesUpdate(Hashtable)' hides inherited member 'MonoBehaviourPunCallbacks.OnRoomPropertiesUpdate(Hashtable)'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+Assets\Scripts\Tools\Bootstrapper.cs(27,17): error CS0103: The name 'Battle' does not exist in the current context
+Assets\Scripts\Tools\Bootstrapper.cs(29,41): error CS0246: The type or namespace name 'Battle' could not be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Tools\Bootstrapper.cs(30,21): error CS0103: The name 'Battle' does not exist in the current context
+Assets\Scripts\UI\battlePanel.cs(256,9): warning CS0618: 'UIManager.CreatepromptMessage(string, Transform)' is obsolete: 'Use CreatePromptMessageAsync instead'
+Assets\Scripts\HotUpdate\HotUpdateManager.cs(135,14): warning CS0219: The variable 'downloadSuccess' is assigned but its value is never used
+Assets\Scripts\Server\LoginLayer.cs(120,9): warning CS0618: 'UIManager.CreatepromptMessage(string, Transform)' is obsolete: 'Use CreatePromptMessageAsync instead'
+Assets\Scripts\HotUpdate\PlayerDataManager.cs(146,33): warning CS0067: The event 'PlayerDataManager.OnCardAdded' is never used
+Assets\Scripts\Game\Battle\NetworkBattleManager.cs(33,23): warning CS0414: The field 'NetworkBattleManager.lastSyncTime' is assigned but its value is never used
+Assets\Scripts\Game\Battle\NetworkBattleManager.cs(30,21): warning CS0414: The field 'NetworkBattleManager.nextBuildingId' is assigned but its value is never used
+Assets\Scripts\Game\Battle\Unit.cs(55,23): warning CS0414: The field 'Unit.projectileFireTime' is assigned but its value is never used
+Assets\Scripts\Game\Battle\NetworkBattleManager.cs(31,21): warning CS0414: The field 'NetworkBattleManager.nextUnitId' is assigned but its value is never used
+Assets\Scripts\Game\Battle\BuildingHealthBar.cs(18,23): warning CS0414: The field 'BuildingHealthBar.showTimer' is assigned but its value is never used
+Assets\Scripts\Game\Battle\AnimationTest.cs(42,21): warning CS0414: The field 'AnimationTest.currentTestIndex' is assigned but its value is never used
+
+Assets\Scripts\UI\battlePanel.cs(73,28): warning CS0114: 'battlePanel.Awake()' hides inherited member 'basePanel.Awake()'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+Assets\Scripts\UI\battlePanel.cs(83,28): warning CS0114: 'battlePanel.Start()' hides inherited member 'basePanel.Start()'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+Assets\Scripts\AI\AIChatService.cs(45,17): warning CS0108: 'AIChatService.SendMessage(string)' hides inherited member 'Component.SendMessage(string)'. Use the new keyword if hiding was intended.
+Assets\Scripts\UI\loadPanel.cs(16,28): warning CS0114: 'loadPanel.Awake()' hides inherited member 'basePanel.Awake()'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+Assets\Scripts\UI\loadPanel.cs(24,28): warning CS0114: 'loadPanel.Start()' hides inherited member 'basePanel.Start()'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+Assets\Scripts\UI\mainPanel.cs(24,28): warning CS0114: 'mainPanel.Start()' hides inherited member 'basePanel.Start()'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+Assets\Scripts\UI\deckPanel.cs(493,17): warning CS0108: 'deckPanel.OnBeginDrag(PointerEventData)' hides inherited member 'basePanel.OnBeginDrag(PointerEventData)'. Use the new keyword if hiding was intended.
+Assets\Scripts\UI\deckPanel.cs(526,17): warning CS0108: 'deckPanel.OnDrag(PointerEventData)' hides inherited member 'basePanel.OnDrag(PointerEventData)'. Use the new keyword if hiding was intended.
+Assets\Scripts\UI\searchPanel.cs(19,28): warning CS0114: 'searchPanel.Awake()' hides inherited member 'basePanel.Awake()'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+Assets\Scripts\UI\searchPanel.cs(47,28): warning CS0114: 'searchPanel.Start()' hides inherited member 'basePanel.Start()'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+Assets\Scripts\Game\Battle\NetworkSpell.cs(38,28): warning CS0108: 'NetworkSpell.photonView' hides inherited member 'MonoBehaviourPun.photonView'. Use the new keyword if hiding was intended.
+Assets\Scripts\Game\Battle\NetworkBuilding.cs(22,28): warning CS0108: 'NetworkBuilding.photonView' hides inherited member 'MonoBehaviourPun.photonView'. Use the new keyword if hiding was intended.
+Assets\Scripts\Game\Battle\NetworkBattleManager.cs(106,22): warning CS0114: 'NetworkBattleManager.OnEnable()' hides inherited member 'MonoBehaviourPunCallbacks.OnEnable()'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+Assets\Scripts\Game\Battle\NetworkBattleManager.cs(974,21): warning CS0114: 'NetworkBattleManager.OnPlayerPropertiesUpdate(Player, Hashtable)' hides inherited member 'MonoBehaviourPunCallbacks.OnPlayerPropertiesUpdate(Player, Hashtable)'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+Assets\Scripts\Game\Battle\NetworkBattleManager.cs(987,21): warning CS0114: 'NetworkBattleManager.OnRoomPropertiesUpdate(Hashtable)' hides inherited member 'MonoBehaviourPunCallbacks.OnRoomPropertiesUpdate(Hashtable)'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+Assets\Scripts\Tools\Bootstrapper.cs(27,17): error CS0103: The name 'Battle' does not exist in the current context
+Assets\Scripts\Tools\Bootstrapper.cs(29,41): error CS0246: The type or namespace name 'Battle' could not be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Tools\Bootstrapper.cs(30,21): error CS0103: The name 'Battle' does not exist in the current context
+Assets\Scripts\UI\battlePanel.cs(256,9): warning CS0618: 'UIManager.CreatepromptMessage(string, Transform)' is obsolete: 'Use CreatePromptMessageAsync instead'
+Assets\Scripts\HotUpdate\HotUpdateManager.cs(135,14): warning CS0219: The variable 'downloadSuccess' is assigned but its value is never used
+Assets\Scripts\Server\LoginLayer.cs(120,9): warning CS0618: 'UIManager.CreatepromptMessage(string, Transform)' is obsolete: 'Use CreatePromptMessageAsync instead'
+Assets\Scripts\HotUpdate\PlayerDataManager.cs(146,33): warning CS0067: The event 'PlayerDataManager.OnCardAdded' is never used
+Assets\Scripts\Game\Battle\NetworkBattleManager.cs(33,23): warning CS0414: The field 'NetworkBattleManager.lastSyncTime' is assigned but its value is never used
+Assets\Scripts\Game\Battle\NetworkBattleManager.cs(30,21): warning CS0414: The field 'NetworkBattleManager.nextBuildingId' is assigned but its value is never used
+Assets\Scripts\Game\Battle\Unit.cs(55,23): warning CS0414: The field 'Unit.projectileFireTime' is assigned but its value is never used
+Assets\Scripts\Game\Battle\NetworkBattleManager.cs(31,21): warning CS0414: The field 'NetworkBattleManager.nextUnitId' is assigned but its value is never used
+Assets\Scripts\Game\Battle\BuildingHealthBar.cs(18,23): warning CS0414: The field 'BuildingHealthBar.showTimer' is assigned but its value is never used
+Assets\Scripts\Game\Battle\AnimationTest.cs(42,21): warning CS0414: The field 'AnimationTest.currentTestIndex' is assigned but its value is never used
+AssetDatabase: script compilation time: 4.596846s
+Scripts have compiler errors.
+Exiting without the bug reporter. Application will terminate with return code 1Total cache size 268066008
+Total cache size after purge 268066008

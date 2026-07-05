@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  csharp-unity:
+    name: C# Unity Compile
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Unity Compile Check
+        shell: pwsh
+        run: .\scripts\compile-check.ps1
+        continue-on-error: true  # Unity not always available in CI
+
+  lua-check:
+    name: Lua Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install LuaCheck
+        run: sudo apt-get update && sudo apt-get install -y luacheck || true
+      - name: Run Lua Check
+        shell: pwsh
+        run: .\scripts\lint-lua.ps1
+
+  rust-build:
+    name: Rust Build & Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+      - name: Rust Build
+        shell: pwsh
+        run: .\scripts\build-rust.ps1
+      - name: Rust Tests
+        shell: pwsh
+        run: .\scripts\test-rust.ps1
+
+  full-ci:
+    name: Full CI (all tests)
+    runs-on: windows-latest
+    needs: [csharp-unity, lua-check, rust-build]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run All Tests
+        shell: pwsh
+        run: .\scripts\ci.ps1

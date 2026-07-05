@@ -1,0 +1,81 @@
+using System.Collections;
+using UnityEngine;
+using UnityEngine.UI;
+using DG.Tweening;
+namespace KingdomWar.UI
+{
+public class promptMessage : MonoBehaviour
+{
+    [Header("动画参数")]
+    public float showDuration = 1f;           // 显示时间
+    public float fadeInDuration = 0.3f;       // 淡入时间
+    public float scaleUpDuration = 0.3f;      // 放大时间
+    public float hideDuration = 0.5f;         // 隐藏时间
+
+    [Header("UI 组件")]
+    public RectTransform rectTransform;
+    public CanvasGroup canvasGroup;
+    public Text messageText; // 可选：动态设置文�?
+
+    private void Awake()
+    {
+
+        // 自动获取组件（确保挂载正确）
+        if (rectTransform == null) rectTransform = GetComponent<RectTransform>();
+        if (canvasGroup == null) canvasGroup = AddOrGetComponent<CanvasGroup>(gameObject);
+        if (messageText == null) messageText = transform.Find("prompt").GetComponent<Text>();
+
+        // 初始隐藏
+        rectTransform.localScale = Vector3.zero;
+        canvasGroup.alpha = 0;
+    }
+
+    /// <summary>
+    /// 显示提示信息
+    /// </summary>
+    public void Show(string msg)
+    {
+        // 设置消息内容
+        if (messageText != null && !string.IsNullOrEmpty(msg))
+        {
+            messageText.text = msg;
+        }
+
+        // 取消上一个动�?
+        rectTransform.DOKill();
+        canvasGroup.DOKill();
+
+        // 恢复初始状�?
+        rectTransform.localPosition = Vector3.zero;
+        rectTransform.localScale = Vector3.zero;
+        canvasGroup.alpha = 0;
+        gameObject.SetActive(true);
+
+        // 播放动画序列
+        Sequence sequence = DOTween.Sequence();
+
+        sequence.Append(canvasGroup.DOFade(1, fadeInDuration))
+                .Join(rectTransform.DOScale(1.1f, scaleUpDuration).SetEase(Ease.OutBack))
+                .AppendInterval(showDuration)
+                .Join(rectTransform.DOAnchorPos(new Vector2(0,400),showDuration))
+                .Append(rectTransform.DOScale(0.8f, hideDuration / 2).SetEase(Ease.InBack))
+                .Join(canvasGroup.DOFade(0, hideDuration))
+                .OnComplete(() =>
+                {
+                    Destroy(gameObject);
+                });
+    }
+
+    /// <summary>
+    /// 添加或获取组�?
+    /// </summary>
+    private T AddOrGetComponent<T>(GameObject go) where T : Component
+    {
+        T comp = go.GetComponent<T>();
+        if (comp == null)
+            comp = go.AddComponent<T>();
+        return comp;
+    }
+}
+
+}

@@ -1,0 +1,84 @@
+stages:
+  - compile
+  - test
+  - build
+  - coverage
+  - perf
+
+variables:
+  UNITY_PATH: "D:\\yinyon\\2022.3.57f1c2\\Editor\\Unity.exe"
+
+before_script:
+  - echo "Killing lingering Unity processes..."
+  - taskkill /F /IM Unity.exe 2>nul || echo "No Unity process found"
+
+compile-check:
+  stage: compile
+  script:
+    - powershell -File scripts\compile-check.ps1
+  artifacts:
+    when: always
+    paths:
+      - unity-ci-log.txt
+
+test-editmode:
+  stage: test
+  script:
+    - echo "Running EditMode tests..."
+    - '"%UNITY_PATH%" -batchmode -nographics -projectPath . -runTests -testPlatform EditMode -testResults editmode-results.xml -logFile editmode-log.txt'
+    - if not exist editmode-results.xml exit /b 1
+    - echo "EditMode tests completed"
+  artifacts:
+    when: always
+    paths:
+      - editmode-results.xml
+      - editmode-log.txt
+
+test-playmode:
+  stage: test
+  script:
+    - echo "Running PlayMode tests..."
+    - '"%UNITY_PATH%" -batchmode -nographics -projectPath . -runTests -testPlatform PlayMode -testResults playmode-results.xml -logFile playmode-log.txt'
+    - if not exist playmode-results.xml exit /b 1
+    - echo "PlayMode tests completed"
+  artifacts:
+    when: always
+    paths:
+      - playmode-results.xml
+      - playmode-log.txt
+
+build-android:
+  stage: build
+  script:
+    - echo "Building Android APK..."
+    - '"%UNITY_PATH%" -batchmode -nographics -projectPath . -buildTarget Android -buildAppBundle -outputPath "Builds/KingdomWar.aab" -logFile android-build-log.txt'
+    - if not exist Builds\KingdomWar.aab exit /b 1
+    - echo "Android build completed"
+  artifacts:
+    when: always
+    paths:
+      - Builds/KingdomWar.aab
+      - android-build-log.txt
+  only:
+    - tags
+
+coverage-check:
+  stage: coverage
+  script:
+    - echo "Running code coverage..."
+    - powershell -File scripts\run-coverage.ps1
+  artifacts:
+    when: always
+    paths:
+      - CoverageReport/
+      - test-results-coverage.xml
+
+perf-check:
+  stage: perf
+  script:
+    - echo "Running performance gate..."
+    - powershell -File scripts\run-perf.ps1
+  artifacts:
+    when: always
+    paths:
+      - unity-perf-log.txt

@@ -1,0 +1,71 @@
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+end_of_line = crlf
+
+[*.{cs,md,json,yml,yaml,xml,txt}]
+indent_style = space
+indent_size = 4
+
+[*.cs]
+charset = utf-8
+# C# naming conventions
+dotnet_naming_style.pascal_case.required_prefix =
+dotnet_naming_style.pascal_case.required_suffix =
+dotnet_naming_style.pascal_case.word_separator =
+dotnet_naming_style.pascal_case.capitalization = pascal_case
+
+dotnet_naming_style.camel_case.required_prefix = _
+dotnet_naming_style.camel_case.required_suffix =
+dotnet_naming_style.camel_case.word_separator =
+dotnet_naming_style.camel_case.capitalization = camel_case
+
+# public members should be PascalCase
+dotnet_naming_symbols.public_fields.applicable_kinds = field
+dotnet_naming_symbols.public_fields.applicable_accessibilities = public
+dotnet_naming_rule.public_fields_should_be_pascal.severity = warning
+dotnet_naming_rule.public_fields_should_be_pascal.symbols = public_fields
+dotnet_naming_rule.public_fields_should_be_pascal.style = pascal_case
+
+# private fields should be _camelCase
+dotnet_naming_symbols.private_fields.applicable_kinds = field
+dotnet_naming_symbols.private_fields.applicable_accessibilities = private
+dotnet_naming_rule.private_fields_should_be_camel.severity = suggestion
+dotnet_naming_rule.private_fields_should_be_camel.symbols = private_fields
+dotnet_naming_rule.private_fields_should_be_camel.style = camel_case
+
+# methods should be PascalCase
+dotnet_naming_symbols.methods.applicable_kinds = method
+dotnet_naming_rule.methods_should_be_pascal.severity = warning
+dotnet_naming_rule.methods_should_be_pascal.symbols = methods
+dotnet_naming_rule.methods_should_be_pascal.style = pascal_case
+
+# properties should be PascalCase
+dotnet_naming_symbols.properties.applicable_kinds = property
+dotnet_naming_rule.properties_should_be_pascal.severity = warning
+dotnet_naming_rule.properties_should_be_pascal.symbols = properties
+dotnet_naming_rule.properties_should_be_pascal.style = pascal_case
+
+# classes should be PascalCase
+dotnet_naming_symbols.types.applicable_kinds = class, struct, interface, enum
+dotnet_naming_rule.types_should_be_pascal.severity = warning
+dotnet_naming_rule.types_should_be_pascal.symbols = types
+dotnet_naming_rule.types_should_be_pascal.style = pascal_case
+
+# Allman braces
+csharp_new_line_before_open_brace = all
+csharp_new_line_before_else = true
+csharp_new_line_before_catch = true
+csharp_new_line_before_finally = true
+csharp_new_line_before_members_in_object_initializers = true
+csharp_new_line_before_members_in_anonymous_types = true
+
+# using directives
+dotnet_sort_system_first_directives = true
+
+[*.meta]
+insert_final_newline = false

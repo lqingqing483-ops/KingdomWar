@@ -1,0 +1,2245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="45" result="Failed(Child)" total="45" passed="41" failed="4" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:13Z" duration="1.1135214">
+  <test-suite type="TestSuite" id="1064" name="KingdomWar" fullname="KingdomWar" runstate="Runnable" testcasecount="45" result="Failed" site="Child" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:13Z" duration="1.113521" total="45" passed="41" failed="4" inconclusive="0" skipped="0" asserts="0">
+    <properties />
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1072" name="EditMode.dll" fullname="D:/fs2025/unity/KingdomWar/Library/ScriptAssemblies/EditMode.dll" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:12Z" duration="0.022248" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="47368" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+      </properties>
+      <test-suite type="TestFixture" id="1065" name="BattleManagerTests" fullname="BattleManagerTests" classname="BattleManagerTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:12Z" duration="0.020921" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1066" name="BattleStatus_Enum_Exists" fullname="BattleManagerTests.BattleStatus_Enum_Exists" methodname="BattleStatus_Enum_Exists" classname="BattleManagerTests" runstate="Runnable" seed="2127396952" result="Passed" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:12Z" duration="0.007761" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1068" name="BattleStatus_HasFighting" fullname="BattleManagerTests.BattleStatus_HasFighting" methodname="BattleStatus_HasFighting" classname="BattleManagerTests" runstate="Runnable" seed="1397277687" result="Passed" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:12Z" duration="0.000343" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1067" name="BattleStatus_HasWaiting" fullname="BattleManagerTests.BattleStatus_HasWaiting" methodname="BattleStatus_HasWaiting" classname="BattleManagerTests" runstate="Runnable" seed="661708585" result="Passed" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:12Z" duration="0.000187" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1069" name="UnitState_Enum_Exists" fullname="BattleManagerTests.UnitState_Enum_Exists" methodname="UnitState_Enum_Exists" classname="BattleManagerTests" runstate="Runnable" seed="1948338703" result="Passed" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:12Z" duration="0.000148" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1071" name="UnitState_HasDead" fullname="BattleManagerTests.UnitState_HasDead" methodname="UnitState_HasDead" classname="BattleManagerTests" runstate="Runnable" seed="2079338847" result="Passed" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:12Z" duration="0.000170" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1070" name="UnitState_HasIdle" fullname="BattleManagerTests.UnitState_HasIdle" methodname="UnitState_HasIdle" classname="BattleManagerTests" runstate="Runnable" seed="80533091" result="Passed" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:12Z" duration="0.000121" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+    </test-suite>
+    <test-suite type="Assembly" id="1119" name="PlayMode.dll" fullname="D:/fs2025/unity/KingdomWar/Library/ScriptAssemblies/PlayMode.dll" runstate="Runnable" testcasecount="38" result="Failed" site="Child" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:13Z" duration="1.059457" total="38" passed="34" failed="4" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="47368" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestFixture" id="1075" name="AudioManagerTests" fullname="AudioManagerTests" classname="AudioManagerTests" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:12Z" duration="0.011969" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1077" name="DefaultVolume_IsOne" fullname="AudioManagerTests.DefaultVolume_IsOne" methodname="DefaultVolume_IsOne" classname="AudioManagerTests" runstate="Runnable" seed="1157829519" result="Passed" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:12Z" duration="0.005450" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1076" name="Instance_IsNotNull" fullname="AudioManagerTests.Instance_IsNotNull" methodname="Instance_IsNotNull" classname="AudioManagerTests" runstate="Runnable" seed="1569869044" result="Passed" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:12Z" duration="0.001932" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1082" name="LoadVolumeSettings_DoesNotThrow" fullname="AudioManagerTests.LoadVolumeSettings_DoesNotThrow" methodname="LoadVolumeSettings_DoesNotThrow" classname="AudioManagerTests" runstate="Runnable" seed="428053321" result="Passed" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:12Z" duration="0.001075" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1081" name="SetBGMVolume_OnlyAffectsBGM" fullname="AudioManagerTests.SetBGMVolume_OnlyAffectsBGM" methodname="SetBGMVolume_OnlyAffectsBGM" classname="AudioManagerTests" runstate="Runnable" seed="1480139836" result="Passed" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:12Z" duration="0.000583" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1080" name="SetVolume_ClampsToOne" fullname="AudioManagerTests.SetVolume_ClampsToOne" methodname="SetVolume_ClampsToOne" classname="AudioManagerTests" runstate="Runnable" seed="1785500549" result="Passed" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:12Z" duration="0.000198" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1079" name="SetVolume_ClampsToZero" fullname="AudioManagerTests.SetVolume_ClampsToZero" methodname="SetVolume_ClampsToZero" classname="AudioManagerTests" runstate="Runnable" seed="1379584465" result="Passed" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:12Z" duration="0.000181" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1078" name="SetVolume_UpdatesBGMAndSFX" fullname="AudioManagerTests.SetVolume_UpdatesBGMAndSFX" methodname="SetVolume_UpdatesBGMAndSFX" classname="AudioManagerTests" runstate="Runnable" seed="397527399" result="Passed" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:12Z" duration="0.000180" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1083" name="VolumePersists_AfterSaveAndLoad" fullname="AudioManagerTests.VolumePersists_AfterSaveAndLoad" methodname="VolumePersists_AfterSaveAndLoad" classname="AudioManagerTests" runstate="Runnable" seed="1263352182" result="Passed" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:12Z" duration="0.000820" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1084" name="CardDatabaseTests" fullname="CardDatabaseTests" classname="CardDatabaseTests" runstate="Runnable" testcasecount="10" result="Passed" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:12Z" duration="0.110742" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1085" name="AllCards_LoadFromResources_AtLeastEight" fullname="CardDatabaseTests.AllCards_LoadFromResources_AtLeastEight" methodname="AllCards_LoadFromResources_AtLeastEight" classname="CardDatabaseTests" runstate="Runnable" seed="881667620" result="Passed" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:12Z" duration="0.105238" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1087" name="Archer_IsLoaded_AsUnit_3Elixir" fullname="CardDatabaseTests.Archer_IsLoaded_AsUnit_3Elixir" methodname="Archer_IsLoaded_AsUnit_3Elixir" classname="CardDatabaseTests" runstate="Runnable" seed="2122812054" result="Passed" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:12Z" duration="0.001854" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1094" name="CardDatabase_LoadsAllCardsFromResources" fullname="CardDatabaseTests.CardDatabase_LoadsAllCardsFromResources" methodname="CardDatabase_LoadsAllCardsFromResources" classname="CardDatabaseTests" runstate="Runnable" seed="745583351" result="Passed" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:12Z" duration="0.000318" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1092" name="ElixirCollector_IsLoaded_AsBuilding" fullname="CardDatabaseTests.ElixirCollector_IsLoaded_AsBuilding" methodname="ElixirCollector_IsLoaded_AsBuilding" classname="CardDatabaseTests" runstate="Runnable" seed="177552948" result="Passed" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:12Z" duration="0.000537" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1088" name="Fireball_IsLoaded_AsSpell_4Elixir" fullname="CardDatabaseTests.Fireball_IsLoaded_AsSpell_4Elixir" methodname="Fireball_IsLoaded_AsSpell_4Elixir" classname="CardDatabaseTests" runstate="Runnable" seed="617953429" result="Passed" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:12Z" duration="0.000231" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1089" name="Giant_IsLoaded_AsUnit_5Elixir" fullname="CardDatabaseTests.Giant_IsLoaded_AsUnit_5Elixir" methodname="Giant_IsLoaded_AsUnit_5Elixir" classname="CardDatabaseTests" runstate="Runnable" seed="153729615" result="Passed" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:12Z" duration="0.000229" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1086" name="Knight_IsLoaded_AsUnit_3Elixir" fullname="CardDatabaseTests.Knight_IsLoaded_AsUnit_3Elixir" methodname="Knight_IsLoaded_AsUnit_3Elixir" classname="CardDatabaseTests" runstate="Runnable" seed="2127133861" result="Passed" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:12Z" duration="0.000220" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1090" name="Lightning_IsLoaded_AsSpell_6Elixir" fullname="CardDatabaseTests.Lightning_IsLoaded_AsSpell_6Elixir" methodname="Lightning_IsLoaded_AsSpell_6Elixir" classname="CardDatabaseTests" runstate="Runnable" seed="1258281603" result="Passed" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:12Z" duration="0.000226" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1091" name="PEKKA_IsLoaded_AsUnit" fullname="CardDatabaseTests.PEKKA_IsLoaded_AsUnit" methodname="PEKKA_IsLoaded_AsUnit" classname="CardDatabaseTests" runstate="Runnable" seed="259067638" result="Passed" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:12Z" duration="0.000211" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1093" name="Zap_IsLoaded_AsSpell_2Elixir" fullname="CardDatabaseTests.Zap_IsLoaded_AsSpell_2Elixir" methodname="Zap_IsLoaded_AsSpell_2Elixir" classname="CardDatabaseTests" runstate="Runnable" seed="1463107413" result="Passed" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:12Z" duration="0.000197" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1095" name="LotterySystemTests" fullname="LotterySystemTests" classname="LotterySystemTests" runstate="Runnable" testcasecount="5" result="Failed" site="Child" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:13Z" duration="0.824251" total="5" passed="3" failed="2" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-case id="1100" name="Draw_ReturnsCorrectCardRarityWeights" fullname="LotterySystemTests.Draw_ReturnsCorrectCardRarityWeights" methodname="Draw_ReturnsCorrectCardRarityWeights" classname="LotterySystemTests" runstate="Runnable" seed="2081816139" result="Failed" start-time="2026-07-04 05:24:12Z" end-time="2026-07-04 05:24:13Z" duration="0.817839" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[  Expected: greater than 0
+  But was:  0
+]]></message>
+            <stack-trace><![CDATA[at LotterySystemTests.Draw_ReturnsCorrectCardRarityWeights () [0x00097] in D:\fs2025\unity\KingdomWar\Assets\Tests\PlayMode\LotterySystemTests.cs:64
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+No cards available in database
+]]></output>
+        </test-case>
+        <test-case id="1096" name="Draw_ReturnsSuccess_WhenPlayerHasGold" fullname="LotterySystemTests.Draw_ReturnsSuccess_WhenPlayerHasGold" methodname="Draw_ReturnsSuccess_WhenPlayerHasGold" classname="LotterySystemTests" runstate="Runnable" seed="377299368" result="Failed" start-time="2026-07-04 05:24:13Z" end-time="2026-07-04 05:24:13Z" duration="0.001448" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[  Expected: True
+  But was:  False
+]]></message>
+            <stack-trace><![CDATA[at LotterySystemTests.Draw_ReturnsSuccess_WhenPlayerHasGold () [0x00019] in D:\fs2025\unity\KingdomWar\Assets\Tests\PlayMode\LotterySystemTests.cs:12
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[No cards available in database
+]]></output>
+        </test-case>
+        <test-case id="1097" name="GetRemainingFreeDraws_ReturnsNonNegative" fullname="LotterySystemTests.GetRemainingFreeDraws_ReturnsNonNegative" methodname="GetRemainingFreeDraws_ReturnsNonNegative" classname="LotterySystemTests" runstate="Runnable" seed="362149640" result="Passed" start-time="2026-07-04 05:24:13Z" end-time="2026-07-04 05:24:13Z" duration="0.000331" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1099" name="HasEnoughCurrency_ReturnsBool" fullname="LotterySystemTests.HasEnoughCurrency_ReturnsBool" methodname="HasEnoughCurrency_ReturnsBool" classname="LotterySystemTests" runstate="Runnable" seed="329212232" result="Passed" start-time="2026-07-04 05:24:13Z" end-time="2026-07-04 05:24:13Z" duration="0.000514" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1098" name="IsFreeDrawAvailable_ReturnsBool" fullname="LotterySystemTests.IsFreeDrawAvailable_ReturnsBool" methodname="IsFreeDrawAvailable_ReturnsBool" classname="LotterySystemTests" runstate="Runnable" seed="1969448919" result="Passed" start-time="2026-07-04 05:24:13Z" end-time="2026-07-04 05:24:13Z" duration="0.000226" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1101" name="ShopManagerTests" fullname="ShopManagerTests" classname="ShopManagerTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-07-04 05:24:13Z" end-time="2026-07-04 05:24:13Z" duration="0.014023" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1104" name="GetDailyItems_ItemsHaveValidData" fullname="ShopManagerTests.GetDailyItems_ItemsHaveValidData" methodname="GetDailyItems_ItemsHaveValidData" classname="ShopManagerTests" runstate="Runnable" seed="191122045" result="Passed" start-time="2026-07-04 05:24:13Z" end-time="2026-07-04 05:24:13Z" duration="0.008726" asserts="0">
+          <properties />
+          <output><![CDATA[Loaded 8 cards into database
+Reloaded card data
+]]></output>
+        </test-case>
+        <test-case id="1103" name="GetDailyItems_ReturnsThreeItems" fullname="ShopManagerTests.GetDailyItems_ReturnsThreeItems" methodname="GetDailyItems_ReturnsThreeItems" classname="ShopManagerTests" runstate="Runnable" seed="2067558248" result="Passed" start-time="2026-07-04 05:24:13Z" end-time="2026-07-04 05:24:13Z" duration="0.000427" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1102" name="Instance_IsNotNull" fullname="ShopManagerTests.Instance_IsNotNull" methodname="Instance_IsNotNull" classname="ShopManagerTests" runstate="Runnable" seed="1596560679" result="Passed" start-time="2026-07-04 05:24:13Z" end-time="2026-07-04 05:24:13Z" duration="0.000298" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1105" name="PurchaseItem_FailsForAlreadyPurchased" fullname="ShopManagerTests.PurchaseItem_FailsForAlreadyPurchased" methodname="PurchaseItem_FailsForAlreadyPurchased" classname="ShopManagerTests" runstate="Runnable" seed="1027073297" result="Passed" start-time="2026-07-04 05:24:13Z" end-time="2026-07-04 05:24:13Z" duration="0.001760" asserts="0">
+          <properties />
+          <output><![CDATA[Item already purchased
+]]></output>
+        </test-case>
+        <test-case id="1106" name="RefreshDailyShop_GeneratesNewItems" fullname="ShopManagerTests.RefreshDailyShop_GeneratesNewItems" methodname="RefreshDailyShop_GeneratesNewItems" classname="ShopManagerTests" runstate="Runnable" seed="1294771970" result="Passed" start-time="2026-07-04 05:24:13Z" end-time="2026-07-04 05:24:13Z" duration="0.000389" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1107" name="UIManagerTests" fullname="UIManagerTests" classname="UIManagerTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-07-04 05:24:13Z" end-time="2026-07-04 05:24:13Z" duration="0.067389" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1113" name="ClearPanelCache_DoesNotThrow" fullname="UIManagerTests.ClearPanelCache_DoesNotThrow" methodname="ClearPanelCache_DoesNotThrow" classname="UIManagerTests" runstate="Runnable" seed="251940433" result="Passed" start-time="2026-07-04 05:24:13Z" end-time="2026-07-04 05:24:13Z" duration="0.001416" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1110" name="CreatePromptMessageAsync_DoesNotThrow" fullname="UIManagerTests.CreatePromptMessageAsync_DoesNotThrow" methodname="CreatePromptMessageAsync_DoesNotThrow" classname="UIManagerTests" runstate="Runnable" seed="1897186336" result="Passed" start-time="2026-07-04 05:24:13Z" end-time="2026-07-04 05:24:13Z" duration="0.048530" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1111" name="GetPanel_ReturnsNull_ForInvalidType" fullname="UIManagerTests.GetPanel_ReturnsNull_ForInvalidType" methodname="GetPanel_ReturnsNull_ForInvalidType" classname="UIManagerTests" runstate="Runnable" seed="2132919312" result="Passed" start-time="2026-07-04 05:24:13Z" end-time="2026-07-04 05:24:13Z" duration="0.010631" asserts="0">
+          <properties />
+          <output><![CDATA[未找到UI面板:999
+]]></output>
+        </test-case>
+        <test-case id="1109" name="GetPanelAsync_DoesNotThrow" fullname="UIManagerTests.GetPanelAsync_DoesNotThrow" methodname="GetPanelAsync_DoesNotThrow" classname="UIManagerTests" runstate="Runnable" seed="1856697094" result="Passed" start-time="2026-07-04 05:24:13Z" end-time="2026-07-04 05:24:13Z" duration="0.000928" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1108" name="Instance_IsNotNull" fullname="UIManagerTests.Instance_IsNotNull" methodname="Instance_IsNotNull" classname="UIManagerTests" runstate="Runnable" seed="2070619895" result="Passed" start-time="2026-07-04 05:24:13Z" end-time="2026-07-04 05:24:13Z" duration="0.000259" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1112" name="ParseUIText_PopulatesPanelPathDic" fullname="UIManagerTests.ParseUIText_PopulatesPanelPathDic" methodname="ParseUIText_PopulatesPanelPathDic" classname="UIManagerTests" runstate="Runnable" seed="412762396" result="Passed" start-time="2026-07-04 05:24:13Z" end-time="2026-07-04 05:24:13Z" duration="0.000275" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1114" name="UnitHealthBarTests" fullname="UnitHealthBarTests" classname="UnitHealthBarTests" runstate="Runnable" testcasecount="4" result="Failed" site="Child" start-time="2026-07-04 05:24:13Z" end-time="2026-07-04 05:24:13Z" duration="0.029801" total="4" passed="2" failed="2" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-case id="1118" name="Cleanup_DestroysCanvas" fullname="UnitHealthBarTests.Cleanup_DestroysCanvas" methodname="Cleanup_DestroysCanvas" classname="UnitHealthBarTests" runstate="Runnable" seed="438409712" result="Failed" start-time="2026-07-04 05:24:13Z" end-time="2026-07-04 05:24:13Z" duration="0.014815" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[  Expected: null
+  But was:  < <empty>, <empty> >
+]]></message>
+            <stack-trace><![CDATA[at UnitHealthBarTests.Cleanup_DestroysCanvas () [0x00041] in D:\fs2025\unity\KingdomWar\Assets\Tests\PlayMode\UnitHealthBarTests.cs:87
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Destroy may not be called from edit mode! Use DestroyImmediate instead.
+Destroying an object in edit mode destroys it permanently.
+]]></output>
+        </test-case>
+        <test-case id="1115" name="Initialize_CreatesCanvas" fullname="UnitHealthBarTests.Initialize_CreatesCanvas" methodname="Initialize_CreatesCanvas" classname="UnitHealthBarTests" runstate="Runnable" seed="113284675" result="Passed" start-time="2026-07-04 05:24:13Z" end-time="2026-07-04 05:24:13Z" duration="0.004386" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1116" name="UpdateHealth_ChangesBarFill" fullname="UnitHealthBarTests.UpdateHealth_ChangesBarFill" methodname="UpdateHealth_ChangesBarFill" classname="UnitHealthBarTests" runstate="Runnable" seed="1946470148" result="Failed" start-time="2026-07-04 05:24:13Z" end-time="2026-07-04 05:24:13Z" duration="0.002561" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[  Expected: 0.5f +/- 0.00999999978f
+  But was:  1.0f
+]]></message>
+            <stack-trace><![CDATA[at UnitHealthBarTests.UpdateHealth_ChangesBarFill () [0x00055] in D:\fs2025\unity\KingdomWar\Assets\Tests\PlayMode\UnitHealthBarTests.cs:55
+]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1117" name="UpdateHealth_FullHealth_ShowsGreen" fullname="UnitHealthBarTests.UpdateHealth_FullHealth_ShowsGreen" methodname="UpdateHealth_FullHealth_ShowsGreen" classname="UnitHealthBarTests" runstate="Runnable" seed="1817975874" result="Passed" start-time="2026-07-04 05:24:13Z" end-time="2026-07-04 05:24:13Z" duration="0.001012" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+    </test-suite>
+    <test-suite type="Assembly" id="1122" name="Unity.Addressables.Editor.Tests.DocExampleCode.dll" fullname="D:/fs2025/unity/KingdomWar/Library/ScriptAssemblies/Unity.Addressables.Editor.Tests.DocExampleCode.dll" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-04 05:24:13Z" end-time="2026-07-04 05:24:13Z" duration="0.018806" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="47368" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+      </properties>
+      <test-suite type="TestSuite" id="1123" name="AddressableAssets" fullname="AddressableAssets" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-04 05:24:13Z" end-time="2026-07-04 05:24:13Z" duration="0.001674" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1124" name="DocExampleCode" fullname="AddressableAssets.DocExampleCode" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-04 05:24:13Z" end-time="2026-07-04 05:24:13Z" duration="0.001131" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1120" name="TestStub" fullname="AddressableAssets.DocExampleCode.TestStub" classname="AddressableAssets.DocExampleCode.TestStub" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-04 05:24:13Z" end-time="2026-07-04 05:24:13Z" duration="0.000821" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1121" name="RequiredTest" fullname="AddressableAssets.DocExampleCode.TestStub.RequiredTest" methodname="RequiredTest" classname="AddressableAssets.DocExampleCode.TestStub" runstate="Runnable" seed="523056273" result="Passed" start-time="2026-07-04 05:24:13Z" end-time="2026-07-04 05:24:13Z" duration="0.000203" asserts="0">
+              <properties />
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

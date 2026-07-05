@@ -1,0 +1,205 @@
+# 完善1v1战斗系统实现计划
+
+## 1. 核心系统设计
+
+### 1.1 战斗管理器 (BattleManager)
+
+* **功能**：管理整个战斗流程，包括游戏状态、玩家数据和战斗逻辑
+
+* **游戏状态**：等待开始、战斗中、战斗结束
+
+* **玩家管理**：支持1v1对战模式，管理双方玩家的状态
+
+* **帧同步接口**：预留事件序列化和状态同步接口
+
+### 1.2 单位系统 (UnitSystem)
+
+* **单位AI**：实现基本的寻路、攻击和移动逻辑
+
+* **目标系统**：优先攻击逻辑（塔 > 单位 > 建筑）
+
+* **战斗属性**：生命值、攻击力、攻击速度、移动速度
+
+* **状态管理**：idle、移动、攻击、受伤、死亡状态
+
+### 1.3 建筑系统 (BuildingSystem)
+
+* **建筑类型**：防御塔、兵营、资源建筑
+
+* **建筑逻辑**：自动攻击、资源生成、生命周期管理
+
+* **放置验证**：确保建筑放置在有效位置
+
+### 1.4 法术系统 (SpellSystem)
+
+* **法术效果**：范围伤害、控制效果、治疗效果
+
+* **目标选择**：自动选择范围内的目标
+
+* **特效管理**：法术释放动画和效果
+
+### 1.5 圣水系统 (ElixirSystem)
+
+* **圣水恢复**：双方玩家独立的圣水恢复系统
+
+* **圣水上限**：最大10点圣水，自动恢复
+
+## 2. 帧同步接口设计
+
+### 2.1 事件系统
+
+* **游戏事件**：卡片使用、单位移动、攻击、建筑放置
+
+* **事件序列化**：将游戏事件转换为可传输的格式
+
+* **事件队列**：管理待处理的游戏事件
+
+### 2.2 状态同步
+
+* **状态快照**：定期生成游戏状态快照
+
+* **状态差异**：计算状态差异以减少传输数据
+
+* **状态验证**：确保客户端和服务器状态一致
+
+### 2.3 预测与修正
+
+* **客户端预测**：本地预测游戏事件的结果
+
+* **服务器修正**：当预测与服务器状态不符时进行修正
+
+* **平滑过渡**：确保状态修正不会导致游戏体验突兀
+
+## 3. 技术实现
+
+### 3.1 核心类设计
+
+* **BattleManager.cs**：战斗主管理器
+
+* **Unit.cs**：单位基类，处理单位逻辑
+
+* **Building.cs**：建筑基类，处理建筑逻辑
+
+* **Spell.cs**：法术基类，处理法术逻辑
+
+* **ElixirManager.cs**：圣水管理器
+
+* **FrameSyncManager.cs**：帧同步管理器
+
+### 3.2 网络接口
+
+* **IEventSerializer**：事件序列化接口
+
+* **IStateSynchronizer**：状态同步接口
+
+* **IActionProcessor**：动作处理接口
+
+### 3.3 战斗UI
+
+* **BattleHUD.cs**：战斗界面主管理器
+
+* **PlayerStatusUI.cs**：玩家状态显示
+
+* **TowerHealthUI.cs**：防御塔生命值显示
+
+* **ElixirUI.cs**：圣水显示
+
+* **MatchTimerUI.cs**：比赛计时器
+
+## 4. 实现步骤
+
+### 4.1 基础系统搭建
+
+1. 创建BattleManager和核心系统类
+2. 实现单位和建筑的基本逻辑
+3. 完善法术和圣水系统
+
+### 4.2 战斗逻辑实现
+
+1. 实现单位AI和战斗逻辑
+2. 完善建筑功能和交互
+3. 实现法术效果和动画
+
+### 4.3 1v1对战支持
+
+1. 实现双方玩家的独立状态管理
+2. 完善圣水系统和卡片使用
+3. 实现胜利条件（摧毁对方主塔）
+
+### 4.4 帧同步接口
+
+1. 设计并实现事件系统
+2. 实现状态同步机制
+3. 添加预测和修正逻辑
+
+### 4.5 UI和用户体验
+
+1. 实现战斗界面UI
+2. 添加动画和特效
+3. 优化用户交互体验
+
+## 5. 预留接口
+
+### 5.1 帧同步接口
+
+```csharp
+public interface IFrameSyncManager {
+    void RegisterEvent(GameEvent gameEvent);
+    void ProcessEvents(int frame);
+    byte[] GetStateSnapshot();
+    void ApplyStateSnapshot(byte[] snapshot);
+    void CorrectState(Dictionary<string, object> corrections);
+}
+```
+
+### 5.2 游戏事件接口
+
+```csharp
+public interface IGameEvent {
+    int EventId { get; }
+    int PlayerId { get; }
+    int Frame { get; }
+    byte[] Serialize();
+    void Deserialize(byte[] data);
+    void Execute();
+}
+```
+
+### 5.3 战斗状态接口
+
+```csharp
+public interface IBattleState {
+    BattleStatus Status { get; }
+    List<PlayerState> Players { get; }
+    List<UnitState> Units { get; }
+    List<BuildingState> Buildings { get; }
+    int CurrentFrame { get; }
+    byte[] Serialize();
+    void Deserialize(byte[] data);
+}
+```
+
+## 6. 技术要点
+
+* **状态管理**：使用不可变状态设计，便于状态同步
+
+* **事件驱动**：所有游戏动作通过事件系统处理
+
+* **帧率控制**：固定帧率处理，确保跨平台一致性
+
+* **网络优化**：最小化传输数据，使用增量更新
+
+* **错误处理**：健壮的错误处理，确保同步错误不会导致游戏崩溃
+
+## 7. 测试计划
+
+* **单元测试**：测试核心系统的基本功能
+
+* **集成测试**：测试系统间的交互
+
+* **同步测试**：测试帧同步的准确性和可靠性
+
+* **性能测试**：测试系统在高负载下的性能
+
+* **网络测试**：测试不同网络条件下的同步效果
+

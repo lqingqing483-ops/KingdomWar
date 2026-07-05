@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dd3217988f3a334db486d0dec9592aa, type: 3}
+  m_Name: "\u7BAD\u96E8"
+  m_EditorClassIdentifier: 
+  cardName: "\u7BAD\u96E8"
+  cardType: 1
+  elixirCost: 3
+  rarity: 1
+  cardIcon: {fileID: 21300000, guid: 17abf4a63e0c1e54881b6a0f13e8e0af, type: 3}
+  cardPrefab: {fileID: 0}
+  damage: 400
+  radius: 4
+  duration: 0.5
+  deployTime: 0
+  draggedPrefab: {fileID: 0}

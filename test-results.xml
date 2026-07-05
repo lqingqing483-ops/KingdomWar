@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="20" result="Failed(Child)" total="20" passed="18" failed="2" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.0492112">
+  <test-suite type="TestSuite" id="1034" name="KingdomWar" fullname="KingdomWar" runstate="Runnable" testcasecount="20" result="Failed" site="Child" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.049211" total="20" passed="18" failed="2" inconclusive="0" skipped="0" asserts="0">
+    <properties />
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1057" name="EditMode.dll" fullname="D:/fs2025/unity/KingdomWar/Library/ScriptAssemblies/EditMode.dll" runstate="Runnable" testcasecount="19" result="Failed" site="Child" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.036813" total="19" passed="17" failed="2" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="50092" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestFixture" id="1035" name="BattleManagerTests" fullname="BattleManagerTests" classname="BattleManagerTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.016957" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1036" name="BattleStatus_Enum_Exists" fullname="BattleManagerTests.BattleStatus_Enum_Exists" methodname="BattleStatus_Enum_Exists" classname="BattleManagerTests" runstate="Runnable" seed="1540805212" result="Passed" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.006339" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1038" name="BattleStatus_HasFighting" fullname="BattleManagerTests.BattleStatus_HasFighting" methodname="BattleStatus_HasFighting" classname="BattleManagerTests" runstate="Runnable" seed="1531262923" result="Passed" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.000264" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1037" name="BattleStatus_HasWaiting" fullname="BattleManagerTests.BattleStatus_HasWaiting" methodname="BattleStatus_HasWaiting" classname="BattleManagerTests" runstate="Runnable" seed="227866985" result="Passed" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.000137" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1039" name="UnitState_Enum_Exists" fullname="BattleManagerTests.UnitState_Enum_Exists" methodname="UnitState_Enum_Exists" classname="BattleManagerTests" runstate="Runnable" seed="1796200852" result="Passed" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.000103" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1041" name="UnitState_HasDead" fullname="BattleManagerTests.UnitState_HasDead" methodname="UnitState_HasDead" classname="BattleManagerTests" runstate="Runnable" seed="874835231" result="Passed" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.000116" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1040" name="UnitState_HasIdle" fullname="BattleManagerTests.UnitState_HasIdle" methodname="UnitState_HasIdle" classname="BattleManagerTests" runstate="Runnable" seed="1464446221" result="Passed" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.000092" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1051" name="CardUpgradeExtensionsTests" fullname="CardUpgradeExtensionsTests" classname="CardUpgradeExtensionsTests" runstate="Runnable" testcasecount="5" result="Failed" site="Child" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.012177" total="5" passed="4" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-case id="1054" name="BuildingHealthAtLevel1_EqualsBaseHealth" fullname="CardUpgradeExtensionsTests.BuildingHealthAtLevel1_EqualsBaseHealth" methodname="BuildingHealthAtLevel1_EqualsBaseHealth" classname="CardUpgradeExtensionsTests" runstate="Runnable" seed="7490225" result="Passed" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.004053" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1055" name="SpellDamageAtLevel1_EqualsBaseDamage" fullname="CardUpgradeExtensionsTests.SpellDamageAtLevel1_EqualsBaseDamage" methodname="SpellDamageAtLevel1_EqualsBaseDamage" classname="CardUpgradeExtensionsTests" runstate="Runnable" seed="1122554304" result="Passed" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.000227" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1056" name="SpellDamageAtLevel9_MoreThanDouble" fullname="CardUpgradeExtensionsTests.SpellDamageAtLevel9_MoreThanDouble" methodname="SpellDamageAtLevel9_MoreThanDouble" classname="CardUpgradeExtensionsTests" runstate="Runnable" seed="956716367" result="Passed" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.002251" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1052" name="UnitHealthAtLevel1_EqualsBaseHealth" fullname="CardUpgradeExtensionsTests.UnitHealthAtLevel1_EqualsBaseHealth" methodname="UnitHealthAtLevel1_EqualsBaseHealth" classname="CardUpgradeExtensionsTests" runstate="Runnable" seed="1088358540" result="Passed" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.000308" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1053" name="UnitHealthAtLevel13_About3xBase" fullname="CardUpgradeExtensionsTests.UnitHealthAtLevel13_About3xBase" methodname="UnitHealthAtLevel13_About3xBase" classname="CardUpgradeExtensionsTests" runstate="Runnable" seed="621862792" result="Failed" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.004013" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[  Expected: 627
+  But was:  628
+]]></message>
+            <stack-trace><![CDATA[at CardUpgradeExtensionsTests.UnitHealthAtLevel13_About3xBase () [0x00037] in D:\fs2025\unity\KingdomWar\Assets\Tests\EditMode\CardUpgradeTests.cs:92
+]]></stack-trace>
+          </failure>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1042" name="CardUpgradeTableTests" fullname="CardUpgradeTableTests" classname="CardUpgradeTableTests" runstate="Runnable" testcasecount="8" result="Failed" site="Child" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.006393" total="8" passed="7" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-case id="1050" name="GetFragmentsRequired_ReturnsCorrectValues" fullname="CardUpgradeTableTests.GetFragmentsRequired_ReturnsCorrectValues" methodname="GetFragmentsRequired_ReturnsCorrectValues" classname="CardUpgradeTableTests" runstate="Runnable" seed="57151246" result="Passed" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.000452" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1047" name="GetLevel_ReturnsNull_ForInvalidLevel" fullname="CardUpgradeTableTests.GetLevel_ReturnsNull_ForInvalidLevel" methodname="GetLevel_ReturnsNull_ForInvalidLevel" classname="CardUpgradeTableTests" runstate="Runnable" seed="1079260667" result="Failed" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.002544" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[Unhandled log message: '[Error] Invalid card level: 0. Must be between 1 and 13.'. Use UnityEngine.TestTools.LogAssert.Expect]]></message>
+            <stack-trace><![CDATA[KingdomWar.Game.Cards.CardUpgradeTable:GetLevel (int) (at Assets/Scripts/Game/Cards/CardUpgradeData.cs:40)
+CardUpgradeTableTests:GetLevel_ReturnsNull_ForInvalidLevel () (at Assets/Tests/EditMode/CardUpgradeTests.cs:40)
+System.Reflection.MethodBase:Invoke (object,object[])
+NUnit.Framework.Internal.Reflect:InvokeMethod (System.Reflection.MethodInfo,object,object[])
+NUnit.Framework.Internal.MethodWrapper:Invoke (object,object[])
+NUnit.Framework.Internal.Commands.TestMethodCommand:RunNonAsyncTestMethod (NUnit.Framework.Internal.ITestExecutionContext)
+NUnit.Framework.Internal.Commands.TestMethodCommand:RunTestMethod (NUnit.Framework.Internal.ITestExecutionContext)
+NUnit.Framework.Internal.Commands.TestMethodCommand:Execute (NUnit.Framework.Internal.ITestExecutionContext)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Invalid card level: 0. Must be between 1 and 13.
+Invalid card level: 14. Must be between 1 and 13.
+]]></output>
+        </test-case>
+        <test-case id="1049" name="GetStatMultiplier_IncreasesWithLevel" fullname="CardUpgradeTableTests.GetStatMultiplier_IncreasesWithLevel" methodname="GetStatMultiplier_IncreasesWithLevel" classname="CardUpgradeTableTests" runstate="Runnable" seed="762149452" result="Passed" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.000912" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1048" name="GetUpgradeCost_IncreasesWithLevel" fullname="CardUpgradeTableTests.GetUpgradeCost_IncreasesWithLevel" methodname="GetUpgradeCost_IncreasesWithLevel" classname="CardUpgradeTableTests" runstate="Runnable" seed="1893814144" result="Passed" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.000251" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1044" name="Level1_HasZeroCost" fullname="CardUpgradeTableTests.Level1_HasZeroCost" methodname="Level1_HasZeroCost" classname="CardUpgradeTableTests" runstate="Runnable" seed="1989587634" result="Passed" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.000598" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1046" name="Level13_HasHighestMultiplier" fullname="CardUpgradeTableTests.Level13_HasHighestMultiplier" methodname="Level13_HasHighestMultiplier" classname="CardUpgradeTableTests" runstate="Runnable" seed="528876721" result="Passed" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.000173" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1045" name="Level2_HasCorrectMultiplier" fullname="CardUpgradeTableTests.Level2_HasCorrectMultiplier" methodname="Level2_HasCorrectMultiplier" classname="CardUpgradeTableTests" runstate="Runnable" seed="444259383" result="Passed" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.000214" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1043" name="Table_Has13Levels" fullname="CardUpgradeTableTests.Table_Has13Levels" methodname="Table_Has13Levels" classname="CardUpgradeTableTests" runstate="Runnable" seed="781941901" result="Passed" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.000122" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+    </test-suite>
+    <test-suite type="Assembly" id="1062" name="Unity.Addressables.Editor.Tests.DocExampleCode.dll" fullname="D:/fs2025/unity/KingdomWar/Library/ScriptAssemblies/Unity.Addressables.Editor.Tests.DocExampleCode.dll" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.001016" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="50092" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+      </properties>
+      <test-suite type="TestSuite" id="1063" name="AddressableAssets" fullname="AddressableAssets" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.000717" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1064" name="DocExampleCode" fullname="AddressableAssets.DocExampleCode" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.000613" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1060" name="TestStub" fullname="AddressableAssets.DocExampleCode.TestStub" classname="AddressableAssets.DocExampleCode.TestStub" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.000522" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1061" name="RequiredTest" fullname="AddressableAssets.DocExampleCode.TestStub.RequiredTest" methodname="RequiredTest" classname="AddressableAssets.DocExampleCode.TestStub" runstate="Runnable" seed="1624163163" result="Passed" start-time="2026-07-04 07:58:47Z" end-time="2026-07-04 07:58:47Z" duration="0.000100" asserts="0">
+              <properties />
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

@@ -1,0 +1,53 @@
+{
+    "panelInfoList": [
+        {
+            "panelName": "settingPanel",
+            "panelPath": "Prefabs/UIPrefab/settingPanel"
+        },
+        {
+            "panelName": "bagPanel",
+            "panelPath": "Prefabs/UIPrefab/bagPanel"
+        },
+        {
+            "panelName": "mainPanel",
+            "panelPath": "Prefabs/UIPrefab/mainPanel"
+        },
+        {
+            "panelName": "taskPanel",
+            "panelPath": "Prefabs/UIPrefab/taskPanel"
+        },
+        {
+            "panelName": "shopPanel",
+            "panelPath": "Prefabs/UIPrefab/shopPanel"
+        },
+        {
+            "panelName": "GetGoodsPanel",
+            "panelPath": "Prefabs/UIPrefab/GetGoodsPanel"
+        },
+        {
+            "panelName": "deckPanel",
+            "panelPath": "Prefabs/UIPrefab/deckPanel"
+        },
+        {
+            "panelName": "battlePanel",
+            "panelPath": "Prefabs/UIPrefab/battlePanel"
+        },
+        {
+            "panelName": "settlementPanel",
+            "panelPath": "Prefabs/UIPrefab/settlementPanel"
+            
+        },
+        {
+            "panelName": "searchPanel",
+            "panelPath": "Prefabs/UIPrefab/searchPanel"
+        },
+        {
+            "panelName": "loadPanel",
+            "panelPath": "Prefabs/UIPrefab/loadPanel"
+        },
+        {
+            "panelName": "lotteryPanel",
+            "panelPath": "Prefabs/UIPrefab/lotteryPanel"
+        }
+    ]
+}

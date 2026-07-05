@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: UI_MainMenu
+  m_EditorClassIdentifier: 
+  m_GroupName: UI_MainMenu
+  m_Data:
+    m_SerializedData: []
+  m_GUID: d4a02cee4f170fd4b8fff96956ef13b9
+  m_SerializeEntries:
+  - m_GUID: 135a63dc9d45e1b48b4bf1583c26d482
+    m_Address: Prefabs/UIPrefab/lotteryPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 520eb29024b899343ab16942b600ca8d
+    m_Address: Prefabs/UIPrefab/Tip
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 557a60264bf4a3946a4cc179d9447ca4
+    m_Address: Config/UIPanelType
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 60788fc56ebaff34f8681b4068c04dd5
+    m_Address: Prefabs/UIPrefab/promptMessage
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6165aa5484d56f447bacdaee950861f9
+    m_Address: Prefabs/UIPrefab/battlePanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7dc1de76cb0432644a6718fe949eeea2
+    m_Address: Prefabs/UIPrefab/Canvas
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 84630c4e4fc7bca48af3558e118846d0
+    m_Address: Prefabs/UIPrefab/settlementPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 96073a15c5ae90e458899b4b69f26519
+    m_Address: Prefabs/UIPrefab/searchPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af43e8ce944d3f54ab966d6fc7f034da
+    m_Address: Prefabs/UIPrefab/mainPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: be653273e9481b442aa2f01650505a87
+    m_Address: Prefabs/UIPrefab/settingPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c1e3ddf20be295e4cb3a38f57f18680a
+    m_Address: Assets/Epic Toon FX/Demo/Textures/2D Sprites/devsprite.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d14030f88d850594d9742babe8fa915f
+    m_Address: Prefabs/UIPrefab/loadPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f6860cffafd0c4f4d9eb241f86306935
+    m_Address: Prefabs/UIPrefab/deckPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f6f42ae7f5dc47145aae80f20e28952f
+    m_Address: Prefabs/UIPrefab/shopPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 3dd0ee342cca6b74baadf96d3610a17e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 260bfae8f17dbf44b8abe0db5cba404a, type: 2}
+    - {fileID: 11400000, guid: 9a6e84c9c55b3ac4688052ead8e407a0, type: 2}

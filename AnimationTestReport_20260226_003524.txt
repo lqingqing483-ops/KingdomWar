@@ -1,0 +1,63 @@
+===== 动画测试报告 =====
+测试时间: 2026/2/26 0:35:24
+测试单位: TestUnit
+批量测试次数: 1
+
+测试结果: 16/23 通过
+
+=== 动画播放测试 ===
+✓ 通过: Idle
+  详情: 成功播放动画: Idle
+✓ 通过: Walk
+  详情: 成功播放动画: Walk
+✓ 通过: Attack
+  详情: 成功播放动画: Attack
+✓ 通过: GetHit
+  详情: 成功播放动画: GetHit
+✓ 通过: Death
+  详情: 成功播放动画: Death
+
+=== 动画切换测试 ===
+✓ 通过: Idle -> Walk
+  详情: 成功从 Idle 切换到 Walk
+✗ 失败: Walk -> Attack
+  详情: 失败: 无法从 Walk 切换到 Attack
+✗ 失败: Attack -> GetHit
+  详情: 失败: 无法从 Attack 切换到 GetHit
+✗ 失败: GetHit -> Death
+  详情: 失败: 无法从 GetHit 切换到 Death
+✓ 通过: Death -> Idle
+  详情: 成功从 Death 切换到 Idle
+
+=== 动画切换测试(快速) ===
+✓ 通过: Idle -> Walk
+  详情: 成功快速从 Idle 切换到 Walk
+✗ 失败: Idle -> Death
+  详情: 失败: 无法快速切换
+✗ 失败: Death -> Death
+  详情: 失败: 无法快速切换
+✓ 通过: Idle -> Attack
+  详情: 成功快速从 Idle 切换到 Attack
+✗ 失败: Death -> GetHit
+  详情: 失败: 无法快速切换
+
+=== 参数控制测试 ===
+✓ 通过: IsMoving (正常)
+  详情: 成功设置参数 IsMoving 为 0
+✓ 通过: MoveSpeed (正常)
+  详情: 成功设置参数 MoveSpeed 为 1
+✓ 通过: MoveSpeed (最大值)
+  详情: 成功设置参数 MoveSpeed 为 100
+✓ 通过: MoveSpeed (最小值)
+  详情: 成功设置参数 MoveSpeed 为 -100
+✓ 通过: Attack (正常)
+  详情: 成功设置参数 Attack 为 0
+✓ 通过: GetHit (正常)
+  详情: 成功设置参数 GetHit 为 0
+✓ 通过: IsDead (正常)
+  详情: 成功设置参数 IsDead 为 0
+
+=== 动画事件测试 ===
+✗ 失败: Attack
+  详情: 失败: 动画事件未触发
+

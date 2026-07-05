@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="7" result="Passed" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-07-04 06:33:05Z" end-time="2026-07-04 06:33:05Z" duration="0.0337963">
+  <test-suite type="TestSuite" id="1019" name="KingdomWar" fullname="KingdomWar" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-07-04 06:33:05Z" end-time="2026-07-04 06:33:05Z" duration="0.033796" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties />
+    <test-suite type="Assembly" id="1027" name="EditMode.dll" fullname="D:/fs2025/unity/KingdomWar/Library/ScriptAssemblies/EditMode.dll" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-07-04 06:33:05Z" end-time="2026-07-04 06:33:05Z" duration="0.018724" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="40128" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+      </properties>
+      <test-suite type="TestFixture" id="1020" name="BattleManagerTests" fullname="BattleManagerTests" classname="BattleManagerTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-07-04 06:33:05Z" end-time="2026-07-04 06:33:05Z" duration="0.017403" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1021" name="BattleStatus_Enum_Exists" fullname="BattleManagerTests.BattleStatus_Enum_Exists" methodname="BattleStatus_Enum_Exists" classname="BattleManagerTests" runstate="Runnable" seed="1536432209" result="Passed" start-time="2026-07-04 06:33:05Z" end-time="2026-07-04 06:33:05Z" duration="0.006041" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1023" name="BattleStatus_HasFighting" fullname="BattleManagerTests.BattleStatus_HasFighting" methodname="BattleStatus_HasFighting" classname="BattleManagerTests" runstate="Runnable" seed="1209614145" result="Passed" start-time="2026-07-04 06:33:05Z" end-time="2026-07-04 06:33:05Z" duration="0.000212" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1022" name="BattleStatus_HasWaiting" fullname="BattleManagerTests.BattleStatus_HasWaiting" methodname="BattleStatus_HasWaiting" classname="BattleManagerTests" runstate="Runnable" seed="1473784597" result="Passed" start-time="2026-07-04 06:33:05Z" end-time="2026-07-04 06:33:05Z" duration="0.000129" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1024" name="UnitState_Enum_Exists" fullname="BattleManagerTests.UnitState_Enum_Exists" methodname="UnitState_Enum_Exists" classname="BattleManagerTests" runstate="Runnable" seed="923356449" result="Passed" start-time="2026-07-04 06:33:05Z" end-time="2026-07-04 06:33:05Z" duration="0.000106" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1026" name="UnitState_HasDead" fullname="BattleManagerTests.UnitState_HasDead" methodname="UnitState_HasDead" classname="BattleManagerTests" runstate="Runnable" seed="113696245" result="Passed" start-time="2026-07-04 06:33:05Z" end-time="2026-07-04 06:33:05Z" duration="0.000121" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1025" name="UnitState_HasIdle" fullname="BattleManagerTests.UnitState_HasIdle" methodname="UnitState_HasIdle" classname="BattleManagerTests" runstate="Runnable" seed="1093566102" result="Passed" start-time="2026-07-04 06:33:05Z" end-time="2026-07-04 06:33:05Z" duration="0.000094" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+    </test-suite>
+    <test-suite type="Assembly" id="1032" name="Unity.Addressables.Editor.Tests.DocExampleCode.dll" fullname="D:/fs2025/unity/KingdomWar/Library/ScriptAssemblies/Unity.Addressables.Editor.Tests.DocExampleCode.dll" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-04 06:33:05Z" end-time="2026-07-04 06:33:05Z" duration="0.001681" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="40128" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+      </properties>
+      <test-suite type="TestSuite" id="1033" name="AddressableAssets" fullname="AddressableAssets" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-04 06:33:05Z" end-time="2026-07-04 06:33:05Z" duration="0.001019" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1034" name="DocExampleCode" fullname="AddressableAssets.DocExampleCode" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-04 06:33:05Z" end-time="2026-07-04 06:33:05Z" duration="0.000851" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1030" name="TestStub" fullname="AddressableAssets.DocExampleCode.TestStub" classname="AddressableAssets.DocExampleCode.TestStub" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-04 06:33:05Z" end-time="2026-07-04 06:33:05Z" duration="0.000742" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1031" name="RequiredTest" fullname="AddressableAssets.DocExampleCode.TestStub.RequiredTest" methodname="RequiredTest" classname="AddressableAssets.DocExampleCode.TestStub" runstate="Runnable" seed="1178494177" result="Passed" start-time="2026-07-04 06:33:05Z" end-time="2026-07-04 06:33:05Z" duration="0.000314" asserts="0">
+              <properties />
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

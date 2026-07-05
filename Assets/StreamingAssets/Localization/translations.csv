@@ -1,0 +1,13 @@
+# KingdomWar Localization Table
+# Format: key,zh_text,en_text
+main_title,王国战争,KingdomWar
+battle_btn,战斗,Battle
+shop_btn,商店,Shop
+deck_btn,卡组,Deck
+profile_btn,资料,Profile
+trophies,奖杯,Trophies
+arena,竞技场,Arena
+wins,胜场,Wins
+losses,负场,Losses
+win_rate,胜率,Win Rate
+searching,正在匹配对手,Searching for opponent
