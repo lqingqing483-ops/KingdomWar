@@ -5,6 +5,11 @@
 $ProjectPath = (Get-Item $PSScriptRoot).Parent.FullName
 $anyFailed = $false
 
+# Normalize mode parameter
+if ($Mode -eq "EditMode" -or $Mode -eq "edit") { $Mode = "edit" }
+elseif ($Mode -eq "PlayMode" -or $Mode -eq "play") { $Mode = "play" }
+else { $Mode = "all" }
+
 function Run-Mode($mode, $label) {
     $rf = "test-results-$mode.xml"
     $lf = "unity-log-$mode.txt"
@@ -21,7 +26,7 @@ function Run-Mode($mode, $label) {
         $p.Kill()
         Start-Sleep -Seconds 2
     }
-    if ($p.ExitCode -ne 0) {
+    if ($p.ExitCode -and $p.ExitCode -ne 0) {
         Write-Host ("Unity exited with code: " + $p.ExitCode) -ForegroundColor Red
         $script:anyFailed = $true
     }
