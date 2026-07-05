@@ -9,7 +9,18 @@ function Run-Mode($mode, $label) {
     $rf = "test-results-$mode.xml"
     $lf = "unity-log-$mode.txt"
     Write-Host ("=== " + $label + " ===") -ForegroundColor Cyan
-    $p = Start-Process -FilePath $UnityPath -ArgumentList "-batchmode -nographics -projectPath `"$ProjectPath`" -runTests -testPlatform $mode -testResults `"$ProjectPath\$rf`" -logFile `"$ProjectPath\$lf`"" -NoNewWindow -Wait -PassThru
+    $p = Start-Process -FilePath $UnityPath -ArgumentList "-batchmode -nographics -projectPath `"$ProjectPath`" -runTests -testPlatform $mode -testResults `"$ProjectPath\$rf`" -logFile `"$ProjectPath\$lf`"" -NoNewWindow -PassThru
+    $timeout = 300
+    $elapsed = 0
+    while ($elapsed -lt $timeout -and -not $p.HasExited) {
+        Start-Sleep -Seconds 1
+        $elapsed++
+    }
+    if (-not $p.HasExited) {
+        Write-Host ("Unity timed out after ${timeout}s, killing...") -ForegroundColor Yellow
+        $p.Kill()
+        Start-Sleep -Seconds 2
+    }
     if ($p.ExitCode -ne 0) {
         Write-Host ("Unity exited with code: " + $p.ExitCode) -ForegroundColor Red
         $script:anyFailed = $true
