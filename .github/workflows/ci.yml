@@ -1,53 +1,100 @@
-name: CI
+# KingdomWar CI/CD — GitHub Actions + game-ci
+#
+# SETUP:
+# 1. Activate Unity locally, export license as UnityLicense.ulf
+# 2. Add UNITY_LICENSE secret to GitHub repo Settings → Secrets
+#
+# License activation:
+#   https://github.com/nicedoc/unity-activator
+
+name: KingdomWar CI
 
 on:
   push:
-    branches: [main, develop]
+    branches: [ master ]
+    tags: [ 'v*' ]
   pull_request:
-    branches: [main]
+    branches: [ master ]
 
 jobs:
-  csharp-unity:
-    name: C# Unity Compile
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Unity Compile Check
-        shell: pwsh
-        run: .\scripts\compile-check.ps1
-        continue-on-error: true  # Unity not always available in CI
-
-  lua-check:
-    name: Lua Lint
+  # ── Stage 1: Compile + EditMode Tests (200 tests) ──
+  test-editmode:
+    name: "EditMode Tests"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install LuaCheck
-        run: sudo apt-get update && sudo apt-get install -y luacheck || true
-      - name: Run Lua Check
-        shell: pwsh
-        run: .\scripts\lint-lua.ps1
 
-  rust-build:
-    name: Rust Build & Test
+      - uses: game-ci/unity-test-runner@v4
+        with:
+          unityVersion: 2022.3.57f1
+          testMode: EditMode
+          artifactsPath: test-results/editmode
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results-editmode
+          path: test-results/editmode
+
+  # ── Stage 2: PlayMode Tests (60 tests) ──
+  test-playmode:
+    name: "PlayMode Tests"
     runs-on: ubuntu-latest
+    needs: test-editmode
     steps:
       - uses: actions/checkout@v4
-      - name: Install Rust
-        uses: dtolnay/rust-toolchain@stable
-      - name: Rust Build
-        shell: pwsh
-        run: .\scripts\build-rust.ps1
-      - name: Rust Tests
-        shell: pwsh
-        run: .\scripts\test-rust.ps1
 
-  full-ci:
-    name: Full CI (all tests)
-    runs-on: windows-latest
-    needs: [csharp-unity, lua-check, rust-build]
+      - uses: game-ci/unity-test-runner@v4
+        with:
+          unityVersion: 2022.3.57f1
+          testMode: PlayMode
+          artifactsPath: test-results/playmode
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results-playmode
+          path: test-results/playmode
+
+  # ── Stage 3: Windows Build ──
+  build-windows:
+    name: "Build Windows"
+    runs-on: ubuntu-latest
+    needs: test-playmode
     steps:
       - uses: actions/checkout@v4
-      - name: Run All Tests
-        shell: pwsh
-        run: .\scripts\ci.ps1
+
+      - uses: game-ci/unity-builder@v4
+        with:
+          unityVersion: 2022.3.57f1
+          targetPlatform: StandaloneWindows64
+          buildsPath: build
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: KingdomWar-Windows
+          path: build/StandaloneWindows64
+
+  # ── Stage 4: Android Build (only on tags) ──
+  build-android:
+    name: "Build Android"
+    runs-on: ubuntu-latest
+    needs: test-playmode
+    if: startsWith(github.ref, 'refs/tags/v')
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: game-ci/unity-builder@v4
+        with:
+          unityVersion: 2022.3.57f1
+          targetPlatform: Android
+          buildsPath: build
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: KingdomWar-Android
+          path: build/Android
