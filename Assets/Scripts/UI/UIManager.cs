@@ -67,6 +67,7 @@ public class UIManager
 
     private void LoadCanvasSync()
     {
+        // Try Addressables first (silent fail — Resources fallback handles it)
         var loadOperation = Addressables.LoadAssetAsync<GameObject>("Prefabs/UIPrefab/Canvas");
         if (loadOperation.IsDone && loadOperation.Status == AsyncOperationStatus.Succeeded && loadOperation.Result != null)
         {
@@ -128,6 +129,7 @@ public class UIManager
 
     private TextAsset LoadConfigSync()
     {
+        // Try Addressables first (silent fail — Resources fallback handles it)
         var loadOperation = Addressables.LoadAssetAsync<TextAsset>("Config/UIPanelType");
         if (loadOperation.IsDone && loadOperation.Status == AsyncOperationStatus.Succeeded && loadOperation.Result != null)
         {
@@ -562,7 +564,8 @@ public class UIManager
             }
             else
             {
-                Debug.LogWarning($"Addressables加载失败，尝试Resources加载: {panelPath}");
+                // Addressables failed — try Resources fallback silently
+                // (only log error if BOTH fail)
                 try
                 {
                     GameObject instanPanel = GameObject.Instantiate(Resources.Load<GameObject>(panelPath));
