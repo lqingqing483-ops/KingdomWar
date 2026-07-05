@@ -158,5 +158,54 @@ namespace KingdomWar.Tests.EditMode
             int change = testManager.CalculateTrophyChange(false, false, 1000, 500);
             Assert.That(change, Is.GreaterThanOrEqualTo(-40));
         }
+
+        // ==================== TrophyManager Edge Case Tests ====================
+
+        [Test]
+        public void TrophyManager_CalculateTrophyChange_ZeroTrophies_WinGainsBase()
+        {
+            // Edge case: both players at 0 trophies
+            int change = testManager.CalculateTrophyChange(true, false, 0, 0);
+            Assert.That(change, Is.EqualTo(30));
+        }
+
+        [Test]
+        public void TrophyManager_CalculateTrophyChange_ZeroTrophies_LossLosesBase()
+        {
+            // Edge case: both players at 0 trophies, loss
+            int change = testManager.CalculateTrophyChange(false, false, 0, 0);
+            Assert.That(change, Is.EqualTo(-30));
+        }
+
+        [Test]
+        public void TrophyManager_CalculateTrophyChange_HugePositiveDiff_BonusCappedAt10()
+        {
+            // Opponent has 10x more trophies — bonus should still be capped
+            int change = testManager.CalculateTrophyChange(true, false, 1000, 20000);
+            int baseWin = 30;
+            Assert.That(change - baseWin, Is.EqualTo(10)); // max bonus
+        }
+
+        [Test]
+        public void TrophyManager_CalculateTrophyChange_HugeNegativeDiff_LossMaxPenalty()
+        {
+            // Opponent has far fewer trophies — max penalty applies
+            // Loss vs much lower: TROPHY_LOSE_BASE(-30) + penalty capped at -40
+            int change = testManager.CalculateTrophyChange(false, false, 1000, 100);
+            Assert.That(change, Is.GreaterThanOrEqualTo(-40));
+            Assert.That(change, Is.LessThanOrEqualTo(-30));
+        }
+
+        [Test]
+        public void TrophyManager_CalculateTrophyChange_Draw_AlwaysZero()
+        {
+            // Draw should be 0 regardless of trophy difference
+            int equalDraw = testManager.CalculateTrophyChange(false, true, 1000, 1000);
+            int higherDraw = testManager.CalculateTrophyChange(false, true, 1000, 3000);
+            int lowerDraw = testManager.CalculateTrophyChange(false, true, 3000, 1000);
+            Assert.That(equalDraw, Is.EqualTo(0));
+            Assert.That(higherDraw, Is.EqualTo(0));
+            Assert.That(lowerDraw, Is.EqualTo(0));
+        }
     }
 }
