@@ -3,12 +3,20 @@
     Local CI runner — runs all checks on this machine using installed Unity + tools.
     Use this when GitHub Actions can't run Unity tests (no license / no runner).
 
-    Usage: .\scripts\run-local-ci.ps1
-    Exit: 0 = all passed, 1 = any failure
+    Usage: .\scripts\run-local-ci.ps1 [-Mode edit]
+    
+    Parameters:
+      -Mode edit  : EditMode tests only (fast, 146 tests)
+      -Mode all   : EditMode + PlayMode (slower, 211 tests, PlayMode may have pre-existing failures)
+      (default)   : EditMode only
 
-    This runs the same checks the GitHub workflow would run,
-    but locally instead of in Docker.
+    Exit: 0 = all passed, 1 = any failure
 #>
+
+param(
+    [ValidateSet("edit", "all")]
+    [string]$Mode = "edit"
+)
 
 $ProjectPath = (Get-Item $PSScriptRoot).Parent.FullName
 $startTime = Get-Date
@@ -21,7 +29,7 @@ Write-Host "Started: $($startTime.ToString('yyyy-MM-dd HH:mm:ss'))"
 Write-Host ""
 
 function Run-Step {
-    param($Name, $ScriptPath)
+    param($Name, $ScriptPath, $ScriptArgs)
     
     Write-Host "--- $Name ---" -ForegroundColor Yellow
     $stepStart = Get-Date
@@ -31,7 +39,11 @@ function Run-Step {
         return "skipped"
     }
     
-    & $ScriptPath 2>&1 | ForEach-Object { Write-Host "  $_" }
+    if ($ScriptArgs) {
+        & $ScriptPath $ScriptArgs 2>&1 | ForEach-Object { Write-Host "  $_" }
+    } else {
+        & $ScriptPath 2>&1 | ForEach-Object { Write-Host "  $_" }
+    }
     $exitCode = $LASTEXITCODE
     $duration = [math]::Round((Get-Date).Subtract($stepStart).TotalSeconds, 1)
     
@@ -48,9 +60,11 @@ function Run-Step {
 $r1 = Run-Step "C# Unity Compile" (Join-Path $ProjectPath "scripts\compile-check.ps1")
 $results += "" | Select-Object @{N="Name";E={"C# Unity Compile"}}, @{N="Result";E={$r1}}
 
-# Step 2: EditMode tests
-$r2 = Run-Step "C# EditMode Tests" (Join-Path $ProjectPath "scripts\ci.ps1")
-$results += "" | Select-Object @{N="Name";E={"C# EditMode Tests"}}, @{N="Result";E={$r2}}
+# Step 2: Unity tests
+$ciPath = Join-Path $ProjectPath "scripts\ci.ps1"
+$ciArg = if ($Mode -eq "edit") { "-Mode EditMode" } else { $null }
+$r2 = Run-Step "C# Unity Tests ($Mode)" $ciPath $ciArg
+$results += "" | Select-Object @{N="Name";E={"C# Unity Tests"}}, @{N="Result";E={$r2}}
 
 # Step 3: Git status
 Write-Host "--- Git Status ---" -ForegroundColor Yellow
