@@ -47,30 +47,36 @@ function Run-Mode($mode, $label) {
 if ($Mode -eq "all" -or $Mode -eq "edit" -or $Mode -eq "EditMode") { Run-Mode "EditMode" "EditMode" }
 if ($Mode -eq "all" -or $Mode -eq "play" -or $Mode -eq "PlayMode") { Run-Mode "PlayMode" "PlayMode" }
 
-if ($anyFailed) { Write-Host "FAILED" -ForegroundColor Red; exit 1 }
-
-# Performance baseline check
-Write-Host "=== Performance Baseline ===" -ForegroundColor Cyan
-$perfLog = "unity-perf-log.txt"
-$p = Start-Process -FilePath $UnityPath -ArgumentList "-batchmode -nographics -projectPath `"$ProjectPath`" -executeMethod KingdomWar.Editor.PerformanceTestRunnerEntry.RunAndCompare -logFile `"$ProjectPath\$perfLog`"" -NoNewWindow -Wait -PassThru
-$perfLogPath = Join-Path $ProjectPath $perfLog
-if (Test-Path $perfLogPath) {
-    $perfLines = Get-Content $perfLogPath | Select-String "\[Perf\]|\[PerformanceBaseline\]|=== Performance Baseline Report ==="
-    foreach ($l in $perfLines) { $l.ToString().Trim() }
+# Performance baseline check (skip in single-mode runs)
+$skipPerf = ($Mode -eq "edit" -or $Mode -eq "play")
+if ($anyFailed -and -not $skipPerf) { Write-Host "FAILED" -ForegroundColor Red; exit 1 }
+if ($skipPerf) {
+    Write-Host "=== Performance Baseline (skipped in single-mode) ===" -ForegroundColor Yellow
+    $p = "" | Select-Object ExitCode
+    $p.ExitCode = 0
 } else {
-    Write-Host "  No performance log generated" -ForegroundColor Red
+    if ($anyFailed) { Write-Host "FAILED" -ForegroundColor Red; exit 1 }
+    $perfLog = "unity-perf-log.txt"
+    $p = Start-Process -FilePath $UnityPath -ArgumentList "-batchmode -nographics -projectPath `"$ProjectPath`" -executeMethod KingdomWar.Editor.PerformanceTestRunnerEntry.RunAndCompare -logFile `"$ProjectPath\$perfLog`"" -NoNewWindow -Wait -PassThru
+    $perfLogPath = Join-Path $ProjectPath $perfLog
+    if (Test-Path $perfLogPath) {
+        $perfLines = Get-Content $perfLogPath | Select-String "\[Perf\]|\[PerformanceBaseline\]|=== Performance Baseline Report ==="
+        foreach ($l in $perfLines) { $l.ToString().Trim() }
+    } else {
+        Write-Host "  No performance log generated" -ForegroundColor Red
+    }
+    if ($p.ExitCode -eq 0) {
+        Write-Host "  Performance: PASS" -ForegroundColor Green
+    } elseif ($p.ExitCode -eq 1) {
+        Write-Host "  Performance: FAILED (regression detected)" -ForegroundColor Red
+        $anyFailed = $true
+    } else {
+        Write-Host "  Performance: ERROR (exit code $($p.ExitCode))" -ForegroundColor Red
+        $anyFailed = $true
+    }
+    $procs = Get-Process -Name "Unity" -ErrorAction SilentlyContinue
+    if ($procs) { $procs | Stop-Process -Force; Start-Sleep -Seconds 3 }
 }
-if ($p.ExitCode -eq 0) {
-    Write-Host "  Performance: PASS" -ForegroundColor Green
-} elseif ($p.ExitCode -eq 1) {
-    Write-Host "  Performance: FAILED (regression detected)" -ForegroundColor Red
-    $anyFailed = $true
-} else {
-    Write-Host "  Performance: ERROR (exit code $($p.ExitCode))" -ForegroundColor Red
-    $anyFailed = $true
-}
-$procs = Get-Process -Name "Unity" -ErrorAction SilentlyContinue
-if ($procs) { $procs | Stop-Process -Force; Start-Sleep -Seconds 3 }
 
 if ($anyFailed) { Write-Host "FAILED" -ForegroundColor Red; exit 1 }
 Write-Host "ALL PASSED" -ForegroundColor Green
