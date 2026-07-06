@@ -155,5 +155,16 @@ if (Test-Path $cl) {
     & $cl -Agent "local-ci" -Task "Local CI run" -Action "test" -Files "multiple" -Status $statusText -Detail "$passedCount passed, $failedCount failed, $skippedCount skipped (Unity: $(if($unityOpen){'open,manual tests'}else{'auto'}))"
 }
 
+# If we ran tests automatically (Editor was closed), reopen Unity
+if (-not $unityOpen -and $failedCount -eq 0) {
+    Write-Host "测试完成，正在重新打开 Unity..." -ForegroundColor Cyan
+    $unityHub = "C:\Users\A\AppData\Local\Unity\Hub\Unity Hub.exe"
+    if (Test-Path $unityHub) {
+        Start-Process -FilePath $unityHub
+    } else {
+        Start-Process -FilePath "D:\yinyon\2022.3.57f1c2\Editor\Unity.exe"
+    }
+}
+
 if ($failedCount -gt 0) { exit 1 }
 exit 0
