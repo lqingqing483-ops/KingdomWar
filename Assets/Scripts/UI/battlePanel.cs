@@ -379,9 +379,12 @@ public class battlePanel : basePanel
 
     private void GoToAIBattle()
     {
-        // 单人AI对战 — 加载战斗场景，AI作为对手
+        // 单人AI对战 — 加载战斗场景并初始化
         Debug.Log("Starting AI battle...");
-        SceneManager.LoadScene("BattleScene");
+        // 设置AI对战标识（可选）
+        PlayerPrefs.SetString("BattleMode", "AI");
+        PlayerPrefs.Save();
+        UIManager.Instance.PushPanel(UIPanelType.loadPanel);
     }
     
     #endregion
