@@ -70,6 +70,7 @@ public class UIManager
         var prefab = Resources.Load<GameObject>("Prefabs/UIPrefab/Canvas");
         if (prefab != null)
         {
+            Debug.Log("[Fallback] Prefabs/UIPrefab/Canvas 从 Resources 加载成功（Addressables 中未配置此 key）");
             canvas = GameObject.Instantiate(prefab).transform;
             Tips = canvas.Find("Tips");
         }
@@ -120,7 +121,10 @@ public class UIManager
     {
         try
         {
-            return Resources.Load<TextAsset>("Config/UIPanelType");
+            var asset = Resources.Load<TextAsset>("Config/UIPanelType");
+            if (asset != null)
+                Debug.Log("[Fallback] Config/UIPanelType 从 Resources 加载成功（Addressables 中未配置此 key）");
+            return asset;
         }
         catch (Exception e)
         {
@@ -142,7 +146,10 @@ public class UIManager
             {
                 try
                 {
-                    onComplete?.Invoke(Resources.Load<TextAsset>("Config/UIPanelType"));
+                    var fallback = Resources.Load<TextAsset>("Config/UIPanelType");
+                    if (fallback != null)
+                        Debug.Log("[Fallback] Config/UIPanelType 从 Resources 加载成功");
+                    onComplete?.Invoke(fallback);
                 }
                 catch (Exception e)
                 {
@@ -562,6 +569,7 @@ public class UIManager
 
     private void LoadPanelFromResources(UIPanelType panelType, string panelPath, Action<basePanel> onComplete)
     {
+        Debug.Log($"[Fallback] {panelPath} 从 Resources 加载成功（Addressables 中未配置此 key）");
         try
         {
             GameObject instanPanel = GameObject.Instantiate(Resources.Load<GameObject>(panelPath));
