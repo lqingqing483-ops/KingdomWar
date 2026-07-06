@@ -22,6 +22,13 @@ namespace KingdomWar.UI
             if (itemContainer == null)
                 itemContainer = transform;
             grid = itemContainer.GetComponent<GridLayoutGroup>();
+
+            // Ensure ShopGrid renders after Bg (so items are not hidden behind background)
+            Transform bg = transform.Find("Bg");
+            if (bg != null && itemContainer != transform)
+            {
+                itemContainer.SetSiblingIndex(bg.GetSiblingIndex() + 1);
+            }
         }
 
         public override void OnEnter()
