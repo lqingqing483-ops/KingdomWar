@@ -1,15 +1,12 @@
 <#
 .SYNOPSIS
-    Local CI runner — runs all checks on this machine using installed Unity + tools.
-    Use this when GitHub Actions can't run Unity tests (no license / no runner).
+    Local CI runner — runs all checks on this machine.
+    
+    Behavior:
+    - Unity Editor open? → Run compile check, then tell you to run tests in Unity Test Runner
+    - Unity Editor closed? → Run everything including tests automatically
 
     Usage: .\scripts\run-local-ci.ps1 [-Mode edit]
-    
-    Parameters:
-      -Mode edit  : EditMode tests only (fast, 146 tests)
-      -Mode all   : EditMode + PlayMode (slower, 211 tests, PlayMode may have pre-existing failures)
-      (default)   : EditMode only
-
     Exit: 0 = all passed, 1 = any failure
 #>
 
@@ -21,11 +18,13 @@ param(
 $ProjectPath = (Get-Item $PSScriptRoot).Parent.FullName
 $startTime = Get-Date
 $results = @()
+$unityOpen = $null -ne (Get-Process -Name "Unity" -ErrorAction SilentlyContinue)
 
 Write-Host ""
 Write-Host "=== Local CI ===" -ForegroundColor Cyan
 Write-Host "Project: $ProjectPath"
 Write-Host "Started: $($startTime.ToString('yyyy-MM-dd HH:mm:ss'))"
+Write-Host "Unity Editor: $(if($unityOpen){'OPEN'}else{'CLOSED'})" -ForegroundColor $(if($unityOpen){"Yellow"}else{"Green"})
 Write-Host ""
 
 function Run-Step {
@@ -56,17 +55,22 @@ function Run-Step {
     }
 }
 
-# Step 1: C# Unity Compile
-$r1 = Run-Step "C# Unity Compile" (Join-Path $ProjectPath "scripts\compile-check.ps1")
-$results += "" | Select-Object @{N="Name";E={"C# Unity Compile"}}, @{N="Result";E={$r1}}
+# ── Step 1: Non-Unity checks (always run) ──
 
-# Step 2: Unity tests
-$ciPath = Join-Path $ProjectPath "scripts\ci.ps1"
-$ciArg = if ($Mode -eq "edit") { "-Mode EditMode" } else { $null }
-$r2 = Run-Step "C# Unity Tests ($Mode)" $ciPath $ciArg
-$results += "" | Select-Object @{N="Name";E={"C# Unity Tests"}}, @{N="Result";E={$r2}}
+# Config validation
+Write-Host "--- Config Check ---" -ForegroundColor Yellow
+$configOk = $true
+foreach ($f in @("opencode.json", "AGENTS.md", ".github/workflows/ci.yml")) {
+    if (Test-Path (Join-Path $ProjectPath $f)) {
+        Write-Host "  OK $f" -ForegroundColor Green
+    } else {
+        Write-Host "  MISSING $f" -ForegroundColor Red
+        $configOk = $false
+    }
+}
+$results += "" | Select-Object @{N="Name";E={"Config Files"}}, @{N="Result";E={if($configOk){"passed"}else{"failed"}}}
 
-# Step 3: Git status
+# Git status
 Write-Host "--- Git Status ---" -ForegroundColor Yellow
 Push-Location $ProjectPath
 $dirty = git status --porcelain
@@ -74,14 +78,51 @@ Pop-Location
 if ($dirty) {
     Write-Host "  [WARN] Uncommitted changes:" -ForegroundColor Yellow
     $dirty | ForEach-Object { Write-Host "    $_" }
-    $r3 = "dirty"
+    $rGit = "dirty"
 } else {
     Write-Host "  [OK] Clean working tree" -ForegroundColor Green
-    $r3 = "passed"
+    $rGit = "passed"
 }
-$results += "" | Select-Object @{N="Name";E={"Git Clean"}}, @{N="Result";E={$r3}}
+$results += "" | Select-Object @{N="Name";E={"Git Clean"}}, @{N="Result";E={$rGit}}
 
-# Summary
+# ── Step 2: Unity checks ──
+
+if ($unityOpen) {
+    # Unity Editor is open → can't run batchmode tests
+    $rCompile = Run-Step "C# Unity Compile" (Join-Path $ProjectPath "scripts\compile-check.ps1")
+    $results += "" | Select-Object @{N="Name";E={"C# Unity Compile"}}, @{N="Result";E={$rCompile}}
+    
+    # Remind user to run tests in Editor
+    Write-Host ""
+    Write-Host "╔══════════════════════════════════════════════════════════╗" -ForegroundColor Cyan
+    Write-Host "║  Unity Editor 正在运行，无法通过脚本运行测试            ║" -ForegroundColor Cyan
+    Write-Host "║                                                       ║" -ForegroundColor Cyan
+    Write-Host "║  请在 Unity 中手动跑测试：                              ║" -ForegroundColor Cyan
+    Write-Host "║  Window → General → Test Runner                       ║" -ForegroundColor Cyan
+    if ($Mode -eq "edit") {
+        Write-Host "║  → EditMode 标签 → Run All                            ║" -ForegroundColor Cyan
+    } else {
+        Write-Host "║  → EditMode 标签 → Run All                            ║" -ForegroundColor Cyan
+        Write-Host "║  → PlayMode 标签 → Run All                            ║" -ForegroundColor Cyan
+    }
+    Write-Host "║                                                       ║" -ForegroundColor Cyan
+    Write-Host "║  预期: $(if($Mode -eq 'edit'){'146'}else{'211'}) 个测试，0 失败                             ║" -ForegroundColor Cyan
+    Write-Host "╚══════════════════════════════════════════════════════════╝" -ForegroundColor Cyan
+    Write-Host ""
+    
+    $results += "" | Select-Object @{N="Name";E={"C# Unity Tests"}}, @{N="Result";E={"skipped"}}
+} else {
+    # Unity Editor is closed → run everything
+    $rCompile = Run-Step "C# Unity Compile" (Join-Path $ProjectPath "scripts\compile-check.ps1")
+    $results += "" | Select-Object @{N="Name";E={"C# Unity Compile"}}, @{N="Result";E={$rCompile}}
+    
+    $ciPath = Join-Path $ProjectPath "scripts\ci.ps1"
+    $ciArg = if ($Mode -eq "edit") { "-Mode EditMode" } else { $null }
+    $rTest = Run-Step "C# Unity Tests ($Mode)" $ciPath $ciArg
+    $results += "" | Select-Object @{N="Name";E={"C# Unity Tests"}}, @{N="Result";E={$rTest}}
+}
+
+# ── Summary ──
 Write-Host ""
 Write-Host "=== CI Results Summary ===" -ForegroundColor Cyan
 Write-Host ""
@@ -100,6 +141,9 @@ foreach ($r in $results) {
 
 $totalDuration = [math]::Round((Get-Date).Subtract($startTime).TotalSeconds, 1)
 Write-Host ""
+if ($unityOpen) {
+    Write-Host "  Unity Editor 未关闭 — 编译检查通过后请在 Unity Test Runner 中手动跑测试" -ForegroundColor Yellow
+}
 Write-Host "  $passedCount passed, $failedCount failed, $skippedCount skipped" -ForegroundColor $(if($failedCount -eq 0){"Green"}else{"Red"})
 Write-Host "  Duration: $totalDuration s"
 Write-Host ""
@@ -108,7 +152,7 @@ Write-Host ""
 $cl = Join-Path $ProjectPath ".opencode\changelog\changelog.ps1"
 if (Test-Path $cl) {
     $statusText = if ($failedCount -eq 0) { "passed" } else { "failed" }
-    & $cl -Agent "local-ci" -Task "Local CI run" -Action "test" -Files "multiple" -Status $statusText -Detail "$passedCount passed, $failedCount failed, $skippedCount skipped"
+    & $cl -Agent "local-ci" -Task "Local CI run" -Action "test" -Files "multiple" -Status $statusText -Detail "$passedCount passed, $failedCount failed, $skippedCount skipped (Unity: $(if($unityOpen){'open,manual tests'}else{'auto'}))"
 }
 
 if ($failedCount -gt 0) { exit 1 }
