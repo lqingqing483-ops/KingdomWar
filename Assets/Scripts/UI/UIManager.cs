@@ -67,22 +67,11 @@ public class UIManager
 
     private void LoadCanvasSync()
     {
-        // Try Addressables first (silent fail — Resources fallback handles it)
-        var loadOperation = Addressables.LoadAssetAsync<GameObject>("Prefabs/UIPrefab/Canvas");
-        if (loadOperation.IsDone && loadOperation.Status == AsyncOperationStatus.Succeeded && loadOperation.Result != null)
+        var prefab = Resources.Load<GameObject>("Prefabs/UIPrefab/Canvas");
+        if (prefab != null)
         {
-            canvas = GameObject.Instantiate(loadOperation.Result).transform;
+            canvas = GameObject.Instantiate(prefab).transform;
             Tips = canvas.Find("Tips");
-            return;
-        }
-        try
-        {
-            canvas = GameObject.Instantiate(Resources.Load<Transform>("Prefabs/UIPrefab/Canvas").transform);
-            Tips = canvas.Find("Tips");
-        }
-        catch (Exception e)
-        {
-            Debug.LogError($"加载Canvas失败: {e.Message}");
         }
     }
 
@@ -129,12 +118,6 @@ public class UIManager
 
     private TextAsset LoadConfigSync()
     {
-        // Try Addressables first (silent fail — Resources fallback handles it)
-        var loadOperation = Addressables.LoadAssetAsync<TextAsset>("Config/UIPanelType");
-        if (loadOperation.IsDone && loadOperation.Status == AsyncOperationStatus.Succeeded && loadOperation.Result != null)
-        {
-            return loadOperation.Result;
-        }
         try
         {
             return Resources.Load<TextAsset>("Config/UIPanelType");
@@ -550,38 +533,49 @@ public class UIManager
             return;
         }
 
-        var loadOperation = Addressables.LoadAssetAsync<GameObject>(panelPath);
-        loadOperation.Completed += op =>
+        // Try Addressables (supports hot update), fallback to Resources
+        try
         {
-            if (op.Status == AsyncOperationStatus.Succeeded && op.Result != null)
+            var loadOperation = Addressables.LoadAssetAsync<GameObject>(panelPath);
+            loadOperation.Completed += op =>
             {
-                GameObject instanPanel = GameObject.Instantiate(op.Result);
-                AddScriptComponent(panelType, instanPanel);
-                instanPanel.transform.SetParent(Canvas, false);
-                var panel = instanPanel.GetComponent<basePanel>();
-                panelObjDic[panelType] = panel;
-                onComplete?.Invoke(panel);
-            }
-            else
-            {
-                // Addressables failed — try Resources fallback silently
-                // (only log error if BOTH fail)
-                try
+                if (op.Status == AsyncOperationStatus.Succeeded && op.Result != null)
                 {
-                    GameObject instanPanel = GameObject.Instantiate(Resources.Load<GameObject>(panelPath));
+                    GameObject instanPanel = GameObject.Instantiate(op.Result);
                     AddScriptComponent(panelType, instanPanel);
                     instanPanel.transform.SetParent(Canvas, false);
                     var panel = instanPanel.GetComponent<basePanel>();
                     panelObjDic[panelType] = panel;
                     onComplete?.Invoke(panel);
                 }
-                catch (Exception e)
+                else
                 {
-                    Debug.LogError($"加载面板失败: {panelPath}, 错误: {e.Message}");
-                    onComplete?.Invoke(null);
+                    LoadPanelFromResources(panelType, panelPath, onComplete);
                 }
-            }
-        };
+            };
+        }
+        catch (Exception)
+        {
+            LoadPanelFromResources(panelType, panelPath, onComplete);
+        }
+    }
+
+    private void LoadPanelFromResources(UIPanelType panelType, string panelPath, Action<basePanel> onComplete)
+    {
+        try
+        {
+            GameObject instanPanel = GameObject.Instantiate(Resources.Load<GameObject>(panelPath));
+            AddScriptComponent(panelType, instanPanel);
+            instanPanel.transform.SetParent(Canvas, false);
+            var panel = instanPanel.GetComponent<basePanel>();
+            panelObjDic[panelType] = panel;
+            onComplete?.Invoke(panel);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"加载面板失败: {panelPath}, 错误: {e.Message}");
+            onComplete?.Invoke(null);
+        }
     }
 
     public IEnumerator CheckAndUpdateCatalog(Action<bool> onComplete)
