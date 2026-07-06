@@ -21,8 +21,7 @@ public class mainPanel : basePanel
 
     // NEW: Experience/Grade display
     public Text gradeText;       // shows level (e.g. "Lv.5")
-    public Text expText;         // shows exp progress (e.g. "EXP: 500/1000")
-    public Slider expSlider;     // shows exp progress bar
+    public Text expText;         // shows exp progress (e.g. "33/66")
 
     private PlayerDataManager cachedPlayerData;
 
@@ -184,17 +183,13 @@ public class mainPanel : basePanel
     private void UpdateExpDisplay()
     {
         var pm = PlayerDataManager.Instance;
+        int current = pm.GetExperience();
+        int thisLevel = PlayerDataManager.GetExpRequiredForLevel(pm.GetLevel());
+        int nextLevel = PlayerDataManager.GetExpRequiredForLevel(pm.GetLevel() + 1);
         if (gradeText != null)
             gradeText.text = $"Lv.{pm.GetLevel()}";
         if (expText != null)
-        {
-            int current = pm.GetExperience();
-            int nextLevel = PlayerDataManager.GetExpRequiredForLevel(pm.GetLevel() + 1);
-            int thisLevel = PlayerDataManager.GetExpRequiredForLevel(pm.GetLevel());
-            expText.text = $"EXP: {current - thisLevel}/{nextLevel - thisLevel}";
-        }
-        if (expSlider != null)
-            expSlider.value = pm.GetExpProgress();
+            expText.text = $"{current - thisLevel}/{nextLevel - thisLevel}";
     }
 
     private void UpdateToggleState(Toggle toggle, bool isOn)
