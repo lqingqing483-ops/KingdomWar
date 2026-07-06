@@ -517,6 +517,8 @@ public class CardsPanel : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                 
                 
                 // 禁用模型的碰撞器和脚�?
+                if (draggingModel == null) return;
+
                 Collider[] colliders = draggingModel.GetComponentsInChildren<Collider>();
                 foreach (Collider collider in colliders)
                 {

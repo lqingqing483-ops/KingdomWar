@@ -374,24 +374,39 @@ namespace KingdomWar.Game.Cards
         // 创建一个新的游戏对象作为范围指示器
         rangeIndicator = new GameObject("RangeIndicator");
         
-        // 添加一个平面作为指示器的视觉效果
-        GameObject plane = GameObject.CreatePrimitive(PrimitiveType.Plane);
-        plane.transform.SetParent(rangeIndicator.transform);
-        plane.transform.localScale = new Vector3(currentHalfWidth * 2f / 10f, 0.1f, currentHalfLength * 2f / 10f);
-        //plane.transform.localRotation = Quaternion.Euler(-90f, 0f, 0f);
+        // 创建圆形指示器 — 使用 Quad 并应用自定义 Shader
+        GameObject indicatorQuad = GameObject.CreatePrimitive(PrimitiveType.Quad);
+        indicatorQuad.transform.SetParent(rangeIndicator.transform);
+        indicatorQuad.transform.localScale = new Vector3(currentHalfWidth * 2f, 1f, currentHalfLength * 2f);
+        indicatorQuad.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
+        indicatorQuad.transform.localPosition = Vector3.zero;
         
-        // 添加一个MeshRenderer组件以设置颜色
-        MeshRenderer meshRenderer = plane.GetComponent<MeshRenderer>();
+        // 应用 PlacementIndicator Shader
+        MeshRenderer meshRenderer = indicatorQuad.GetComponent<MeshRenderer>();
         if (meshRenderer != null)
         {
-            // 创建一个半透明的材质
-            Material material = new Material(Shader.Find("Transparent/Diffuse"));
-            material.color = new Color(0.2f, 0.8f, 0.2f, 0.3f);
-            meshRenderer.material = material;
+            Shader shader = Shader.Find("KingdomWar/PlacementIndicator");
+            if (shader != null)
+            {
+                Material material = new Material(shader);
+                material.SetColor("_MainColor", new Color(0.2f, 0.6f, 1.0f, 0.3f));
+                material.SetColor("_BorderColor", new Color(0.5f, 0.8f, 1.0f, 0.8f));
+                material.SetFloat("_BorderWidth", 0.08f);
+                material.SetFloat("_FadeDistance", 0.3f);
+                material.SetFloat("_IsValid", 1f);
+                meshRenderer.material = material;
+            }
+            else
+            {
+                // Fallback if shader not found
+                Material fallback = new Material(Shader.Find("Transparent/Diffuse"));
+                fallback.color = new Color(0.2f, 0.8f, 0.2f, 0.3f);
+                meshRenderer.material = fallback;
+            }
         }
         
         // 禁用碰撞器，避免影响游戏
-        Collider collider = plane.GetComponent<Collider>();
+        Collider collider = indicatorQuad.GetComponent<Collider>();
         if (collider != null)
         {
             collider.enabled = false;
@@ -417,15 +432,16 @@ namespace KingdomWar.Game.Cards
             MeshRenderer meshRenderer = rangeIndicator.GetComponentInChildren<MeshRenderer>();
             if (meshRenderer != null)
             {
-                if (isInRange)
+                Material mat = meshRenderer.material;
+                if (mat.HasProperty("_IsValid"))
                 {
-                    // 在范围内显示绿色
-                    meshRenderer.material.color = new Color(0.2f, 0.8f, 0.2f, 0.3f);
+                    // 使用自定义 Shader 的属性
+                    mat.SetFloat("_IsValid", isInRange ? 1f : 0f);
                 }
                 else
                 {
-                    // 不在范围内显示红色
-                    meshRenderer.material.color = new Color(0.8f, 0.2f, 0.2f, 0.3f);
+                    // 降级：直接改颜色
+                    mat.color = isInRange ? new Color(0.2f, 0.8f, 0.2f, 0.3f) : new Color(0.8f, 0.2f, 0.2f, 0.3f);
                 }
             }
             
@@ -437,9 +453,9 @@ namespace KingdomWar.Game.Cards
             }
             else
             {
-                // 人物和建筑卡片使用范围为己方区域
-                rangeIndicator.transform.localScale = new Vector3(currentHalfWidth * 2f / 10f, 1f, currentHalfLength * 2f / 10f);
-                rangeIndicator.transform.position = ownSideCenter + new Vector3(0,0.1f,0);
+                // 人物和建筑卡片使用范围为己方区域 (Quad is 1x1, scale directly)
+                rangeIndicator.transform.localScale = new Vector3(currentHalfWidth * 2f, 1f, currentHalfLength * 2f);
+                rangeIndicator.transform.position = ownSideCenter + new Vector3(0, 0.1f, 0);
             }
         }
     }
