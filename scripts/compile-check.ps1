@@ -33,9 +33,13 @@ $editorLog = "$env:LOCALAPPDATA\Unity\Editor\Editor.log"
 $previousLength = 0
 if (Test-Path $editorLog) { $previousLength = (Get-Item $editorLog).Length }
 
-# Kill any stale Unity processes before starting
-Get-Process -Name "Unity" -ErrorAction SilentlyContinue | Stop-Process -Force
-Start-Sleep -Seconds 2
+# Check if Unity Editor is running — can't run batchmode + Editor on same project
+$unityProcs = Get-Process -Name "Unity" -ErrorAction SilentlyContinue
+if ($unityProcs) {
+    Write-Host "⚠ Unity Editor is running (PID: $($unityProcs.Id)). Close it before running compile check." -ForegroundColor Yellow
+    Write-Host "  Compile check skipped." -ForegroundColor Yellow
+    exit 0
+}
 
 Write-Host "Running compile check..." -ForegroundColor Yellow
 Write-Host "Unity: $UnityPath"

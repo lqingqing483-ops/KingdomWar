@@ -10,6 +10,13 @@ if ($Mode -eq "EditMode" -or $Mode -eq "edit") { $Mode = "edit" }
 elseif ($Mode -eq "PlayMode" -or $Mode -eq "play") { $Mode = "play" }
 else { $Mode = "all" }
 
+# Check if Unity Editor is running — can't run tests alongside Editor
+$unityProcs = Get-Process -Name "Unity" -ErrorAction SilentlyContinue
+if ($unityProcs) {
+    Write-Host "⚠ Unity Editor is running (PID: $($unityProcs.Id)). Close it before running CI." -ForegroundColor Yellow
+    exit 1
+}
+
 function Run-Mode($mode, $label) {
     $rf = "test-results-$mode.xml"
     $lf = "unity-log-$mode.txt"
@@ -45,8 +52,6 @@ function Run-Mode($mode, $label) {
         Write-Host ("  No results file generated") -ForegroundColor Red
         $script:anyFailed = $true
     }
-    $procs = Get-Process -Name "Unity" -ErrorAction SilentlyContinue
-    if ($procs) { $procs | Stop-Process -Force; Start-Sleep -Seconds 3 }
 }
 
 if ($Mode -eq "all" -or $Mode -eq "edit" -or $Mode -eq "EditMode") { Run-Mode "EditMode" "EditMode" }
@@ -79,8 +84,6 @@ if ($skipPerf) {
         Write-Host "  Performance: ERROR (exit code $($p.ExitCode))" -ForegroundColor Red
         $anyFailed = $true
     }
-    $procs = Get-Process -Name "Unity" -ErrorAction SilentlyContinue
-    if ($procs) { $procs | Stop-Process -Force; Start-Sleep -Seconds 3 }
 }
 
 if ($anyFailed) { Write-Host "FAILED" -ForegroundColor Red; exit 1 }
