@@ -55,6 +55,7 @@ namespace KingdomWar.UI
             if (itemPrefab != null)
             {
                 itemObj = Object.Instantiate(itemPrefab, itemContainer);
+                itemObj.SetActive(true);
             }
             else
             {
