@@ -12,14 +12,16 @@ namespace KingdomWar.UI
         public GameObject itemPrefab;
 
         private List<GameObject> itemObjects = new List<GameObject>();
+        private GridLayoutGroup grid;
 
         protected override void Awake()
         {
             base.Awake();
             if (itemContainer == null)
-                itemContainer = transform.Find("ItemContainer");
+                itemContainer = transform.Find("ShopGrid");
             if (itemContainer == null)
                 itemContainer = transform;
+            grid = itemContainer.GetComponent<GridLayoutGroup>();
         }
 
         public override void OnEnter()
@@ -36,6 +38,8 @@ namespace KingdomWar.UI
             {
                 CreateItemUI(item);
             }
+            if (grid != null)
+                grid.enabled = true;
         }
 
         private void CreateItemUI(ShopItem item)
@@ -61,6 +65,22 @@ namespace KingdomWar.UI
 
         private void SetupItemUI(GameObject obj, ShopItem item)
         {
+            // Card icon
+            if (FindChildComponent<Image>(obj.transform, "IconImage") == null)
+            {
+                GameObject iconObj = new GameObject("IconImage");
+                iconObj.transform.SetParent(obj.transform, false);
+                Image iconImg = iconObj.AddComponent<Image>();
+                iconImg.preserveAspect = true;
+                RectTransform irt = iconObj.GetComponent<RectTransform>();
+                irt.sizeDelta = new Vector2(60, 60);
+                irt.anchoredPosition = new Vector2(-60, 20);
+                // Look up card icon from CardDatabase
+                CardData cardData = CardDatabase.Instance.GetCardByName(item.cardName);
+                if (cardData != null && cardData.cardIcon != null)
+                    iconImg.sprite = cardData.cardIcon;
+            }
+
             Text nameText = FindChildComponent<Text>(obj.transform, "NameText");
             if (nameText == null)
             {
