@@ -136,8 +136,13 @@ namespace KingdomWar.Game.Battle
                 localTeam = BattleManager.Instance.GetLocalPlayerTeam();
             }
 
+            // 特殊处理：非网络对战时（如AI对战），所有单位都不进行网络控制
+            if (!PhotonNetwork.IsConnected)
+            {
+                shouldBeNetworkControlled = false;
+            }
             // 特殊处理：如果是本地玩家阵营创建的单位，即使所有权还没转移，也应该由本地控制
-            if (PhotonNetwork.IsConnected && unit != null && localTeam != 0 && ownerId == localTeam)
+            else if (unit != null && localTeam != 0 && ownerId == localTeam)
             {
                 shouldBeNetworkControlled = false;
                 isLocalUnit = true;
