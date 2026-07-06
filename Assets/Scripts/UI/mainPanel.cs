@@ -19,6 +19,11 @@ public class mainPanel : basePanel
     public Text trophiesText;    // shows trophy count
     public Text arenaText;       // shows arena name
 
+    // NEW: Experience/Grade display
+    public Text gradeText;       // shows level (e.g. "Lv.5")
+    public Text expText;         // shows exp progress (e.g. "EXP: 500/1000")
+    public Slider expSlider;     // shows exp progress bar
+
     private PlayerDataManager cachedPlayerData;
 
     protected virtual void Start()
@@ -82,11 +87,14 @@ public class mainPanel : basePanel
         UpdateGemsDisplay();
         // NEW
         UpdateTrophyDisplay();
+        UpdateExpDisplay();
         // 订阅金币和宝石变化事?
         PlayerDataManager.Instance.OnGoldChanged += OnGoldChanged;
         PlayerDataManager.Instance.OnGemsChanged += OnGemsChanged;
         // NEW
         cachedPlayerData.OnTrophiesChanged += OnTrophiesChanged;
+        cachedPlayerData.OnExperienceChanged += OnExperienceChanged;
+        cachedPlayerData.OnLevelChanged += OnLevelChanged;
         PlayerDataManager.Instance.OnBattleStatsChanged += OnBattleStatsChanged;
 
         // Push battlePanel as the default sub-view on top of mainPanel
@@ -104,6 +112,8 @@ public class mainPanel : basePanel
             cachedPlayerData.OnGemsChanged -= OnGemsChanged;
             // NEW
             cachedPlayerData.OnTrophiesChanged -= OnTrophiesChanged;
+            cachedPlayerData.OnExperienceChanged -= OnExperienceChanged;
+            cachedPlayerData.OnLevelChanged -= OnLevelChanged;
         }
         PlayerDataManager.Instance.OnBattleStatsChanged -= OnBattleStatsChanged;
     }
@@ -122,6 +132,16 @@ public class mainPanel : basePanel
     private void OnTrophiesChanged(int newTrophies)
     {
         UpdateTrophyDisplay();
+    }
+
+    private void OnExperienceChanged(int newExp)
+    {
+        UpdateExpDisplay();
+    }
+
+    private void OnLevelChanged(int newLevel)
+    {
+        UpdateExpDisplay();
     }
 
     private void OnBattleStatsChanged(int wins, int losses, int draws)
@@ -159,6 +179,22 @@ public class mainPanel : basePanel
             ArenaDefinition arena = ArenaConfig.GetArenaByTrophies(trophies);
             arenaText.text = arena.arenaName;
         }
+    }
+
+    private void UpdateExpDisplay()
+    {
+        var pm = PlayerDataManager.Instance;
+        if (gradeText != null)
+            gradeText.text = $"Lv.{pm.GetLevel()}";
+        if (expText != null)
+        {
+            int current = pm.GetExperience();
+            int nextLevel = PlayerDataManager.GetExpRequiredForLevel(pm.GetLevel() + 1);
+            int thisLevel = PlayerDataManager.GetExpRequiredForLevel(pm.GetLevel());
+            expText.text = $"EXP: {current - thisLevel}/{nextLevel - thisLevel}";
+        }
+        if (expSlider != null)
+            expSlider.value = pm.GetExpProgress();
     }
 
     private void UpdateToggleState(Toggle toggle, bool isOn)

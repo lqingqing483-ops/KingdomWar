@@ -46,6 +46,8 @@ public class PlayerDataManager : MonoBehaviour
     private const string TotalWinsKey = "Player_TotalWins";
     private const string TotalLossesKey = "Player_TotalLosses";
     private const string TotalDrawsKey = "Player_TotalDraws";
+    private const string ExperienceKey = "Player_Experience";
+    private const string LevelKey = "Player_Level";
     
     #endregion
     
@@ -117,6 +119,8 @@ public class PlayerDataManager : MonoBehaviour
     private int totalWins;
     private int totalLosses;
     private int totalDraws;
+    private int experience;
+    private int level = 1;
     
     /// <summary>
     /// Data repository for persistence. If non-null, used instead of PlayerPrefs.
@@ -165,6 +169,8 @@ public class PlayerDataManager : MonoBehaviour
     public event Action<string> OnNicknameChanged;
     public event Action<int> OnAvatarIndexChanged;
     public event Action<int, int, int> OnBattleStatsChanged;  // wins, losses, draws
+    public event Action<int> OnExperienceChanged;
+    public event Action<int> OnLevelChanged;
     
     #endregion
 
@@ -326,6 +332,8 @@ public class PlayerDataManager : MonoBehaviour
             totalWins = dataRepository.LoadInt(TotalWinsKey, 0);
             totalLosses = dataRepository.LoadInt(TotalLossesKey, 0);
             totalDraws = dataRepository.LoadInt(TotalDrawsKey, 0);
+            experience = dataRepository.LoadInt(ExperienceKey, 0);
+            level = dataRepository.LoadInt(LevelKey, 1);
         }
         else
         {
@@ -374,6 +382,8 @@ public class PlayerDataManager : MonoBehaviour
             totalWins = PlayerPrefs.GetInt(TotalWinsKey, 0);
             totalLosses = PlayerPrefs.GetInt(TotalLossesKey, 0);
             totalDraws = PlayerPrefs.GetInt(TotalDrawsKey, 0);
+            experience = PlayerPrefs.GetInt(ExperienceKey, 0);
+            level = PlayerPrefs.GetInt(LevelKey, 1);
         }
     }
 
@@ -570,6 +580,76 @@ public class PlayerDataManager : MonoBehaviour
         return false;
     }
     
+    #endregion
+
+    #region 经验值与等级
+
+    /// <summary>
+    /// 获取最大等级
+    /// </summary>
+    public static int GetMaxLevel() => 100;
+
+    /// <summary>
+    /// 获取升到指定等级所需的总经验值
+    /// 公式: level * 100 (第1级0, 第2级100, 第3级300...)
+    /// </summary>
+    public static int GetExpRequiredForLevel(int level)
+    {
+        int sum = 0;
+        for (int i = 1; i < level; i++)
+            sum += i * 100;
+        return sum;
+    }
+
+    /// <summary>
+    /// 获取当前等级的经验值进度 (0~1)
+    /// </summary>
+    public float GetExpProgress()
+    {
+        int currentLevelExp = GetExpRequiredForLevel(level);
+        int nextLevelExp = GetExpRequiredForLevel(level + 1);
+        int range = nextLevelExp - currentLevelExp;
+        if (range <= 0) return 1f;
+        return (float)(experience - currentLevelExp) / range;
+    }
+
+    public int GetExperience() => experience;
+    public int GetLevel() => level;
+
+    /// <summary>
+    /// 添加经验值，自动处理升级
+    /// </summary>
+    public void AddExperience(int amount)
+    {
+        if (level >= GetMaxLevel())
+        {
+            experience = GetExpRequiredForLevel(GetMaxLevel());
+            return;
+        }
+
+        experience += amount;
+        int nextLevelExp = GetExpRequiredForLevel(level + 1);
+
+        // 可能一次升多级
+        while (level < GetMaxLevel() && experience >= nextLevelExp)
+        {
+            level++;
+            OnLevelChanged?.Invoke(level);
+            UnityEngine.Debug.Log($"[PlayerDataManager] 升级! 当前等级: {level}");
+            nextLevelExp = GetExpRequiredForLevel(level + 1);
+        }
+
+        OnExperienceChanged?.Invoke(experience);
+        SaveData();
+    }
+
+    public void SetLevel(int newLevel, bool save)
+    {
+        level = Mathf.Clamp(newLevel, 1, GetMaxLevel());
+        OnLevelChanged?.Invoke(level);
+        if (save) SaveData();
+    }
+
     #endregion
 
     #region 卡片管理
