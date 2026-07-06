@@ -51,9 +51,12 @@ if (-not $LogFile) {
     $LogFile = Join-Path $env:TEMP "unity-invoke-$(Get-Date -Format 'yyyyMMdd-HHmmss').log"
 }
 
-# Kill any stale Unity processes first
-Get-Process -Name "Unity" -ErrorAction SilentlyContinue | Stop-Process -Force
-Start-Sleep -Seconds 2
+# Check if Unity Editor is running — can't run batchmode alongside it
+$unityProcs = Get-Process -Name "Unity" -ErrorAction SilentlyContinue
+if ($unityProcs) {
+    Write-Host "[Invoke-Unity] ⚠ Unity Editor is running (PID: $($unityProcs.Id)). Close it before running batchmode commands." -ForegroundColor Yellow
+    exit 1
+}
 
 Write-Host "[Invoke-Unity] Running: $UnityPath $Arguments" -ForegroundColor Yellow
 Write-Host "[Invoke-Unity] Log: $LogFile"

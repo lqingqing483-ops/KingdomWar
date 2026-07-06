@@ -16,9 +16,12 @@ $logFile = Join-Path $env:TEMP "unity-perf-$(Get-Date -Format 'yyyyMMdd-HHmmss')
 
 Write-Host "=== Performance Gate ===" -ForegroundColor Cyan
 
-# Kill stale Unity
-Get-Process -Name "Unity" -ErrorAction SilentlyContinue | Stop-Process -Force
-Start-Sleep -Seconds 2
+# Check if Unity Editor is running
+$unityProcs = Get-Process -Name "Unity" -ErrorAction SilentlyContinue
+if ($unityProcs) {
+    Write-Host "⚠ Unity Editor is running. Close it before running performance gate." -ForegroundColor Yellow
+    exit 0
+}
 
 $process = Start-Process -FilePath $UnityPath -ArgumentList @(
     "-batchmode", "-nographics",
