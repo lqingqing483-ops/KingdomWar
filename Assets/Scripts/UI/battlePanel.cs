@@ -24,6 +24,11 @@ public class battlePanel : basePanel
     public Button battleButon;
     
     /// <summary>
+    /// AI对战按钮 - 点击进入单人AI对战
+    /// </summary>
+    public Button aiBattleButton;
+    
+    /// <summary>
     /// 热更新按�?- 点击触发热更新流�?
     /// </summary>
     public Button hotUpdateButton;
@@ -86,6 +91,8 @@ public class battlePanel : basePanel
 
         // 绑定战斗按钮点击事件
         battleButon.onClick.AddListener(GoToBattle);
+        if (aiBattleButton != null)
+            aiBattleButton.onClick.AddListener(GoToAIBattle);
         
         // 初始化各个子系统
         InitializeNetworkManager();
@@ -368,6 +375,13 @@ public class battlePanel : basePanel
         // 跳转到搜索匹配面�?
         UIManager.Instance.PushPanel(UIPanelType.searchPanel);
         Debug.Log("Start matching opponent");
+    }
+
+    private void GoToAIBattle()
+    {
+        // 单人AI对战 — 加载战斗场景，AI作为对手
+        Debug.Log("Starting AI battle...");
+        SceneManager.LoadScene("BattleScene");
     }
     
     #endregion
