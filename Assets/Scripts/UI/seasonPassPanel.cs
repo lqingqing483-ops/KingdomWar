@@ -28,6 +28,17 @@ namespace KingdomWar.UI
         {
             base.Awake();
 
+            // Ensure panel has a valid size (for self-building without prefab)
+            RectTransform rt = GetComponent<RectTransform>();
+            if (rt.sizeDelta == Vector2.zero)
+            {
+                rt.anchorMin = new Vector2(0.5f, 0.5f);
+                rt.anchorMax = new Vector2(0.5f, 0.5f);
+                rt.pivot = new Vector2(0.5f, 0.5f);
+                rt.sizeDelta = new Vector2(900f, 1600f);
+                rt.anchoredPosition = Vector2.zero;
+            }
+
             if (rewardContainer == null)
                 rewardContainer = transform;
 

@@ -236,9 +236,18 @@ public class UIManager
         }
 
         GameObject prefab = LoadPanelSync(panelPath);
-        if (prefab == null) return null;
-
-        GameObject instanPanel = GameObject.Instantiate(prefab);
+        GameObject instanPanel;
+        if (prefab != null)
+        {
+            instanPanel = GameObject.Instantiate(prefab);
+        }
+        else
+        {
+            // No prefab found — create empty GameObject and let the script build itself
+            Debug.Log($"[UIManager] No prefab for {panelType}, creating empty GameObject (self-building panel)");
+            instanPanel = new GameObject(panelType.ToString());
+            instanPanel.AddComponent<RectTransform>();
+        }
         AddScriptComponent(panelType, instanPanel);
         instanPanel.transform.SetParent(Canvas, false);
 
@@ -569,10 +578,21 @@ public class UIManager
 
     private void LoadPanelFromResources(UIPanelType panelType, string panelPath, Action<basePanel> onComplete)
     {
-        Debug.Log($"[Fallback] {panelPath} 从 Resources 加载成功（Addressables 中未配置此 key）");
+        Debug.Log($"[Fallback] {panelPath} 从 Resources 加载（Addressables 中未配置此 key）");
         try
         {
-            GameObject instanPanel = GameObject.Instantiate(Resources.Load<GameObject>(panelPath));
+            GameObject prefab = Resources.Load<GameObject>(panelPath);
+            GameObject instanPanel;
+            if (prefab != null)
+            {
+                instanPanel = GameObject.Instantiate(prefab);
+            }
+            else
+            {
+                Debug.Log($"[UIManager] No prefab for {panelType} in Resources, creating empty GameObject");
+                instanPanel = new GameObject(panelType.ToString());
+                instanPanel.AddComponent<RectTransform>();
+            }
             AddScriptComponent(panelType, instanPanel);
             instanPanel.transform.SetParent(Canvas, false);
             var panel = instanPanel.GetComponent<basePanel>();
