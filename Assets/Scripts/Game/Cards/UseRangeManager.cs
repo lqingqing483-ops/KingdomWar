@@ -371,45 +371,165 @@ namespace KingdomWar.Game.Cards
     /// </summary>
     private void CreateDefault3DRangeIndicator()
     {
-        // 创建一个新的游戏对象作为范围指示器
         rangeIndicator = new GameObject("RangeIndicator");
+        rangeIndicator.transform.position = ownSideCenter;
         
-        // 创建圆形指示器 — 使用 Quad 并应用自定义 Shader
-        GameObject indicatorQuad = GameObject.CreatePrimitive(PrimitiveType.Quad);
-        indicatorQuad.transform.SetParent(rangeIndicator.transform);
-        indicatorQuad.transform.localScale = new Vector3(currentHalfWidth * 2f, 1f, currentHalfLength * 2f);
-        indicatorQuad.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
-        indicatorQuad.transform.localPosition = Vector3.zero;
+        // 创建圆形网格（程序化生成的圆盘，不是 Quad）
+        GameObject indicatorDisk = new GameObject("IndicatorDisk");
+        indicatorDisk.transform.SetParent(rangeIndicator.transform);
+        indicatorDisk.transform.localPosition = new Vector3(0, 0.05f, 0);
+        indicatorDisk.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
+        indicatorDisk.transform.localScale = new Vector3(currentHalfWidth * 2f, currentHalfLength * 2f, 1f);
         
-        // 应用 PlacementIndicator Shader
-        MeshRenderer meshRenderer = indicatorQuad.GetComponent<MeshRenderer>();
-        if (meshRenderer != null)
+        // 生成圆形网格（替代默认的 Quad）
+        Mesh diskMesh = CreateCircleMesh(32, 1.0f);
+        indicatorDisk.AddComponent<MeshFilter>().mesh = diskMesh;
+        
+        MeshRenderer renderer = indicatorDisk.AddComponent<MeshRenderer>();
+        ApplyRangeMaterial(renderer, true);
+        
+        // 添加外圈环（稍大一圈的环形线）
+        GameObject borderRing = new GameObject("BorderRing");
+        borderRing.transform.SetParent(rangeIndicator.transform);
+        borderRing.transform.localPosition = new Vector3(0, 0.06f, 0);
+        borderRing.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
+        borderRing.transform.localScale = new Vector3(currentHalfWidth * 2f * 1.02f, currentHalfLength * 2f * 1.02f, 1f);
+        
+        Mesh ringMesh = CreateRingMesh(48, 0.85f, 1.0f);
+        borderRing.AddComponent<MeshFilter>().mesh = ringMesh;
+        MeshRenderer ringRenderer = borderRing.AddComponent<MeshRenderer>();
+        ApplyRangeMaterial(ringRenderer, false);
+        
+        // 创建方向指示器（四个小箭头标记）
+        for (int i = 0; i < 4; i++)
         {
-            Shader shader = Shader.Find("KingdomWar/PlacementIndicator");
-            if (shader != null)
-            {
-                Material material = new Material(shader);
-                material.SetColor("_MainColor", new Color(0.2f, 0.6f, 1.0f, 0.3f));
-                material.SetColor("_BorderColor", new Color(0.5f, 0.8f, 1.0f, 0.8f));
-                material.SetFloat("_BorderWidth", 0.08f);
-                material.SetFloat("_FadeDistance", 0.3f);
-                material.SetFloat("_IsValid", 1f);
-                meshRenderer.material = material;
-            }
-            else
-            {
-                // Fallback if shader not found
-                Material fallback = new Material(Shader.Find("Transparent/Diffuse"));
-                fallback.color = new Color(0.2f, 0.8f, 0.2f, 0.3f);
-                meshRenderer.material = fallback;
-            }
+            GameObject marker = new GameObject("Marker_" + i);
+            marker.transform.SetParent(rangeIndicator.transform);
+            float angle = i * 90f;
+            float radians = angle * Mathf.Deg2Rad;
+            float radius = 0.45f;
+            marker.transform.localPosition = new Vector3(
+                Mathf.Sin(radians) * currentHalfWidth * radius,
+                0.07f,
+                Mathf.Cos(radians) * currentHalfLength * radius);
+            
+            MeshFilter mf = marker.AddComponent<MeshFilter>();
+            mf.mesh = CreateSmallArrowMesh();
+            MeshRenderer mr = marker.AddComponent<MeshRenderer>();
+            Material arrowMat = new Material(Shader.Find("Unlit/Color"));
+            arrowMat.color = new Color(0.5f, 0.8f, 1.0f, 0.6f);
+            mr.material = arrowMat;
+        }
+    }
+    
+    /// <summary>
+    /// 生成圆形网格
+    /// </summary>
+    private Mesh CreateCircleMesh(int segments, float radius)
+    {
+        Mesh mesh = new Mesh();
+        Vector3[] vertices = new Vector3[segments + 1];
+        int[] triangles = new int[segments * 3];
+        Vector2[] uv = new Vector2[segments + 1];
+        
+        vertices[0] = Vector3.zero;
+        uv[0] = new Vector2(0.5f, 0.5f);
+        
+        for (int i = 0; i < segments; i++)
+        {
+            float angle = (float)i / segments * Mathf.PI * 2f;
+            vertices[i + 1] = new Vector3(Mathf.Sin(angle) * radius, 0, Mathf.Cos(angle) * radius);
+            uv[i + 1] = new Vector2(Mathf.Sin(angle) * 0.5f + 0.5f, Mathf.Cos(angle) * 0.5f + 0.5f);
+            
+            triangles[i * 3] = 0;
+            triangles[i * 3 + 1] = i + 1;
+            triangles[i * 3 + 2] = (i + 1) % segments + 1;
         }
         
-        // 禁用碰撞器，避免影响游戏
-        Collider collider = indicatorQuad.GetComponent<Collider>();
-        if (collider != null)
+        mesh.vertices = vertices;
+        mesh.triangles = triangles;
+        mesh.uv = uv;
+        mesh.RecalculateNormals();
+        return mesh;
+    }
+    
+    /// <summary>
+    /// 生成环形网格（外圈边框）
+    /// </summary>
+    private Mesh CreateRingMesh(int segments, float innerRadius, float outerRadius)
+    {
+        Mesh mesh = new Mesh();
+        Vector3[] vertices = new Vector3[segments * 2];
+        int[] triangles = new int[segments * 6];
+        Vector2[] uv = new Vector2[segments * 2];
+        
+        for (int i = 0; i < segments; i++)
         {
-            collider.enabled = false;
+            float angle = (float)i / segments * Mathf.PI * 2f;
+            float sin = Mathf.Sin(angle);
+            float cos = Mathf.Cos(angle);
+            
+            vertices[i * 2] = new Vector3(sin * innerRadius, 0, cos * innerRadius);
+            vertices[i * 2 + 1] = new Vector3(sin * outerRadius, 0, cos * outerRadius);
+            uv[i * 2] = new Vector2((float)i / segments, 0);
+            uv[i * 2 + 1] = new Vector2((float)i / segments, 1);
+            
+            int next = (i + 1) % segments;
+            triangles[i * 6] = i * 2;
+            triangles[i * 6 + 1] = next * 2;
+            triangles[i * 6 + 2] = i * 2 + 1;
+            triangles[i * 6 + 3] = i * 2 + 1;
+            triangles[i * 6 + 4] = next * 2;
+            triangles[i * 6 + 5] = next * 2 + 1;
+        }
+        
+        mesh.vertices = vertices;
+        mesh.triangles = triangles;
+        mesh.uv = uv;
+        mesh.RecalculateNormals();
+        return mesh;
+    }
+    
+    /// <summary>
+    /// 生成小箭头网格
+    /// </summary>
+    private Mesh CreateSmallArrowMesh()
+    {
+        Mesh mesh = new Mesh();
+        Vector3[] vertices = new Vector3[]
+        {
+            new Vector3(0, 0, 0.15f),
+            new Vector3(-0.06f, 0, -0.05f),
+            new Vector3(0.06f, 0, -0.05f),
+            new Vector3(0, 0, -0.15f)
+        };
+        mesh.vertices = vertices;
+        mesh.triangles = new int[] { 0, 1, 2, 2, 1, 3 };
+        mesh.RecalculateNormals();
+        return mesh;
+    }
+    
+    /// <summary>
+    /// 应用范围指示器材质
+    /// </summary>
+    private void ApplyRangeMaterial(MeshRenderer renderer, bool isMainDisk)
+    {
+        Shader shader = Shader.Find("KingdomWar/PlacementIndicator");
+        if (shader != null)
+        {
+            Material mat = new Material(shader);
+            mat.SetColor("_MainColor", new Color(0.2f, 0.6f, 1.0f, 0.25f));
+            mat.SetColor("_BorderColor", new Color(0.5f, 0.8f, 1.0f, 0.7f));
+            mat.SetFloat("_BorderWidth", 0.05f);
+            mat.SetFloat("_FadeDistance", isMainDisk ? 0.2f : 0.0f);
+            mat.SetFloat("_IsValid", 1f);
+            renderer.material = mat;
+        }
+        else
+        {
+            Material fallback = new Material(Shader.Find("Transparent/Diffuse"));
+            fallback.color = new Color(0.2f, 0.8f, 0.2f, 0.3f);
+            renderer.material = fallback;
         }
     }
     
@@ -448,12 +568,10 @@ namespace KingdomWar.Game.Cards
             // 根据卡片类型调整范围指示器的大小
             if (cardType == CardType.Spell)
             {
-                // 法术卡片使用范围为整个战场
-                rangeIndicator.transform.localScale = new Vector3(1.75f, 1f, 4.5f);
+                rangeIndicator.transform.localScale = new Vector3(7f, 1f, 12f);
             }
             else
             {
-                // 人物和建筑卡片使用范围为己方区域 (Quad is 1x1, scale directly)
                 rangeIndicator.transform.localScale = new Vector3(currentHalfWidth * 2f, 1f, currentHalfLength * 2f);
                 rangeIndicator.transform.position = ownSideCenter + new Vector3(0, 0.1f, 0);
             }
