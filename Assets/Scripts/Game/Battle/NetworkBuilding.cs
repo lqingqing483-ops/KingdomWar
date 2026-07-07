@@ -195,6 +195,12 @@ namespace KingdomWar.Game.Battle
 
             if (photonView.ViewID == 0)
             {
+                // AI对战或无网络时，直接本地伤害
+                if (!PhotonNetwork.IsConnected && building != null)
+                {
+                    building.TakeDamage((int)damage);
+                    return;
+                }
                 Debug.LogError($"[NetworkBuilding] ViewID is 0! Building: {building?.buildingName}");
                 return;
             }

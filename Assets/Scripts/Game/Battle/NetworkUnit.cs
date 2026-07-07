@@ -234,6 +234,12 @@ namespace KingdomWar.Game.Battle
 
             if (photonViewComponent.ViewID == 0)
             {
+                // AI对战或无网络时，直接本地伤害
+                if (!PhotonNetwork.IsConnected && unit != null)
+                {
+                    unit.TakeDamage((int)damage);
+                    return;
+                }
                 Debug.LogError($"[NetworkUnit] ViewID is 0! Unit: {unit?.unitName}");
                 return;
             }
