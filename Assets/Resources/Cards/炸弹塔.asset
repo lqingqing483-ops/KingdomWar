@@ -1,4 +1,4 @@
-%YAML 1.1
+﻿%YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &11400000
 MonoBehaviour:
@@ -18,9 +18,10 @@ MonoBehaviour:
   rarity: 2
   cardIcon: {fileID: 21300000, guid: ccbe26fdd57ffc742a5ab81083a441cf, type: 3}
   cardPrefab: {fileID: 0}
-  health: 1800
-  damage: 130
-  attackSpeed: 1.2
-  attackRange: 5
-  duration: 0
-  deployTime: 2
+  buildingData:
+    health: 1800
+    damage: 130
+    attackSpeed: 1.2
+    attackRange: 5
+    duration: 0
+    deployTime: 2

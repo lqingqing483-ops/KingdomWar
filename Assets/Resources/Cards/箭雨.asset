@@ -1,4 +1,4 @@
-%YAML 1.1
+﻿%YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &11400000
 MonoBehaviour:
@@ -18,8 +18,9 @@ MonoBehaviour:
   rarity: 1
   cardIcon: {fileID: 21300000, guid: 17abf4a63e0c1e54881b6a0f13e8e0af, type: 3}
   cardPrefab: {fileID: 0}
-  damage: 400
-  radius: 4
-  duration: 0.5
-  deployTime: 0
-  draggedPrefab: {fileID: 0}
+  spellData:
+    damage: 400
+    radius: 4
+    duration: 0.5
+    deployTime: 0
+    draggedPrefab: {fileID: 0}
