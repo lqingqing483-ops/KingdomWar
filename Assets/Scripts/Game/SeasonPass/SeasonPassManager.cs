@@ -340,6 +340,10 @@ namespace KingdomWar.Game.SeasonPass
 
         private List<int> GetUnclaimedLevels(SeasonPassTier tier)
         {
+            // Premium unclaimed requires premium pass
+            if (tier == SeasonPassTier.Premium && !saveData.hasPremiumPass)
+                return new List<int>();
+
             List<int> result = new List<int>();
             int currentLevel = GetCurrentLevel();
             List<int> claimed = ClaimedLevelsForTier(tier);
