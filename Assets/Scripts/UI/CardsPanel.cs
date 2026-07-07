@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -35,7 +35,8 @@ public class CardsPanel : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     private float elixirTimer = 0f;      //圣水恢复计时�?
     
     private GameObject draggingCard;     //正在拖动的卡�?
-    private GameObject draggingModel;     //正在拖动的模型预�?
+    private GameObject draggingModel;
+    private GameObject placementGhost;    //placement position circle indicator     //正在拖动的模型预�?
     private CardData draggedCardData;    //正在拖动的卡片数�?
     private int draggedCardIndex = -1;   //正在拖动的卡片索�?
     private Vector3 dragOffset;          //拖动偏移�?
@@ -439,6 +440,66 @@ public class CardsPanel : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     /// </summary>
     /// <param name="screenPosition">屏幕坐标</param>
     /// <returns>世界坐标</returns>
+        private void CreatePlacementGhost()
+    {
+        if (draggedCardData == null) return;
+        
+        placementGhost = new GameObject("PlacementGhost");
+        
+        // Outer ring using LineRenderer
+        GameObject ring = new GameObject("GhostRing");
+        ring.transform.SetParent(placementGhost.transform);
+        ring.transform.localPosition = Vector3.zero;
+        ring.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
+        
+        LineRenderer lr = ring.AddComponent<LineRenderer>();
+        lr.useWorldSpace = false;
+        lr.loop = true;
+        lr.startWidth = 0.08f;
+        lr.endWidth = 0.08f;
+        lr.positionCount = 24;
+        
+        float radius = 0.5f;
+        for (int i = 0; i < 24; i++)
+        {
+            float angle = (float)i / 24 * Mathf.PI * 2f;
+            lr.SetPosition(i, new Vector3(Mathf.Sin(angle) * radius, 0, Mathf.Cos(angle) * radius));
+        }
+        
+        Material lineMat = new Material(Shader.Find("Unlit/Color"));
+        lineMat.color = new Color(1f, 1f, 1f, 0.5f);
+        lr.material = lineMat;
+        
+        // Inner fill circle
+        GameObject fill = new GameObject("GhostFill");
+        fill.transform.SetParent(placementGhost.transform);
+        fill.transform.localPosition = Vector3.zero;
+        fill.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
+        
+        MeshFilter mf = fill.AddComponent<MeshFilter>();
+        Mesh circleMesh = new Mesh();
+        Vector3[] verts = new Vector3[25];
+        int[] tris = new int[72];
+        verts[0] = Vector3.zero;
+        for (int i = 0; i < 24; i++)
+        {
+            float a = (float)i / 24 * Mathf.PI * 2f;
+            verts[i+1] = new Vector3(Mathf.Sin(a) * 0.48f, 0, Mathf.Cos(a) * 0.48f);
+            tris[i*3] = 0;
+            tris[i*3+1] = i+1;
+            tris[i*3+2] = (i+1) % 24 + 1;
+        }
+        circleMesh.vertices = verts;
+        circleMesh.triangles = tris;
+        circleMesh.RecalculateNormals();
+        mf.mesh = circleMesh;
+        
+        MeshRenderer mr = fill.AddComponent<MeshRenderer>();
+        Material fillMat = new Material(Shader.Find("Unlit/Color"));
+        fillMat.color = new Color(1f, 1f, 1f, 0.15f);
+        mr.material = fillMat;
+    }
+
     private Vector3 GetWorldPositionFromScreen(Vector2 screenPosition)
     {
         // 使用主相机将屏幕坐标转换为世界坐�?
