@@ -54,10 +54,10 @@ public static class SeasonPassPanelPrefabBuilder
         rootImg.color = BgColor;
         rootImg.raycastTarget = true;
 
-        // UILinearGradient for root panel (dark blue-to-purple)
-        var rootGrad = root.AddComponent<UnityEngine.UI.Extensions.UILinearGradient>();
-        rootGrad.m_Mode = UnityEngine.UI.Extensions.UILinearGradient.Mode.Horizontal;
-        rootGrad._color2 = new Color(0.15f, 0.10f, 0.25f);
+        // Gradient for root panel (dark blue-to-purple)
+        var rootGrad = root.AddComponent<UIGradient>();
+        rootGrad.horizontal = true;
+        rootGrad.color2 = new Color(0.15f, 0.10f, 0.25f);
 
         // CanvasGroup (required by basePanel.Awake())
         root.AddComponent<CanvasGroup>();
@@ -171,9 +171,9 @@ public static class SeasonPassPanelPrefabBuilder
         bg.raycastTarget = false;
 
         // UILinearGradient for header area
-        var headerGrad = go.AddComponent<UnityEngine.UI.Extensions.UILinearGradient>();
-        headerGrad.m_Mode = UnityEngine.UI.Extensions.UILinearGradient.Mode.Horizontal;
-        headerGrad._color2 = new Color(0.2f, 0.18f, 0.3f);
+        var headerGrad = go.AddComponent<UIGradient>();
+        headerGrad.horizontal = true;
+        headerGrad.color2 = new Color(0.2f, 0.18f, 0.3f);
 
         // Title text (left half)
         GameObject titleGo = new GameObject("TitleText", typeof(RectTransform));
@@ -335,8 +335,8 @@ public static class SeasonPassPanelPrefabBuilder
         vpImg.color = new Color(0f, 0f, 0f, 0f);
         vpImg.raycastTarget = false;
 
-        // UISoftMask for smooth rounded corners masking (replaces standard Mask)
-        vpGo.AddComponent<UnityEngine.UI.Extensions.UISoftMask>();
+        // Standard Mask for viewport clipping
+        vpGo.AddComponent<Mask>().showMaskGraphic = false;
 
         // ── Content ──
         GameObject contentGo = new GameObject("Content", typeof(RectTransform));
@@ -429,10 +429,10 @@ public static class SeasonPassPanelPrefabBuilder
         Image img = go.AddComponent<Image>();
         img.color = BuyBtnColor;
 
-        // UILinearGradient for buy premium button
-        var btnGrad = go.AddComponent<UnityEngine.UI.Extensions.UILinearGradient>();
-        btnGrad.m_Mode = UnityEngine.UI.Extensions.UILinearGradient.Mode.Horizontal;
-        btnGrad._color2 = new Color(0.2f, 0.4f, 0.8f);
+        // Gradient for buy premium button
+        var btnGrad = go.AddComponent<UIGradient>();
+        btnGrad.horizontal = true;
+        btnGrad.color2 = new Color(0.2f, 0.4f, 0.8f);
 
         Button btn = go.AddComponent<Button>();
         btn.targetGraphic = img;
@@ -476,10 +476,10 @@ public static class SeasonPassPanelPrefabBuilder
         Image img = go.AddComponent<Image>();
         img.color = ClaimBtnColor;
 
-        // UILinearGradient for claim all button
-        var claimGrad = go.AddComponent<UnityEngine.UI.Extensions.UILinearGradient>();
-        claimGrad.m_Mode = UnityEngine.UI.Extensions.UILinearGradient.Mode.Horizontal;
-        claimGrad._color2 = new Color(0.1f, 0.7f, 0.35f);
+        // Gradient for claim all button
+        var claimGrad = go.AddComponent<UIGradient>();
+        claimGrad.horizontal = true;
+        claimGrad.color2 = new Color(0.1f, 0.7f, 0.35f);
 
         Button btn = go.AddComponent<Button>();
         btn.targetGraphic = img;
