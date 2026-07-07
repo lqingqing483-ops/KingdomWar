@@ -9,6 +9,7 @@ using KingdomWar.Game.Cards;
 using KingdomWar.UI;
 using KingdomWar.Game.Arena;
 using KingdomWar.HotUpdate;
+using KingdomWar.Game.SeasonPass;
 using Photon.Pun;
 using Photon.Realtime;
 
@@ -759,6 +760,16 @@ namespace KingdomWar.Game.Battle
                     
                     // Record battle stats
                     PlayerDataManager.Instance.RecordBattleResult(isLocalPlayerVictory, isDraw);
+
+                    // Grant Season Pass exp
+                    int expGained = isDraw ? SeasonPassConfigSO.Instance.battleLoseExp
+                        : isLocalPlayerVictory ? SeasonPassConfigSO.Instance.battleWinExp
+                        : SeasonPassConfigSO.Instance.battleLoseExp;
+                    var spManager = KingdomWar.Game.SeasonPass.SeasonPassManager.Instance;
+                    if (spManager != null)
+                    {
+                        spManager.AddExp(expGained);
+                    }
                 }
             }
 

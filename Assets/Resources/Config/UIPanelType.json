@@ -48,6 +48,10 @@
         {
             "panelName": "lotteryPanel",
             "panelPath": "Prefabs/UIPrefab/lotteryPanel"
+        },
+        {
+            "panelName": "seasonPassPanel",
+            "panelPath": "Prefabs/UIPrefab/seasonPassPanel"
         }
     ]
 }

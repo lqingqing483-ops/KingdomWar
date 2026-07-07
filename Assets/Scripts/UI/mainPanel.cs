@@ -12,6 +12,7 @@ public class mainPanel : basePanel
     public Toggle shopToggle;
     public Toggle deckToggle;
     public Toggle profileToggle;
+    public Toggle seasonPassToggle; // ponytail: season pass toggle - assign in prefab
     public Text GoldsText;
     public Text GemsText;
 
@@ -76,6 +77,17 @@ public class mainPanel : basePanel
                 if (isOn)
                 {
                     PushPanel(UIPanelType.profilePanel);
+                }
+            });
+        }
+        if (seasonPassToggle != null)
+        {
+            seasonPassToggle.onValueChanged.AddListener((isOn) =>
+            {
+                UpdateToggleState(seasonPassToggle, isOn);
+                if (isOn)
+                {
+                    PushPanel(UIPanelType.seasonPassPanel);
                 }
             });
         }
