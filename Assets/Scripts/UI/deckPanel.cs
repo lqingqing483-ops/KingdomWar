@@ -164,7 +164,10 @@ public class deckPanel : basePanel, IBeginDragHandler, IDragHandler, IEndDragHan
             if (libraryButton != null)
             {
                 CardData currentCard = cardData; // 闭包捕获变量
-                libraryButton.onClick.AddListener(() => OnLibraryCardClicked(currentCard));
+                libraryButton.onClick.AddListener(() => {
+                    libraryButton.transform.DOPunchScale(Vector3.one * 0.15f, 0.3f, 5, 0.5f);
+                    OnLibraryCardClicked(currentCard);
+                });
             }
         }
     }
