@@ -867,7 +867,10 @@ namespace KingdomWar.Game.Battle
                 isHit = true;
                 
                 health -= damage;
-                
+
+                // Show floating damage text
+                if (Application.isPlaying) DamageTextManager.Instance.ShowDamage(transform.position + Vector3.up * 2f, damage);
+
                 if (BattleEventSystem.Instance != null)
                 {
                     BattleEventSystem.Instance.EmitUnitDamaged(GetInstanceID(), damage, sourceId);
@@ -907,6 +910,9 @@ namespace KingdomWar.Game.Battle
                 {
                     health = maxHealth;
                 }
+
+                // Show healing text
+                if (Application.isPlaying) DamageTextManager.Instance.ShowHeal(transform.position + Vector3.up * 2f, amount);
 
                 if (healthBar != null)
                 {
@@ -1098,7 +1104,9 @@ namespace KingdomWar.Game.Battle
         Freeze,       // Cannot move or attack
         Stun,         // Cannot act
         BoostDamage,  // Increased damage
-        BoostSpeed    // Increased movement speed
+        BoostSpeed,   // Increased movement speed
+        Poison,       // Damage over time
+        Slow          // Reduce movement speed
     }
 
     [System.Serializable]

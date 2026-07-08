@@ -11,60 +11,101 @@ public class basePanel : MonoBehaviour, IBeginDragHandler, IDragHandler
     private Transform clockTrans;
     protected RectTransform panel;
     protected Tween showHideTween;
-    private Vector2 offset; // 鼠标位置与物体中心的偏移
+    protected Sequence animSequence;
+    private Vector2 offset; // mouse offset for drag
+    private Vector2 hiddenPos;
+    
+    [Header("Animation Settings")]
+    public float enterDuration = 0.4f;
+    public float exitDuration = 0.25f;
+    public float slideDistance = 200f;
+    public bool enableBounce = true;
+    
     protected virtual void Awake()
     {
-        //自定义函数在Awake和Stack之间的时机调�?
         canvasGroup = AddAndGetComponent<CanvasGroup>(this.gameObject);
-        //canvasGroup= this.GetComponent<CanvasGroup>();
-
         panel = this.GetComponent<RectTransform>();
-
-        //默认隐藏
+        
+        // Store hidden position (slide down)
+        hiddenPos = panel.anchoredPosition - new Vector2(0, slideDistance);
+        
+        // Start hidden
         canvasGroup.alpha = 0;
         canvasGroup.blocksRaycasts = false;
+        panel.anchoredPosition = hiddenPos;
+        panel.localScale = Vector3.one * 0.95f;
     }
+    
     protected virtual void Start()
     {
         if (canvasGroup == null)
-            Debug.LogError(this.gameObject.name + "缺少CanvasGroup"); // 再次确认
+            Debug.LogError(this.gameObject.name + " missing CanvasGroup");
         if (panel == null)
-            Debug.LogError(this.gameObject.name + "缺少RectTransform");
-
-
-
-        showHideTween = panel.DOAnchorPos(Vector3.zero, 1f) // 移动到中�?
-            .SetAutoKill(false); // 禁止自动销�?
-        showHideTween.Pause(); // 暂停等待播放
+            Debug.LogError(this.gameObject.name + " missing RectTransform");
 
         clockTrans = transform.Find("CloseBtn");
-        //防止有些界面没有封闭按钮
         if (clockTrans != null)
         {
             clockBtn = clockTrans.GetComponent<Button>();
             clockBtn.onClick.AddListener(OnClickBtn);
+            
+            // Button hover scale effect
+            clockBtn.onClick.AddListener(() => {
+                clockTrans.DOPunchScale(Vector3.one * 0.2f, 0.3f, 5, 0.5f);
+            });
+        }
+        
+        // Add hover effects to all buttons in this panel
+        Button[] buttons = GetComponentsInChildren<Button>(true);
+        foreach (Button btn in buttons)
+        {
+            if (btn == clockBtn) continue;
+            AddButtonHoverEffect(btn);
         }
     }
 
-    protected virtual void OnClickBtn()
+    private void AddButtonHoverEffect(Button btn)
     {
-
-        UIManager.Instance.PopPanel();
+        EventTrigger trigger = btn.GetComponent<EventTrigger>();
+        if (trigger == null) trigger = btn.gameObject.AddComponent<EventTrigger>();
+        
+        EventTrigger.Entry enter = new EventTrigger.Entry();
+        enter.eventID = EventTriggerType.PointerEnter;
+        enter.callback.AddListener((data) => {
+            btn.transform.DOScale(1.08f, 0.15f).SetEase(Ease.OutQuad);
+        });
+        trigger.triggers.Add(enter);
+        
+        EventTrigger.Entry exit = new EventTrigger.Entry();
+        exit.eventID = EventTriggerType.PointerExit;
+        exit.callback.AddListener((data) => {
+            btn.transform.DOScale(1f, 0.15f).SetEase(Ease.OutQuad);
+        });
+        trigger.triggers.Add(exit);
     }
 
     public virtual void OnEnter()
     {
-        if (panel != null)
-        {
-            panel.DOPlayForward();
-        }
-        if (canvasGroup != null)
-        {
-            canvasGroup.alpha = 1;
-            canvasGroup.blocksRaycasts = true;
-        }
-
+        if (panel == null) return;
+        
+        // Kill any running animations
+        animSequence?.Kill();
+        animSequence = DOTween.Sequence();
+        
+        // Reset to start state
+        canvasGroup.alpha = 0;
+        canvasGroup.blocksRaycasts = true;
+        panel.anchoredPosition = hiddenPos;
+        panel.localScale = Vector3.one * 0.95f;
+        
+        // Animate in
+        animSequence.Join(panel.DOAnchorPos(hiddenPos + new Vector2(0, slideDistance), enterDuration)
+            .SetEase(Ease.OutBack, 1.2f));
+        animSequence.Join(canvasGroup.DOFade(1, enterDuration * 0.8f));
+        animSequence.Join(panel.DOScale(1f, enterDuration).SetEase(Ease.OutBack, 1.2f));
+        animSequence.Play();
     }
+    
     public virtual void OnPause()
     {
         if (canvasGroup != null)
@@ -72,6 +113,7 @@ public class basePanel : MonoBehaviour, IBeginDragHandler, IDragHandler
             canvasGroup.blocksRaycasts = false;
         }
     }
+    
     public virtual void OnResume()
     {
         if (canvasGroup != null)
@@ -79,31 +121,47 @@ public class basePanel : MonoBehaviour, IBeginDragHandler, IDragHandler
             canvasGroup.blocksRaycasts = true;
         }
     }
+    
     public virtual void OnExit()
     {
-        if (panel != null)
+        if (panel == null) return;
+        
+        animSequence?.Kill();
+        animSequence = DOTween.Sequence();
+        
+        canvasGroup.blocksRaycasts = false;
+        
+        animSequence.Join(panel.DOAnchorPos(hiddenPos, exitDuration).SetEase(Ease.InBack));
+        animSequence.Join(canvasGroup.DOFade(0, exitDuration * 0.7f));
+        animSequence.Join(panel.DOScale(0.95f, exitDuration).SetEase(Ease.InBack));
+        animSequence.Play();
+    }
+    
+    /// <summary>
+    /// Add stagger animation to list items (for shop, deck, etc.)
+    /// </summary>
+    protected void AnimateItems(Transform container, float staggerDelay = 0.05f)
+    {
+        int count = container.childCount;
+        for (int i = 0; i < count; i++)
         {
-            panel.DOPlayBackwards();
-        }
-        if (canvasGroup != null)
-        {
-            canvasGroup.alpha = 0;
-            canvasGroup.blocksRaycasts = false;
+            Transform item = container.GetChild(i);
+            item.localScale = Vector3.zero;
+            item.DOScale(1f, 0.3f).SetDelay(i * staggerDelay).SetEase(Ease.OutBack, 1.5f);
         }
     }
-    /// <summary>
-    /// 添加并获取脚�?
-    /// </summary>
+
     protected T AddAndGetComponent<T>(GameObject obj) where T : Component
     {
         T comp = obj.GetComponent<T>();
-        if (comp == null)
-        {
-            comp = obj.AddComponent<T>();
-        }
+        if (comp == null) comp = obj.AddComponent<T>();
         return comp;
     }
 
+    protected virtual void OnClickBtn()
+    {
+        UIManager.Instance.PopPanel();
+    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -112,8 +170,7 @@ public class basePanel : MonoBehaviour, IBeginDragHandler, IDragHandler
 
     public void OnDrag(PointerEventData eventData)
     {
-        //transform.position = eventData.position + offset;
+        // Optional drag behavior
     }
 }
-
 }

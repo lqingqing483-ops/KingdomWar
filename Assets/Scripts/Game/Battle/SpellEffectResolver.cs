@@ -15,7 +15,11 @@ namespace KingdomWar.Game.Battle
         Freeze,     // Freeze enemies (no movement, no attack)
         Stun,       // Stun enemies (interrupt current action)
         Boost,      // Boost friendly units (damage + speed)
-        Clone       // Clone targeted unit
+        Clone,      // Clone targeted unit
+        Poison,     // Damage over time
+        Slow,       // Reduce movement speed
+        Knockback,  // Push units away from center
+        Pull        // Pull units toward center
     }
 
     public static class SpellEffectResolver
@@ -45,6 +49,18 @@ namespace KingdomWar.Game.Battle
                     break;
                 case SpellEffectType.Clone:
                     ApplyClone(ownerId, targetPosition, radius);
+                    break;
+                case SpellEffectType.Poison:
+                    ApplyPoison(ownerId, targetPosition, damage, radius, duration);
+                    break;
+                case SpellEffectType.Slow:
+                    ApplySlow(ownerId, targetPosition, radius, duration, effectValue);
+                    break;
+                case SpellEffectType.Knockback:
+                    ApplyKnockback(ownerId, targetPosition, radius, effectValue);
+                    break;
+                case SpellEffectType.Pull:
+                    ApplyPull(ownerId, targetPosition, radius, effectValue);
                     break;
             }
         }
@@ -193,6 +209,68 @@ namespace KingdomWar.Game.Battle
                         BattleManager.Instance.AddUnit(cloneUnit);
                     }
                     Debug.Log($"[SpellEffect] Clone created: {target.unitName}_Clone at {clonePos}");
+                }
+            }
+        }
+
+        private static void ApplyPoison(int ownerId, Vector3 position, int damage, float radius, float duration)
+        {
+            if (BattleManager.Instance == null) return;
+            foreach (Unit unit in BattleManager.Instance.Units)
+            {
+                if (unit == null || unit.ownerId == ownerId || unit.health <= 0) continue;
+                float dist = Vector3.Distance(unit.transform.position, position);
+                if (dist <= radius)
+                {
+                    unit.AddBuff(BuffType.Poison, duration, damage);
+                    Debug.Log($"[SpellEffect] Poison applied to {unit.unitName} for {duration}s, {damage}/tick");
+                }
+            }
+        }
+
+        private static void ApplySlow(int ownerId, Vector3 position, float radius, float duration, float slowAmount)
+        {
+            if (BattleManager.Instance == null) return;
+            foreach (Unit unit in BattleManager.Instance.Units)
+            {
+                if (unit == null || unit.ownerId == ownerId || unit.health <= 0) continue;
+                float dist = Vector3.Distance(unit.transform.position, position);
+                if (dist <= radius)
+                {
+                    unit.AddBuff(BuffType.Slow, duration, slowAmount);
+                    Debug.Log($"[SpellEffect] Slow applied to {unit.unitName} for {duration}s x{slowAmount}");
+                }
+            }
+        }
+
+        private static void ApplyKnockback(int ownerId, Vector3 position, float radius, float force)
+        {
+            if (BattleManager.Instance == null) return;
+            foreach (Unit unit in BattleManager.Instance.Units)
+            {
+                if (unit == null || unit.ownerId == ownerId || unit.health <= 0) continue;
+                float dist = Vector3.Distance(unit.transform.position, position);
+                if (dist <= radius && dist > 0.1f)
+                {
+                    Vector3 direction = (unit.transform.position - position).normalized;
+                    unit.transform.position += direction * force;
+                    Debug.Log($"[SpellEffect] Knockback applied to {unit.unitName} with force {force}");
+                }
+            }
+        }
+
+        private static void ApplyPull(int ownerId, Vector3 position, float radius, float force)
+        {
+            if (BattleManager.Instance == null) return;
+            foreach (Unit unit in BattleManager.Instance.Units)
+            {
+                if (unit == null || unit.ownerId == ownerId || unit.health <= 0) continue;
+                float dist = Vector3.Distance(unit.transform.position, position);
+                if (dist <= radius && dist > 0.1f)
+                {
+                    Vector3 direction = (position - unit.transform.position).normalized;
+                    unit.transform.position += direction * force;
+                    Debug.Log($"[SpellEffect] Pull applied to {unit.unitName} with force {force}");
                 }
             }
         }
