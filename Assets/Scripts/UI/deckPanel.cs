@@ -326,6 +326,8 @@ public class deckPanel : basePanel, IBeginDragHandler, IDragHandler, IEndDragHan
                 // 显示UI元素
                 cardIcon.gameObject.SetActive(true);
                 elixirCostText.gameObject.SetActive(true);
+                if (cardName != null)
+                    cardName.gameObject.SetActive(true);
             }
             else
             {
