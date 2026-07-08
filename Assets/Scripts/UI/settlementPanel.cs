@@ -39,6 +39,9 @@ namespace KingdomWar.UI
 
         public void Init(int id)
         {
+            // Auto-load sprites from imported resources if serialized references are null
+            AutoLoadSprites();
+
             if (id == 1)
             {
                 winTra[0].gameObject.SetActive(true);
@@ -52,6 +55,39 @@ namespace KingdomWar.UI
 
             // NEW: Show trophy result
             UpdateTrophyDisplay();
+        }
+
+        private void AutoLoadSprites()
+        {
+            // Assign BattleResult sprites to child Image components if they have no sprite
+            var images = GetComponentsInChildren<Image>(true);
+            foreach (var img in images)
+            {
+                if (img.sprite != null) continue;
+                switch (img.name.ToLower())
+                {
+                    case "bg":
+                    case "background":
+                        img.sprite = UIResourceHelper.LoadBattleResultBg();
+                        break;
+                    case "winicon":
+                        img.sprite = UIResourceHelper.LoadWinSprite(1);
+                        break;
+                    case "loseicon":
+                        img.sprite = UIResourceHelper.LoadLoseSprite();
+                        break;
+                    case "chesticon":
+                    case "chest":
+                        img.sprite = UIResourceHelper.LoadChestIcon();
+                        break;
+                    case "rewardicon":
+                    case "reward":
+                        img.sprite = UIResourceHelper.LoadRewardIcon();
+                        break;
+                }
+                if (img.sprite != null)
+                    img.enabled = true;
+            }
         }
 
         // NEW: Private helper to display trophy result
