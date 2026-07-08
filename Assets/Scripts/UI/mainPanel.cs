@@ -31,7 +31,10 @@ public class mainPanel : basePanel
         base.Start(); 
 
         // This panel is pre-placed in the scene, not created by UIManager.
-        // Ensure visibility manually since we never get OnEnter() from a self-push.
+        // Reset position/scale that basePanel.Awake() set for slide-in animation,
+        // since we never get OnEnter() to trigger the forward animation.
+        panel.anchoredPosition = Vector2.zero;
+        panel.localScale = Vector3.one;
         if (canvasGroup != null)
         {
             canvasGroup.alpha = 1;

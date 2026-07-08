@@ -38,7 +38,7 @@ namespace KingdomWar.UI
         /// </summary>
         public static Tween ShakeError(this Transform t)
         {
-            return t.DOShakePosition(0.4f, new Vector3(10f, 0, 0), 10, 90, false, true);
+            return t.DOShakePosition(0.4f, new Vector3(10f, 0, 0), 10, 90);
         }
 
         /// <summary>
