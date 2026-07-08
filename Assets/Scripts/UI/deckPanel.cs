@@ -136,6 +136,21 @@ public class deckPanel : basePanel, IBeginDragHandler, IDragHandler, IEndDragHan
             return;
         }
         
+        // 优化卡牌库滚动性能
+        if (cardLibraryScrollView != null)
+        {
+            cardLibraryScrollView.movementType = ScrollRect.MovementType.Elastic;
+            cardLibraryScrollView.inertia = true;
+            cardLibraryScrollView.decelerationRate = 0.135f;
+            // 确保Viewport有Mask组件来裁剪不可见区域
+            if (cardLibraryScrollView.viewport != null)
+            {
+                var mask = cardLibraryScrollView.viewport.GetComponent<RectMask2D>();
+                if (mask == null)
+                    cardLibraryScrollView.viewport.gameObject.AddComponent<RectMask2D>();
+            }
+        }
+        
         // 从CardDatabase获取所有卡牌数�?
         cardLibrary = CardDatabase.Instance.GetAllCards();
         
@@ -319,6 +334,11 @@ public class deckPanel : basePanel, IBeginDragHandler, IDragHandler, IEndDragHan
                     cardIcon.gameObject.SetActive(false);
                 if (elixirCostText != null)
                     elixirCostText.gameObject.SetActive(false);
+                if (cardName != null)
+                {
+                    cardName.text = "";
+                    cardName.gameObject.SetActive(false);
+                }
             }
         }
     }
