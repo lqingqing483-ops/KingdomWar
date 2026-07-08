@@ -91,7 +91,7 @@ namespace KingdomWar.UI
 
             Text txt = textObj.AddComponent<Text>();
             txt.text = text;
-            txt.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            txt.font = FontHelper.GetUIFont();
             txt.fontSize = size;
             txt.fontStyle = FontStyle.Bold;
             txt.alignment = TextAnchor.MiddleCenter;

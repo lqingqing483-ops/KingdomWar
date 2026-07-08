@@ -57,7 +57,7 @@ namespace KingdomWar.UI
                 closeTextObj.transform.SetParent(closeObj.transform, false);
                 Text closeText = closeTextObj.AddComponent<Text>();
                 closeText.text = "X";
-                closeText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+                closeText.font = FontHelper.GetUIFont();
                 closeText.fontSize = 20;
                 closeText.alignment = TextAnchor.MiddleCenter;
                 closeText.color = Color.white;
@@ -76,7 +76,7 @@ namespace KingdomWar.UI
                 titleObj.transform.SetParent(transform, false);
                 Text titleText = titleObj.AddComponent<Text>();
                 titleText.text = "Quests";
-                titleText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+                titleText.font = FontHelper.GetUIFont();
                 titleText.fontSize = 28;
                 titleText.alignment = TextAnchor.MiddleCenter;
                 titleText.color = Color.white;
@@ -124,7 +124,7 @@ namespace KingdomWar.UI
                 headerObj.transform.SetParent(transform, false);
                 Text headerText = headerObj.AddComponent<Text>();
                 headerText.text = "Complete quests to earn rewards!";
-                headerText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+                headerText.font = FontHelper.GetUIFont();
                 headerText.fontSize = 14;
                 headerText.alignment = TextAnchor.MiddleCenter;
                 headerText.color = Color.gray;
@@ -193,7 +193,7 @@ namespace KingdomWar.UI
                 GameObject titleObj = new GameObject("TitleText");
                 titleObj.transform.SetParent(obj.transform, false);
                 titleText = titleObj.AddComponent<Text>();
-                titleText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+                titleText.font = FontHelper.GetUIFont();
                 titleText.fontSize = 18;
                 titleText.alignment = TextAnchor.MiddleLeft;
                 titleText.color = progress.completed ? Color.green : Color.white;
@@ -213,7 +213,7 @@ namespace KingdomWar.UI
                 GameObject descObj = new GameObject("DescText");
                 descObj.transform.SetParent(obj.transform, false);
                 descText = descObj.AddComponent<Text>();
-                descText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+                descText.font = FontHelper.GetUIFont();
                 descText.fontSize = 12;
                 descText.alignment = TextAnchor.MiddleLeft;
                 descText.color = Color.gray;
@@ -232,7 +232,7 @@ namespace KingdomWar.UI
                 GameObject rarityObj = new GameObject("RarityText");
                 rarityObj.transform.SetParent(obj.transform, false);
                 rarityText = rarityObj.AddComponent<Text>();
-                rarityText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+                rarityText.font = FontHelper.GetUIFont();
                 rarityText.fontSize = 10;
                 rarityText.alignment = TextAnchor.MiddleLeft;
                 RectTransform rrt = rarityObj.GetComponent<RectTransform>();
@@ -287,7 +287,7 @@ namespace KingdomWar.UI
                 GameObject rewardObj = new GameObject("RewardText");
                 rewardObj.transform.SetParent(obj.transform, false);
                 rewardText = rewardObj.AddComponent<Text>();
-                rewardText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+                rewardText.font = FontHelper.GetUIFont();
                 rewardText.fontSize = 12;
                 rewardText.alignment = TextAnchor.MiddleRight;
                 rewardText.color = Color.yellow;
@@ -318,7 +318,7 @@ namespace KingdomWar.UI
                 GameObject btnTextObj = new GameObject("Text");
                 btnTextObj.transform.SetParent(btnObj.transform, false);
                 Text btnText = btnTextObj.AddComponent<Text>();
-                btnText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+                btnText.font = FontHelper.GetUIFont();
                 btnText.fontSize = 13;
                 btnText.alignment = TextAnchor.MiddleCenter;
                 btnText.color = Color.white;

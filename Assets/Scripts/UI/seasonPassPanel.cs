@@ -68,7 +68,7 @@ namespace KingdomWar.UI
                 closeTextObj.transform.SetParent(closeObj.transform, false);
                 Text closeText = closeTextObj.AddComponent<Text>();
                 closeText.text = "X";
-                closeText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+                closeText.font = FontHelper.GetUIFont();
                 closeText.fontSize = 20;
                 closeText.alignment = TextAnchor.MiddleCenter;
                 closeText.color = Color.white;
@@ -156,7 +156,7 @@ namespace KingdomWar.UI
                 titleObj.transform.SetParent(header, false);
                 Text titleText = titleObj.AddComponent<Text>();
                 titleText.text = "Season Pass";
-                titleText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+                titleText.font = FontHelper.GetUIFont();
                 titleText.fontSize = 26;
                 titleText.alignment = TextAnchor.MiddleCenter;
                 titleText.color = Color.white;
@@ -170,7 +170,7 @@ namespace KingdomWar.UI
                 GameObject countObj = new GameObject("CountdownText");
                 countObj.transform.SetParent(header, false);
                 countdownText = countObj.AddComponent<Text>();
-                countdownText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+                countdownText.font = FontHelper.GetUIFont();
                 countdownText.fontSize = 14;
                 countdownText.alignment = TextAnchor.MiddleCenter;
                 countdownText.color = Color.yellow;
@@ -223,7 +223,7 @@ namespace KingdomWar.UI
                 GameObject lvlObj = new GameObject("LevelText");
                 lvlObj.transform.SetParent(area, false);
                 levelText = lvlObj.AddComponent<Text>();
-                levelText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+                levelText.font = FontHelper.GetUIFont();
                 levelText.fontSize = 16;
                 levelText.alignment = TextAnchor.MiddleLeft;
                 levelText.color = Color.white;
@@ -237,7 +237,7 @@ namespace KingdomWar.UI
                 GameObject expObj = new GameObject("ExpText");
                 expObj.transform.SetParent(area, false);
                 expText = expObj.AddComponent<Text>();
-                expText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+                expText.font = FontHelper.GetUIFont();
                 expText.fontSize = 12;
                 expText.alignment = TextAnchor.MiddleRight;
                 expText.color = Color.gray;
@@ -387,7 +387,7 @@ namespace KingdomWar.UI
                 freeHeader.transform.SetParent(headerRow.transform, false);
                 Text freeText = freeHeader.AddComponent<Text>();
                 freeText.text = "Free";
-                freeText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+                freeText.font = FontHelper.GetUIFont();
                 freeText.fontSize = 14;
                 freeText.alignment = TextAnchor.MiddleCenter;
                 freeText.color = new Color(0.5f, 0.8f, 1f, 1);
@@ -400,7 +400,7 @@ namespace KingdomWar.UI
                 premiumHeader.transform.SetParent(headerRow.transform, false);
                 Text premiumText = premiumHeader.AddComponent<Text>();
                 premiumText.text = "Premium";
-                premiumText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+                premiumText.font = FontHelper.GetUIFont();
                 premiumText.fontSize = 14;
                 premiumText.alignment = TextAnchor.MiddleCenter;
                 premiumText.color = new Color(1f, 0.8f, 0.2f, 1);
@@ -429,7 +429,7 @@ namespace KingdomWar.UI
             lvlLabelObj.transform.SetParent(row.transform, false);
             Text lvlLabel = lvlLabelObj.AddComponent<Text>();
             lvlLabel.text = $"Lv.{level}";
-            lvlLabel.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            lvlLabel.font = FontHelper.GetUIFont();
             lvlLabel.fontSize = 13;
             lvlLabel.alignment = TextAnchor.MiddleCenter;
             lvlLabel.color = level <= currentLevel ? Color.white : Color.gray;
@@ -607,7 +607,7 @@ namespace KingdomWar.UI
                 GameObject btnTextObj = new GameObject("Text");
                 btnTextObj.transform.SetParent(btnObj.transform, false);
                 Text btnText = btnTextObj.AddComponent<Text>();
-                btnText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+                btnText.font = FontHelper.GetUIFont();
                 btnText.fontSize = 15;
                 btnText.alignment = TextAnchor.MiddleCenter;
                 btnText.color = Color.white;
@@ -655,7 +655,7 @@ namespace KingdomWar.UI
                 GameObject btnTextObj = new GameObject("Text");
                 btnTextObj.transform.SetParent(btnObj.transform, false);
                 Text btnText = btnTextObj.AddComponent<Text>();
-                btnText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+                btnText.font = FontHelper.GetUIFont();
                 btnText.fontSize = 13;
                 btnText.alignment = TextAnchor.MiddleCenter;
                 btnText.color = Color.white;
@@ -786,7 +786,7 @@ namespace KingdomWar.UI
             obj.transform.SetParent(parent.transform, false);
             Text txt = obj.AddComponent<Text>();
             txt.text = text;
-            txt.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            txt.font = FontHelper.GetUIFont();
             txt.fontSize = fontSize;
             txt.alignment = TextAnchor.MiddleCenter;
             txt.color = color;
