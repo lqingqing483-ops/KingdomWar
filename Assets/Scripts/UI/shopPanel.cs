@@ -23,6 +23,14 @@ namespace KingdomWar.UI
                 itemContainer = transform;
             grid = itemContainer.GetComponent<GridLayoutGroup>();
 
+            // Auto-load shop background sprite from imported resources
+            Image bgImage = transform.Find("Bg")?.GetComponent<Image>();
+            if (bgImage != null && bgImage.sprite == null)
+            {
+                var bg = UIResourceHelper.LoadShopBG();
+                if (bg != null) bgImage.sprite = bg;
+            }
+
             // Ensure ShopGrid renders after Bg (so items are not hidden behind background)
             Transform bg = transform.Find("Bg");
             if (bg != null && itemContainer != transform)
@@ -95,7 +103,7 @@ namespace KingdomWar.UI
                 GameObject nameObj = new GameObject("NameText");
                 nameObj.transform.SetParent(obj.transform, false);
                 nameText = nameObj.AddComponent<Text>();
-                nameText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            nameText.font = FontHelper.GetUIFont();
                 nameText.fontSize = 18;
                 nameText.alignment = TextAnchor.MiddleCenter;
                 nameText.color = Color.white;
@@ -111,7 +119,7 @@ namespace KingdomWar.UI
                 GameObject priceObj = new GameObject("PriceText");
                 priceObj.transform.SetParent(obj.transform, false);
                 priceText = priceObj.AddComponent<Text>();
-                priceText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+                priceText.font = FontHelper.GetUIFont();
                 priceText.fontSize = 16;
                 priceText.alignment = TextAnchor.MiddleCenter;
                 priceText.color = Color.yellow;
@@ -146,7 +154,7 @@ namespace KingdomWar.UI
                 btnTextObj.transform.SetParent(btnObj.transform, false);
                 Text btnText = btnTextObj.AddComponent<Text>();
                 btnText.text = item.purchased ? "\u5DF2\u62E5\u6709" : "\u8D2D\u4E70";
-                btnText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+                btnText.font = FontHelper.GetUIFont();
                 btnText.fontSize = 14;
                 btnText.alignment = TextAnchor.MiddleCenter;
                 btnText.color = Color.white;

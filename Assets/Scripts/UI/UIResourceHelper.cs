@@ -55,6 +55,10 @@ namespace KingdomWar.UI
         {
             return Resources.Load<Sprite>("UI/Shop/nap_down");
         }
+        public static Sprite LoadShopBG()
+        {
+            return Resources.Load<Sprite>("UI/Shop/inf_bg");
+        }
 
         // ── Cards ────────────────────────────────────────────────────
         public static Sprite LoadCardIcon(string cardId)
