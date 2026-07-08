@@ -76,6 +76,9 @@ namespace KingdomWar.Game.Battle
         // 释放法术
         private void CastSpell()
         {
+            // Show radius indicator before impact
+            SpellVisualEffect.ShowRadiusIndicator(targetPosition, radius, Color.white * 0.5f, 0.3f);
+
             if (hasAppliedInstantDamage)
             {
                 state = SpellState.Ended;
@@ -124,6 +127,19 @@ namespace KingdomWar.Game.Battle
         private void ApplySpellEffect()
         {
             Debug.Log($"[Spell] ApplySpellEffect called: {spellName}, damage: {damage}, radius: {radius}, targetPosition: {targetPosition}, ownerId: {ownerId}");
+
+            // Show impact visual
+            Color effectColor = Color.white;
+            switch (spellEffectType)
+            {
+                case SpellEffectType.Damage: effectColor = new Color(1f, 0.3f, 0.1f); break;
+                case SpellEffectType.Heal: effectColor = Color.green; break;
+                case SpellEffectType.Freeze: effectColor = Color.cyan; break;
+                case SpellEffectType.Poison: effectColor = new Color(0.5f, 0f, 0.5f); break;
+                case SpellEffectType.Boost: effectColor = Color.yellow; break;
+                default: effectColor = Color.white; break;
+            }
+            SpellVisualEffect.ShowImpactFlash(targetPosition, radius, effectColor, 0.5f);
 
             float effectValue = 0f;
             if (spellEffectType == SpellEffectType.Boost) effectValue = 0.4f;  // +40% boost

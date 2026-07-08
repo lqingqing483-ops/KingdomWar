@@ -45,9 +45,33 @@ namespace KingdomWar.Tests.EditMode
         }
 
         [Test]
-        public void SpellEffectType_HasExactly6Values()
+        public void SpellEffectType_HasExactly10Values()
         {
-            Assert.That(System.Enum.GetValues(typeof(SpellEffectType)).Length, Is.EqualTo(6));
+            Assert.That(System.Enum.GetValues(typeof(SpellEffectType)).Length, Is.EqualTo(10));
+        }
+
+        [Test]
+        public void SpellEffectType_HasPoison()
+        {
+            Assert.That(System.Enum.IsDefined(typeof(SpellEffectType), SpellEffectType.Poison), Is.True);
+        }
+
+        [Test]
+        public void SpellEffectType_HasSlow()
+        {
+            Assert.That(System.Enum.IsDefined(typeof(SpellEffectType), SpellEffectType.Slow), Is.True);
+        }
+
+        [Test]
+        public void SpellEffectType_HasKnockback()
+        {
+            Assert.That(System.Enum.IsDefined(typeof(SpellEffectType), SpellEffectType.Knockback), Is.True);
+        }
+
+        [Test]
+        public void SpellEffectType_HasPull()
+        {
+            Assert.That(System.Enum.IsDefined(typeof(SpellEffectType), SpellEffectType.Pull), Is.True);
         }
 
         // ===== Buff System Tests =====
@@ -148,9 +172,9 @@ namespace KingdomWar.Tests.EditMode
         // ===== BuffType Enum Tests =====
 
         [Test]
-        public void BuffType_HasExactly4Values()
+        public void BuffType_HasExactly6Values()
         {
-            Assert.That(System.Enum.GetValues(typeof(BuffType)).Length, Is.EqualTo(4));
+            Assert.That(System.Enum.GetValues(typeof(BuffType)).Length, Is.EqualTo(6));
         }
 
         [Test]
@@ -160,6 +184,8 @@ namespace KingdomWar.Tests.EditMode
             Assert.That(System.Enum.IsDefined(typeof(BuffType), BuffType.Stun));
             Assert.That(System.Enum.IsDefined(typeof(BuffType), BuffType.BoostDamage));
             Assert.That(System.Enum.IsDefined(typeof(BuffType), BuffType.BoostSpeed));
+            Assert.That(System.Enum.IsDefined(typeof(BuffType), BuffType.Poison));
+            Assert.That(System.Enum.IsDefined(typeof(BuffType), BuffType.Slow));
         }
     }
 }

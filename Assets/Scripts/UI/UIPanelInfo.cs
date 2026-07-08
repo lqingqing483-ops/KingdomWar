@@ -23,7 +23,8 @@ public enum UIPanelType
     chestPanel,
     upgradePanel,
     profilePanel,
-    seasonPassPanel
+    seasonPassPanel,
+    questPanel
 }
 [Serializable]
 public class UIPanelTypeInfo : ISerializationCallbackReceiver

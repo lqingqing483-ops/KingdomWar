@@ -761,6 +761,13 @@ namespace KingdomWar.Game.Battle
                     // Record battle stats
                     PlayerDataManager.Instance.RecordBattleResult(isLocalPlayerVictory, isDraw);
 
+                    // Progress quests
+                    int trophyChange = LastTrophyResult?.trophiesGained ?? 0;
+                    int goldGained = isDraw ? KingdomWar.Game.Config.EconomyBalanceSO.Instance.battleDrawGold
+                        : isLocalPlayerVictory ? KingdomWar.Game.Config.EconomyBalanceSO.Instance.battleWinGold
+                        : KingdomWar.Game.Config.EconomyBalanceSO.Instance.battleLoseGold;
+                    KingdomWar.Game.Quests.QuestManager.OnBattleEnded(isLocalPlayerVictory, trophyChange, goldGained, 0);
+
                     // Grant Season Pass exp
                     int expGained = isDraw ? SeasonPassConfigSO.Instance.battleLoseExp
                         : isLocalPlayerVictory ? SeasonPassConfigSO.Instance.battleWinExp

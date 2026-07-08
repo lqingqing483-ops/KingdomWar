@@ -52,6 +52,10 @@
         {
             "panelName": "seasonPassPanel",
             "panelPath": "Prefabs/UIPrefab/seasonPassPanel"
+        },
+        {
+            "panelName": "questPanel",
+            "panelPath": "Prefabs/UIPrefab/questPanel"
         }
     ]
 }
